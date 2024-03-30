@@ -1,0 +1,9 @@
+/*Import Google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap');
+
+*Asterisk wildcard selector will remove any automatic browser styling*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
