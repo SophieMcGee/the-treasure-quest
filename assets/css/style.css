@@ -51,7 +51,7 @@ button {
     cursor: pointer;
     font-size: 4vw;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease,
+    transition: all 0.3s ease;
 
 }
 
@@ -61,14 +61,6 @@ button:active {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
 }
-
-/*Styling for header and logo*/
-header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
 
     /* Media query for tablets and screens above 768px wide */
     @media (min-width: 768px) {
