@@ -13,7 +13,7 @@ body, html {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
     justify-content: center;
     align-items: center;
@@ -29,11 +29,13 @@ body, html {
     background-repeat: no-repeat;
 }
 
-h2,
-h3 {
+h2 {
     font-weight: 800;
     font-size: 5vw;
     color: #060606;
+    width: 60%;
+    margin: 0 auto;
+    line-height: 1.4;
 }
 
 
@@ -60,9 +62,9 @@ button:hover, button:active {
 
 /*Styling for header and logo*/
 .logo img {
-    max-width: 200px;
+    max-width: 50vw;
     height: auto;
-    transition: transform 0.7s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
 
 #game-selection img {
@@ -71,21 +73,23 @@ button:hover, button:active {
 
 /* Media query for tablets and screens above 768px wide */
 @media (min-width: 768px) {
-    h2, h3 {
-        font-size: 2.5rem;
-    }
 
     button {
         padding: 20px 40px; 
         font-size: 1.5rem;
         margin: 10px;
     }
+
+    .logo img, #game-selection img {
+        width: auto; 
+        max-width: 500px;
+    }
 }
 
 /* Media query for desktops and screens above 996px wide */
 @media (min-width: 996px) {
-    h2, h3 {
-        font-size: 3.5rem;
+    h2 {
+        font-size: 6vw;
     }
 
     button {
@@ -93,3 +97,8 @@ button:hover, button:active {
         font-size: 1.75rem;
         margin: 20px;
     }
+    .logo img, #game-selection img {
+    width: auto; 
+    max-width: 600px;
+}
+}
