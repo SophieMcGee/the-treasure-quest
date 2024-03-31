@@ -8,7 +8,13 @@ document.getElementById('hardMode').addEventListener('click', function () {
 
 function startGame(difficulty) {
     // Function to trigger the start of the game once difficulty is selected
-    document.getElementById('header').style.display = 'flex'; 
-    document.getElementById('game-selection').style.display = 'none'; 
-    document.getElementById('quiz-container').style.display = 'block';
+    loadQuiz(difficulty);
+
+    document.getElementById('header').style.display = 'flex'; //Code to display the header
+    document.getElementById('game-selection').style.display = 'none'; //Code to show the quiz game questions
+    document.getElementById('quiz-container').style.display = 'block'; //Code to show the footer
+}
+
+function loadQuiz(difficulty) {
+    
 }
