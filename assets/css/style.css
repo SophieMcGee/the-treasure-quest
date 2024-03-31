@@ -9,7 +9,8 @@
 
 /*Generic Styles*/
 
-body, html {
+body,
+html {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -23,7 +24,7 @@ body, html {
     font-family: 'Sniglet', sans-serif;
     font-size: 1.8rem;
     /*Background image styles*/
-    background-image: url('../images/background-image.webp');
+    background-image: url('../images/game-background.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -41,64 +42,54 @@ h2 {
 
 /*Styling for buttons*/
 button {
-background-color: #e96854;
-color: #ffffff;
-border: none;
-padding: 5% 10%;
-margin: 5% 2%;
-border-radius: 10px;
-cursor: pointer;
-font-size: 4vw;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-transition: all 0.3s ease,
+    background-color: #e96854;
+    color: #ffffff;
+    border: none;
+    padding: 5% 10%;
+    margin: 5% 2%;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 4vw;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease,
 
 }
 
-button:hover, button:active {
+button:hover,
+button:active {
     background-color: #d0574b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
 }
 
 /*Styling for header and logo*/
-.logo img {
-    max-width: 50vw;
-    height: auto;
-    transition: transform 0.5s ease-in-out;
-}
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
 
-#game-selection img {
-    max-width: 250px;
-}
+    /* Media query for tablets and screens above 768px wide */
+    @media (min-width: 768px) {
 
-/* Media query for tablets and screens above 768px wide */
-@media (min-width: 768px) {
-
-    button {
-        padding: 20px 40px; 
-        font-size: 1.5rem;
-        margin: 10px;
+        button {
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            margin: 10px;
+        }
     }
 
-    .logo img, #game-selection img {
-        width: auto; 
-        max-width: 500px;
-    }
-}
+    /* Media query for desktops and screens above 996px wide */
+    @media (min-width: 996px) {
+        h2 {
+            font-size: 6vw;
+        }
 
-/* Media query for desktops and screens above 996px wide */
-@media (min-width: 996px) {
-    h2 {
-        font-size: 6vw;
+        button {
+            padding: 20px 60px;
+            font-size: 1.75rem;
+            margin: 20px;
+        }
     }
-
-    button {
-        padding: 20px 60px;
-        font-size: 1.75rem;
-        margin: 20px;
-    }
-    .logo img, #game-selection img {
-    width: auto; 
-    max-width: 600px;
-}
 }
