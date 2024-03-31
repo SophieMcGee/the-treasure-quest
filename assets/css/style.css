@@ -51,6 +51,16 @@ box-shadow 0.3s,
 transform 0.2s;
 }
 
+button:hover, button:active {
+    background-color: #d0574b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
 /*Styling for header and logo*/
 .logo img {
     max-width: 200px;
