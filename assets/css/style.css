@@ -45,7 +45,7 @@ button {
     background-color: #e96854;
     color: #ffffff;
     border: none;
-    padding: 5% 10%;
+    padding: 3% 8%;
     margin: 5% 2%;
     border-radius: 10px;
     cursor: pointer;
@@ -73,11 +73,6 @@ header {
     /* Media query for tablets and screens above 768px wide */
     @media (min-width: 768px) {
 
-        button {
-            padding: 20px 40px;
-            font-size: 1.5rem;
-            margin: 10px;
-        }
     }
 
     /* Media query for desktops and screens above 996px wide */
@@ -85,11 +80,4 @@ header {
         h2 {
             font-size: 6vw;
         }
-
-        button {
-            padding: 20px 60px;
-            font-size: 1.75rem;
-            margin: 20px;
-        }
-    }
 }
