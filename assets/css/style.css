@@ -73,5 +73,6 @@ button:active {
     @media (min-width: 996px) {
         h2 {
             font-size: 6vw;
+            margin-top: 300px;
         }
 }
