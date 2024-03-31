@@ -24,21 +24,20 @@ body {
     color: #ffffff;
     font-family: 'Sniglet', sans-serif;
     font-size: 1.8rem;
+    /*Background image styles*/
+    background-image: url('assets/images/background-image.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-h2,
-h3 {
+h2, h3 {
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
-/*Website Background Image*/
-#background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    object-fit: cover;
-}
+/*Styling for header and logo*/
+header .logo img [
+    max-width: 200px;
+    height: auto;
+]
