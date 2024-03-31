@@ -9,7 +9,7 @@
 
 /*Generic Styles*/
 
-body {
+body, html {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -22,7 +22,7 @@ body {
     font-family: 'Sniglet', sans-serif;
     font-size: 1.8rem;
     /*Background image styles*/
-    background-image: url('assets/images/background-image.webp');
+    background-image: url('../images/background-image.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
