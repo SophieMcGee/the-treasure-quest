@@ -34,11 +34,14 @@ html {
 /*Header Styles*/
 
 header {
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px 0;
+    z-index: 1;
+    position: relative;
 }
 
 header img {
@@ -50,14 +53,20 @@ header img {
 .game-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 60vh;
-    margin-top: 10vh;
+    height: 40vh;
+    margin-top: 20px;
     max-width: 100%;
     overflow-x: hidden;
+    z-index: 2;
+    position: relative;
+}
+
+#game-selection {
+    width: 100%; 
 }
 
 /*Font Styles*/
@@ -97,13 +106,13 @@ button:active {
 /* Media query for tablets and screens above 768px wide */
 @media (min-width: 768px) {
     header img {
-        max-width: 70%;
+        max-width: 60%;
     }
 }
 
 /* Media query for desktops and screens above 996px wide */
 @media (min-width: 996px) {
     header img {
-        max-width: 80%;
+        max-width: 70%;
     }
 }
