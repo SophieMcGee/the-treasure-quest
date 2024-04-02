@@ -53,6 +53,7 @@ function getRandomQuestions(sourceArray, numQuestions) {
 
 //Display the current question and possition answers
 function displayCurrentQuestion() {
+    const quizContainer = document.getElementById('quiz-container');
     const questionInfo = selectedQuestions[currentQuestionIndex];
     document.getElementById('question').textContent = questionInfo.question;
     const answersContainer = document.getElementById('answers');
