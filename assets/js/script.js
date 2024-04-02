@@ -83,9 +83,20 @@ function checkAnswer(selectedIndex) {
     }
 }
 
-//Display the quiz score with option to restart the quiz
-function endQuiz() {
-    const quizContainer = document.getElementById('quiz-container');
-    quizContainer.innerHTML = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
-    <button onclick="location.reload()">Restart the game!</button>`;
+function restartGame() {
+    score = 0;
+    incorrectCount = 0;
+    currentQuestionIndex = 0;
+    document.getElementById('correct').textContent = '0';
+    document.getElementById('incorrect').textContent = '0';
+    document.getElementById('game-selection').style.display = 'block';
+    document.getElementById('quiz-container').style.display = 'none';
+
+    //Display the quiz score with option to restart the quiz
+    function endQuiz() {
+        const quizContainer = document.getElementById('quiz-container');
+        quizContainer.innerHTML = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
+    <button id="restartButton">Restart the game!</button>`;
+        document.getElementById('restartButton').addEventListener('click', restartGame);
+    }
 }
