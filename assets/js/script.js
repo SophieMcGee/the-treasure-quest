@@ -16,11 +16,11 @@ const questions = {
     ],
 };
 
-let selectedQuestions =[];
+let selectedQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 
-
+//Event listeners for the easy and hard mode buttons
 document.getElementById('easyMode').addEventListener('click', function () {
     startGame('easy');
 });
@@ -35,22 +35,29 @@ function startGame(difficulty) {
     currentQuestionIndex = 0;
     score = 0;
     displayCurrentQuestion();
+
+    //Ensure the game selection is visible
+    document.getElementById('game-selection').style.display = 'none';
+    document.getElementById('quiz-container').style.display = 'block';
 }
+
+//Pull random questions from the source questions array
 
 function getRandomQuestions(sourceArray, numQuestions) {
     const shuffled = [...sourceArray].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, numQuestions);
 }
 
+//Display the current question and possition answers
 function displayCurrentQuestion() {
     const question = selectedQuestions[currentQuestionIndex];
     const quizContainer = document.getElementById('quiz-container');
-    quizContainer.innerHTML = `<div>${question.question}</div>`;
+    quizContainer.innerHTML = `<h3>${question.question}</h3>`;
 
     question.options.forEach((option, index) => {
         const button = document.createElement('button');
         button.textContent = option;
-        button.addEventListener('click', () => checkAnswer(index));
+        button.onclick = () => checkAnswer(index);
         quizContainer.appendChild(button);
     });
 }
@@ -68,13 +75,9 @@ function checkAnswer(selectedIndex) {
     }
 }
 
+//Display the quiz score with option to restart the quiz
 function endQuiz() {
     const quizContainer = document.getElementById('quiz-container');
-    quizContainer.innerHTML = `<div>Your score: ${score}/${selectedQuestions.length}</div>`;
-}
-
-//Function to start the quiz
-function loadQuiz(difficulty) {
-    startGame(difficulty);
-    document.getElementById('game-selection').style.display = 'none'; //Code to show the quiz game questions
+    quizContainer.innerHTML = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
+    <button onclick="location.reload()">Restart the game!</button>`;
 }
