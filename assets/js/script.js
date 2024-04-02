@@ -70,7 +70,11 @@ function displayCurrentQuestion() {
 function checkAnswer(selectedIndex) {
     if (selectedIndex === selectedQuestions[currentQuestionIndex].correctAnswerPosition) {
         score++;
+    } else {
+        incorrectCount++;
     }
+    document.getElementById('correct').textContent = score;
+    document.getElementById('incorrect').textContent = incorrectCount;
     currentQuestionIndex++;
     if (currentQuestionIndex < selectedQuestions.length) {
         displayCurrentQuestion();
