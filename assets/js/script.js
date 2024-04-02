@@ -53,14 +53,15 @@ function getRandomQuestions(sourceArray, numQuestions) {
 
 //Display the current question and possition answers
 function displayCurrentQuestion() {
-    const question = selectedQuestions[currentQuestionIndex];
-    const quizContainer = document.getElementById('quiz-container');
-    quizContainer.innerHTML = `<h3>${question.question}</h3>`;
+    const questionInfo = selectedQuestions[currentQuestionIndex];
+    document.getElementById('question').textContent = questionInfo.question;
+    const answersContainer = document.getElementById('answers');
+    answersContainer.innerHTML = '';
 
-    question.options.forEach((option, index) => {
+    questionInfo.options.forEach((option, index) => {
         const button = document.createElement('button');
         button.textContent = option;
-        button.onclick = () => checkAnswer(index);
+        button.addEventListener = ('click', () => checkAnswer(index));
         quizContainer.appendChild(button);
     });
 }
