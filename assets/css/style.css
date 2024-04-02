@@ -21,7 +21,7 @@ html {
     align-items: center;
     text-align: center;
     /*General text styles*/
-    color: #ffffff;
+    color: #060606;
     font-family: 'Sniglet', sans-serif;
     font-size: 1.8rem;
     /*Background image styles*/
@@ -73,7 +73,6 @@ header img {
 h2 {
     font-weight: 800;
     font-size: 5vw;
-    color: #060606;
     width: 60%;
     margin: 0 auto;
     line-height: 1.4;
