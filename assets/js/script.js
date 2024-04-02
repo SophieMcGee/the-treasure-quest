@@ -35,11 +35,13 @@ function startGame(difficulty) {
     selectedQuestions = getRandomQuestions(questions[difficulty], 10);
     currentQuestionIndex = 0;
     score = 0;
+    incorrectCount = 0;
     displayCurrentQuestion();
 
     //Ensure the game selection is visible
-    document.getElementById('game-selection').style.display = 'none';
     document.getElementById('quiz-container').style.display = 'block';
+    document.getElementById('game-selection').style.display = 'none';
+    displayCurrentQuestion();
 }
 
 //Pull random questions from the source questions array
