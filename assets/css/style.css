@@ -78,6 +78,14 @@ h2 {
     line-height: 1.4;
 }
 
+h3 {
+    font-weight: 800;
+    font-size: 6vw;
+    width: 60%;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
 
 /*Styling for buttons*/
 button {
@@ -111,16 +119,11 @@ button:active {
     padding: 20px;
     width: 80%;
     max-width: 600px;
+    font-size: 1.5rem;
     
 }
 
-/*Styling for question text*/
-#question {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.score-scount p {
+.score-count p {
     font-size: 1.2rem;
 }
 
