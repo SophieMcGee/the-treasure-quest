@@ -19,6 +19,7 @@ const questions = {
 let selectedQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
+let incorrectCount = 0;
 
 //Event listeners for the easy and hard mode buttons
 document.getElementById('easyMode').addEventListener('click', function () {
