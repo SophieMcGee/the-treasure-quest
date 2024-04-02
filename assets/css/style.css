@@ -102,6 +102,28 @@ button:active {
     transform: translateY(-2px);
 }
 
+/*Styling for question area*/
+
+#quiz-container {
+    text-align: center;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    
+}
+
+/*Styling for question text*/
+#question {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.score-scount p {
+    font-size: 1.2rem;
+}
 
 /* Media query for tablets and screens above 768px wide */
 @media (min-width: 768px) {
