@@ -4,14 +4,14 @@ const questions = {
         {
             question: "What is the capital city of Ireland",
             correctAnswerPosition: 0,
-            options: ["Dublin, Paris, London"]
+            options: ["Dublin", "Paris", "London"]
         },
     ],
     hard: [
         {
             question: "What is the capital city of England",
             correctAnswerPosition: 2,
-            options: ["Dublin, Paris, London"]
+            options: ["Dublin", "Paris", "London"]
         }
     ],
 };
@@ -62,8 +62,8 @@ function displayCurrentQuestion() {
     questionInfo.options.forEach((option, index) => {
         const button = document.createElement('button');
         button.textContent = option;
-        button.addEventListener = ('click', () => checkAnswer(index));
-        quizContainer.appendChild(button);
+        button.addEventListener('click', () => checkAnswer(index));
+        answersContainer.appendChild(button);
     });
 }
 
