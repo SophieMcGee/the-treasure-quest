@@ -17,7 +17,7 @@ html {
     max-width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     /*General text styles*/
@@ -41,20 +41,21 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    margin-bottom: 2rem;
     z-index: 1;
     position: relative;
 }
 
 .logo-container img {
-    
     width: 12vw;
-    max-width: 150px;
-    min-width: 80px;
+    max-width: 250px;
+    min-width: 150px;
 }
 
 #restartQuiz {
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    max-width: 120px;
     background-color: #e96854;
     color: #ffffff;
     border: none;
@@ -80,6 +81,7 @@ header {
     overflow-x: hidden;
     z-index: 2;
     position: relative;
+    margin-top: 1rem;
 }
 
 /*Font Styles*/
@@ -155,7 +157,7 @@ button:focus {
 /* Media query for tablets and screens above 768px wide */
 @media (min-width: 768px) {
     logo-container img, #restartQuiz {
-        width: 10vw;
+        width: auto;
         padding: 8px 16px;
         font-size: 0.9rem;
     }
@@ -163,9 +165,11 @@ button:focus {
 
 /* Media query for desktops and screens above 996px wide */
 @media (min-width: 996px) {
-    .logo-container img, #restartQuiz {
-        width: 8vw;
-        padding: 6px 12px;
-        font-size: 0.8rem;
+    .logo-container img {
+        max-width: 500px; 
+    }
+    #restartQuiz {
+        padding: 0.5rem 1rem; 
+        font-size: 1rem;
     }
 }
