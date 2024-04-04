@@ -451,7 +451,7 @@ const questions = {
         {
             question: "What does unprecedented mean?",
             correctAnswerPosition: 2,
-            options: ["A present returned to the owner", "Unexpected", "Not done or experienced before"]
+            options: ["A present returned to the owner", "Expected", "Not done or experienced before"]
         },
         {
             question: "Climate shows what in the weather?",
