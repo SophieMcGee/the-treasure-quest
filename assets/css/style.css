@@ -23,7 +23,7 @@ html {
     /*General text styles*/
     color: #060606;
     font-family: 'Sniglet', sans-serif;
-    font-size: 1.8rem;
+    font-size: 16px;
     /*Background image styles*/
     background-image: url('../images/background-image.webp');
     background-size: cover;
@@ -39,22 +39,32 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 1rem;
     z-index: 1;
     position: relative;
 }
 
-.logo-container {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-start;
-    transition: all 0.3s ease;
+.logo-container img {
+    
+    width: 12vw;
+    max-width: 150px;
+    min-width: 80px;
 }
 
-.logo-container img {
-    max-width: 100%; 
-    height: auto; 
-    transition: all 0.3s ease;
+#restartQuiz {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #e96854;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#restartQuiz:hover,
+#restartQuiz:focus {
+    background-color: #d0574b;
 }
 
 /*Quiz Game Styles*/
@@ -66,48 +76,32 @@ header {
     text-align: center;
     width: 100%;
     min-height: 40vh;
-    margin-top: 20px;
-    max-width: 100%;
+    margin-top: 2rem;
     overflow-x: hidden;
     z-index: 2;
     position: relative;
 }
 
-#game-selection {
-    width: 100%;
-}
-
 /*Font Styles*/
-h2 {
+h2, h3 {
     font-weight: 800;
-    font-size: 5vw;
-    width: 60%;
+    font-size: 4vw;
     margin: 0 auto;
     line-height: 1.4;
 }
-
-h3 {
-    font-weight: 800;
-    font-size: 6vw;
-    width: 60%;
-    margin: 0 auto;
-    line-height: 1.4;
-}
-
 
 /*Styling for buttons*/
 button {
     background-color: #e96854;
     color: #ffffff;
     border: none;
-    padding: 3% 8%;
-    margin: 5% 2%;
+    padding: 10px 20px;
+    margin: 20px 10px;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 4vw;
+    font-size: 1.2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-
 }
 
 button:hover,
@@ -120,9 +114,7 @@ button:focus {
 }
 
 /*Styling for question area*/
-
 #quiz-container {
-    text-align: center;
     margin: 20px auto;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
@@ -151,31 +143,29 @@ button:focus {
     transition: all 0.3s ease;
 }
 
-#time {
-    font-weight: bold;
-}
-
 #timer.urgent {
     color: #b21124;
     animation: blink 1s step-start 0s infinite;
 }
 
+@keyframes blink {
+    50% { opacity: 0; }
+}
 
 /* Media query for tablets and screens above 768px wide */
 @media (min-width: 768px) {
-    header img {
-        max-width: 60%;
+    logo-container img, #restartQuiz {
+        width: 10vw;
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 }
 
 /* Media query for desktops and screens above 996px wide */
 @media (min-width: 996px) {
-    header img {
-        max-width: 70%;
-    }
-
-    .game-container {
-        min-height: 30vh;
-        margin-top: 5vh;
+    .logo-container img, #restartQuiz {
+        width: 8vw;
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
 }
