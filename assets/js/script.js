@@ -553,11 +553,46 @@ function displayCurrentQuestion() {
         button.textContent = option;
         button.addEventListener('click', () => checkAnswer(index));
         answersContainer.appendChild(button);
+
+//Clear existing timer and starts a new 10 second timer countdown
+        clearInterval(countdown);
+        let timeDisplay = document.querySelector('#time'); 
+        startTimer(10, timeDisplay);
     });
+}
+
+//Code for a countdown timer of 10 seconds for each question
+let countdown; 
+
+function startTimer(duration, display) {
+    let timer = duration, seconds;
+    countdown = setInterval(function () {
+        seconds = parseInt(timer % 60, 10);
+
+        display.textContent = seconds;
+//If counter reaches 9 the countdown clears and game moves to the next question
+        if (--timer < 0) {
+            clearInterval(countdown);
+            handleTimeout(); 
+        }
+    }, 1000);
+}
+
+function handleTimeout() {
+    alert("Time's up!");
+    incorrectCount++;
+    document.getElementById('incorrect').textContent = incorrectCount;
+    currentQuestionIndex++;
+    if (currentQuestionIndex < selectedQuestions.length) {
+        displayCurrentQuestion();
+    } else {
+        endQuiz();
+    }
 }
 
 //Triggered when an option is clicked, checks to see if answer is correct and updates score, ends quiz with final score
 function checkAnswer(selectedIndex) {
+    clearInterval(countdown);
     if (selectedIndex === selectedQuestions[currentQuestionIndex].correctAnswerPosition) {
         score++;
     } else {
