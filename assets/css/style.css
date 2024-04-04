@@ -25,6 +25,7 @@ html {
     font-family: 'Sniglet', sans-serif;
     font-size: 16px;
     /*Background image styles*/
+    background-color: #ffc966;
     background-image: url('../images/background-image.webp');
     background-size: cover;
     background-position: center;
@@ -76,7 +77,6 @@ header {
     text-align: center;
     width: 100%;
     min-height: 40vh;
-    margin-top: 2rem;
     overflow-x: hidden;
     z-index: 2;
     position: relative;
