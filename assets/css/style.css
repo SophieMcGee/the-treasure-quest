@@ -129,6 +129,30 @@ button:focus {
     font-size: 1.2rem;
 }
 
+/*Styling for timer*/
+
+#timer {
+    color: #38b6ff;
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#time {
+    font-weight: bold;
+}
+
+#timer.urgent {
+    color: #b21124;
+    animation: blink 1s step-start 0s infinite;
+}
+
+
 /* Media query for tablets and screens above 768px wide */
 @media (min-width: 768px) {
     header img {

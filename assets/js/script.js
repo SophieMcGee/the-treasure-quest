@@ -568,9 +568,14 @@ function startTimer(duration, display) {
     let timer = duration, seconds;
     countdown = setInterval(function () {
         seconds = parseInt(timer % 60, 10);
-
+// Less than or equal to 5 seconds left and text will change to red and blinking will start
         display.textContent = seconds;
-//If counter reaches 9 the countdown clears and game moves to the next question
+        if (timer <= 5) { 
+            display.parentNode.classList.add("urgent");
+        } else {
+            display.parentNode.classList.remove("urgent");
+        }
+        //If counter reaches 0 the countdown clears and game moves to the next question
         if (--timer < 0) {
             clearInterval(countdown);
             handleTimeout(); 
