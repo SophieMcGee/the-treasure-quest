@@ -51,7 +51,7 @@ function getRandomQuestions(sourceArray, numQuestions) {
     return shuffled.slice(0, numQuestions);
 }
 
-//Display the current question and possition answers
+//Display the current question and position answers
 function displayCurrentQuestion() {
     const quizContainer = document.getElementById('quiz-container');
     const questionInfo = selectedQuestions[currentQuestionIndex];
@@ -93,11 +93,12 @@ function restartGame() {
     document.getElementById('game-selection').style.display = 'block';
     document.getElementById('quiz-container').style.display = 'none';
 
-    //Display the quiz score with option to restart the quiz
-    function endQuiz() {
-        const quizContainer = document.getElementById('quiz-container');
-        quizContainer.innerHTML = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
-    <button id="restartButton">Restart the game!</button>`;
-        document.getElementById('restartButton').addEventListener('click', restartGame);
-    }
+}
+
+//Display the quiz score with option to restart the quiz
+function endQuiz() {
+    const quizContainer = document.getElementById('quiz-container');
+    quizContainer.innerHTML = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
+<button id="restartButton">Restart the game!</button>`;
+    document.getElementById('restartButton').addEventListener('click', restartGame);
 }

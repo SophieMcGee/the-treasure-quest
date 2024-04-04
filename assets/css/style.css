@@ -103,10 +103,12 @@ button {
 }
 
 button:hover,
-button:active {
+button:active,
+button:focus {
     background-color: #d0574b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
+    outline: none;
 }
 
 /*Styling for question area*/
