@@ -525,11 +525,13 @@ function startGame(difficulty) {
     currentQuestionIndex = 0;
     score = 0;
     incorrectCount = 0;
-    displayCurrentQuestion();
 
     //Ensure the game selection is visible
     document.getElementById('quiz-container').style.display = 'block';
     document.getElementById('game-selection').style.display = 'none';
+    document.querySelector('.logo-container img').style.width = '400px'; 
+    document.getElementById('restartQuiz').style.display = 'inline-block';
+
     displayCurrentQuestion();
 }
 
@@ -630,6 +632,15 @@ function restartGame() {
     document.getElementById('incorrect').textContent = '0';
     document.getElementById('game-selection').style.display = 'block';
     document.getElementById('quiz-container').style.display = 'none';
-
+    document.querySelector('.logo-container img').style.width = '500px';
+    document.getElementById('restartQuiz').style.display = 'none';
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('restartQuiz').addEventListener('click', function() {
+        restartGame();
+        document.querySelector('.logo-container img').style.width = '500px'
+        this.style.display = 'none';
+    });
+});
 

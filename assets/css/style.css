@@ -37,16 +37,24 @@ header {
     height: auto;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px;
     z-index: 1;
     position: relative;
 }
 
-header img {
-    max-width: 60%;
-    max-width: 300px;
+.logo-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    transition: all 0.3s ease;
+}
+
+.logo-container img {
+    max-width: 100%; 
+    height: auto; 
+    transition: all 0.3s ease;
 }
 
 /*Quiz Game Styles*/
