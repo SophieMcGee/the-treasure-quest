@@ -165,8 +165,12 @@ button:focus {
 /*Media query for very small mobile screens below 360px wide*/
 @media (max-width: 360px) {
     header {
+        flex-direction: column;
+    }
+    
+    header.game-started {
         flex-direction: column; 
-        justify-content: center; 
+        justify-content: space-between; 
         align-items: center; 
         padding-top: 20px; 
         padding-bottom: 20px; 
@@ -188,6 +192,13 @@ button:focus {
         right: auto; 
         margin: 10px auto; 
         display: block;
+    }
+}
+
+/* Left alignment for the logo when the quiz starts, for screens wider than 360px */
+@media (min-width: 361px) {
+    .header-game-started {
+        justify-content: space-between;
     }
 }
 
