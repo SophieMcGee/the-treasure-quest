@@ -72,6 +72,18 @@ header {
 }
 
 /*Quiz Game Styles*/
+/*Initial game selection loading screen*/
+#game-selection {
+    background: rgba(255, 255, 255, 0.5); 
+    border-radius: 15px; 
+    padding: 20px; 
+    margin: 20px auto; 
+    width: 80%;
+    max-width: 600px; 
+    text-align: center
+}
+
+/*Game play screen*/
 .game-container {
     display: flex;
     flex-direction: column;
