@@ -72,16 +72,6 @@ header {
 }
 
 /*Quiz Game Styles*/
-/*Initial game selection loading screen*/
-#game-selection {
-    background: rgba(255, 255, 255, 0.5); 
-    border-radius: 15px; 
-    padding: 20px; 
-    margin: 20px auto; 
-    width: 80%;
-    max-width: 600px; 
-    text-align: center
-}
 
 /*Game play screen*/
 .game-container {
@@ -96,6 +86,30 @@ header {
     z-index: 2;
     position: relative;
     margin-top: 1rem;
+}
+
+/*Initial game selection loading screen*/
+#game-selection {
+    background: rgba(255, 255, 255, 0.5); 
+    border-radius: 15px; 
+    padding: 20px; 
+    margin: 20px auto; 
+    width: 100%;
+    max-width: 600px; 
+    text-align: center
+}
+
+/*Styling for question area*/
+#quiz-container {
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.5rem;
+    
 }
 
 /*Font Styles*/
@@ -129,17 +143,7 @@ button:focus {
     outline: none;
 }
 
-/*Styling for question area*/
-#quiz-container {
-    margin: 20px auto;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    font-size: 1.5rem;
-    
-}
+
 
 .score-count p {
     font-size: 1.2rem;
@@ -210,4 +214,14 @@ button:focus {
         padding: 0.5rem 1.5rem; 
         font-size: 1.3rem;
     }
+
+/* Media query for very large screens above 2400px wide */
+@media (min-width: 2400px) {
+    h2, h3 {
+        font-weight: 800;
+        font-size: 3vw;
+        margin: 0 auto;
+        line-height: 1.4;
+    }
+}
 }
