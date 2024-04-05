@@ -74,46 +74,29 @@ header {
 /*Quiz Game Styles*/
 
 /*Game play screen*/
-.game-container {
+.game-container,
+#game-selection,
+#quiz-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    width: 100%;
+    width: 80%;
+    max-width: 1200px;
     min-height: 40vh;
-    overflow-x: hidden;
-    z-index: 2;
-    position: relative;
-    margin-top: 1rem;
-}
-
-/*Initial game selection loading screen*/
-#game-selection {
-    background: rgba(255, 255, 255, 0.5); 
-    border-radius: 15px; 
-    padding: 20px; 
-    margin: 20px auto; 
-    width: 100%;
-    max-width: 600px; 
-    text-align: center
-}
-
-/*Styling for question area*/
-#quiz-container {
-    margin: 20px auto;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
     padding: 20px;
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    font-size: 1.5rem;
-    
+    overflow-x: hidden;
+    z-index: 2;
+    position: relative;
+    margin: 1rem auto;
 }
 
 /*Font Styles*/
-h2, h3 {
+h2,
+h3 {
     font-weight: 800;
     font-size: 4vw;
     margin: 0 auto;
@@ -143,8 +126,6 @@ button:focus {
     outline: none;
 }
 
-
-
 .score-count p {
     font-size: 1.2rem;
 }
@@ -169,35 +150,40 @@ button:focus {
 }
 
 @keyframes blink {
-    50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
 }
 
 /*Media query for very small mobile screens below 360px wide*/
 @media (max-width: 360px) {
     header {
-        flex-direction: column; 
-        align-items: center; 
-        padding: 0.5rem; 
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
     }
 
-    .logo-container img, #restartQuiz {
-        width: auto; 
-        margin: 0.5rem 0; 
+    .logo-container img,
+    #restartQuiz {
+        width: auto;
+        margin: 0.5rem 0;
     }
 
     .logo-container img {
-        max-width: 150px; 
+        max-width: 150px;
     }
 
     #restartQuiz {
-        font-size: 0.8rem; 
+        font-size: 0.8rem;
         padding: 0.5rem 1rem;
     }
 }
 
 /* Media query for tablets and screens above 768px wide */
 @media (min-width: 768px) {
-    logo-container img, #restartQuiz {
+
+    logo-container img,
+    #restartQuiz {
         width: auto;
         padding: 8px 16px;
         font-size: 1.1rem;
@@ -210,18 +196,21 @@ button:focus {
         max-width: 500px;
         margin: 1 2rem;
     }
+
     #restartQuiz {
-        padding: 0.5rem 1.5rem; 
+        padding: 0.5rem 1.5rem;
         font-size: 1.3rem;
     }
+}
 
 /* Media query for very large screens above 2400px wide */
 @media (min-width: 2400px) {
-    h2, h3 {
+
+    h2,
+    h3 {
         font-weight: 800;
         font-size: 3vw;
         margin: 0 auto;
         line-height: 1.4;
     }
-}
 }
