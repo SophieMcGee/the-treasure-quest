@@ -38,7 +38,7 @@ header {
     height: auto;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
     margin-bottom: 2rem;
@@ -60,6 +60,8 @@ header {
     background-color: #e96854;
     color: #ffffff;
     border: none;
+    position: absolute;
+    right: 2rem;
     margin-left: 1rem;
     border-radius: 10px;
     cursor: pointer;
@@ -69,6 +71,11 @@ header {
 #restartQuiz:hover,
 #restartQuiz:focus {
     background-color: #d0574b;
+}
+
+/* Only applied when this button is visible */
+.header-with-button {
+    justify-content: space-between; 
 }
 
 /*Quiz Game Styles*/
@@ -158,11 +165,12 @@ button:focus {
 /*Media query for very small mobile screens below 360px wide*/
 @media (max-width: 360px) {
     header {
-        flex-direction: column;
-        align-items: center;
-        padding: 0.5rem;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        padding-top: 20px; 
+        padding-bottom: 20px; 
     }
-
     .logo-container img,
     #restartQuiz {
         width: auto;
@@ -176,6 +184,10 @@ button:focus {
     #restartQuiz {
         font-size: 0.8rem;
         padding: 0.5rem 1rem;
+        position: static; 
+        right: auto; 
+        margin: 10px auto; 
+        display: block;
     }
 }
 
