@@ -1,4 +1,4 @@
-//Test Questions
+//Game Questions
 const questions = {
     easy: [
         {
@@ -527,11 +527,10 @@ function startGame(difficulty) {
     incorrectCount = 0;
 
     //Ensure the game selection is visible
+    document.getElementById('header').classList.add('game-active');
     document.getElementById('quiz-container').style.display = 'block';
     document.getElementById('game-selection').style.display = 'none';
-    document.getElementById('header').classList.add('header-game-started');
     document.getElementById('restartQuiz').style.display = 'inline-block';
-
     displayCurrentQuestion();
 }
 
@@ -628,11 +627,11 @@ function restartGame() {
     score = 0;
     incorrectCount = 0;
     currentQuestionIndex = 0;
+    document.getElementById('header').classList.remove('game-active');
     document.getElementById('correct').textContent = '0';
     document.getElementById('incorrect').textContent = '0';
     document.getElementById('game-selection').style.display = 'block';
     document.getElementById('quiz-container').style.display = 'none';
-    document.getElementById('header').classList.remove('game-started');
     document.getElementById('restartQuiz').style.display = 'none';
 }
 

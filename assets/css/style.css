@@ -196,10 +196,14 @@ button:focus {
     }
 }
 
-/* Left alignment for the logo when the quiz starts, for screens wider than 360px */
+/* Left alignment for the logo when the quiz starts, for screens wider than 361px */
 @media (min-width: 361px) {
-    .header-game-started {
-        justify-content: space-between;
+    header.game-active .logo-container img {
+        margin-right: auto; /* This pushes the logo to the left */
+    }
+    header.game-active #restartQuiz {
+        position: absolute;
+        right: 2rem;
     }
 }
 
