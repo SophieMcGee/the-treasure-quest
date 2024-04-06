@@ -635,11 +635,3 @@ function restartGame() {
     document.getElementById('restartQuiz').style.display = 'none';
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('restartQuiz').addEventListener('click', function() {
-        restartGame();
-        document.querySelector('.logo-container img').style.width = '500px'
-        this.style.display = 'none';
-    });
-});
-
