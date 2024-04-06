@@ -185,12 +185,13 @@ button:focus {
 /* Media query for tablets and screens above 768px wide */
 @media (min-width: 768px) {
 
-    logo-container img,{
+    logo-container img {
         width: auto;
         padding: 8px 16px;
         font-size: 1.1rem;
     }
 }
+
 
 /* Media query for desktops and screens above 996px wide */
 @media (min-width: 996px) {

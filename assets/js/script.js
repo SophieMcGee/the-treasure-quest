@@ -530,7 +530,7 @@ function startGame(difficulty) {
     document.getElementById('header').classList.add('game-active');
     document.getElementById('quiz-container').style.display = 'block';
     document.getElementById('game-selection').style.display = 'none';
-    document.getElementById('restartQuiz').style.display = 'inline-block';
+    document.getElementById('restartQuiz').style.display = 'none';
     displayCurrentQuestion();
 }
 
@@ -627,7 +627,6 @@ function restartGame() {
     score = 0;
     incorrectCount = 0;
     currentQuestionIndex = 0;
-    document.getElementById('header').classList.remove('game-active');
     document.getElementById('correct').textContent = '0';
     document.getElementById('incorrect').textContent = '0';
     document.getElementById('game-selection').style.display = 'block';
