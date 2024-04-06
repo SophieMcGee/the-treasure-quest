@@ -530,7 +530,6 @@ function startGame(difficulty) {
     document.getElementById('header').classList.add('game-active');
     document.getElementById('quiz-container').style.display = 'block';
     document.getElementById('game-selection').style.display = 'none';
-    document.getElementById('restartQuiz').style.display = 'none';
     displayCurrentQuestion();
 }
 
@@ -555,23 +554,23 @@ function displayCurrentQuestion() {
         button.addEventListener('click', () => checkAnswer(index));
         answersContainer.appendChild(button);
 
-//Clear existing timer and starts a new 10 second timer countdown
+        //Clear existing timer and starts a new 10 second timer countdown
         clearInterval(countdown);
-        let timeDisplay = document.querySelector('#time'); 
+        let timeDisplay = document.querySelector('#time');
         startTimer(10, timeDisplay);
     });
 }
 
 //Code for a countdown timer of 10 seconds for each question
-let countdown; 
+let countdown;
 
 function startTimer(duration, display) {
     let timer = duration, seconds;
     countdown = setInterval(function () {
         seconds = parseInt(timer % 60, 10);
-// Less than or equal to 5 seconds left and text will change to red and blinking will start
+        // Less than or equal to 5 seconds left and text will change to red and blinking will start
         display.textContent = seconds;
-        if (timer <= 5) { 
+        if (timer <= 5) {
             display.parentNode.classList.add("urgent");
         } else {
             display.parentNode.classList.remove("urgent");
@@ -579,7 +578,7 @@ function startTimer(duration, display) {
         //If counter reaches 0 the countdown clears and game moves to the next question
         if (--timer < 0) {
             clearInterval(countdown);
-            handleTimeout(); 
+            handleTimeout();
         }
     }, 1000);
 }
@@ -618,19 +617,23 @@ function endQuiz() {
     const quizContainer = document.getElementById('quiz-container');
     quizContainer.innerHTML = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
 <button id="restartButton">Restart the game!</button>`;
-    document.getElementById('restartButton').addEventListener('click', function () {
-        restartGame();
-    });
+    document.getElementById('restartButton').addEventListener('click', restartGame);
 }
 
 function restartGame() {
     score = 0;
     incorrectCount = 0;
     currentQuestionIndex = 0;
-    document.getElementById('correct').textContent = '0';
-    document.getElementById('incorrect').textContent = '0';
+
+    const correctElement = document.getElementById('correct');
+    const incorrectElement = document.getElementById('incorrect');
+    if (correctElement) correctElement.textContent = '0';
+    if (incorrectElement) incorrectElement.textContent = '0';
+
     document.getElementById('game-selection').style.display = 'block';
     document.getElementById('quiz-container').style.display = 'none';
-    document.getElementById('restartQuiz').style.display = 'none';
+    const restartQuizBtn = document.getElementById('restartQuiz');
+    if (restartQuizBtn) {
+        restartQuizBtn.style.display = 'none';
+    }
 }
-
