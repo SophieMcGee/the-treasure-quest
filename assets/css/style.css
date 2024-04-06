@@ -53,6 +53,8 @@ header {
     margin-right: 1rem;
 }
 
+/*Styling for Restart Quiz button*/
+
 #restartQuiz {
     padding: 0.5rem 1rem;
     font-size: 1rem;
@@ -71,11 +73,6 @@ header {
 #restartQuiz:hover,
 #restartQuiz:focus {
     background-color: #d0574b;
-}
-
-/* Only applied when this button is visible */
-.header-with-button {
-    justify-content: space-between; 
 }
 
 /*Quiz Game Styles*/
@@ -165,16 +162,13 @@ button:focus {
 
 /*Media query for very small mobile screens below 360px wide*/
 @media (max-width: 360px) {
-    header {
-        flex-direction: column;
-    }
     
-    header.game-started {
+    header.game-active {
         flex-direction: column; 
-        justify-content: space-between; 
+        justify-content: center; 
         align-items: center; 
         padding-top: 20px; 
-        padding-bottom: 20px; 
+        padding-bottom: 20px;
     }
 
     .logo-container img {
