@@ -27,32 +27,42 @@
             <div id="game-selection">
                 <h2>WELCOME, YOUNG ADVENTURERS!</h2>
                 <br>
-                <h3>Are you ready to embark on a fun treasure question, read the instructions below before you start your quiz adventure!</h3>
+                <h3>Are you ready to embark on a fun treasure question, read the instructions below before you start
+                    your quiz adventure!</h3>
                 <br>
                 <ul>
                     <li><strong>Select Your Challenge:</strong> Choose your difficulty to begin your quest. 🗺️✨</li>
-                    <li><strong>Quest for Coins:</strong> Answer 10 questions correctly to collect all 10 golden coins and uncover the pirate's treasure! 🪙💰</li>
-                    <li><strong>Beware of Pirates:</strong> Oh no, got a question wrong? Watch out! The progress bar will raise a pirate flag as a warning. 🏴‍☠️🚩</li>
-                    <li><strong>Need a Nudge?</strong> Stuck on a tricky question? Click the hint button for a helping hand on your quest. 🧐💡</li>
-                    <li><strong>Sound Adventures:</strong> To toggle the sounds of the game on or off, click the button in the top right corner. 🔊🔇</li>
-                    <li><strong>Race Against Time:</strong> Be quick! You only have 10 seconds to choose an answer before the pirates catch up to you! ⏳🏃‍♀️</li>
+                    <li><strong>Quest for Coins:</strong> Answer 10 questions correctly to collect all 10 golden coins
+                        and uncover the pirate's treasure! 🪙💰</li>
+                    <li><strong>Beware of Pirates:</strong> Oh no, got a question wrong? Watch out! The progress bar
+                        will raise a pirate flag as a warning. 🏴‍☠️🚩</li>
+                    <li><strong>Need a Nudge?</strong> Stuck on a tricky question? Click the hint button for a helping
+                        hand on your quest. 🧐💡</li>
+                    <li><strong>Sound Adventures:</strong> To toggle the sounds of the game on or off, click the button
+                        in the top right corner. 🔊🔇</li>
+                    <li><strong>Race Against Time:</strong> Be quick! You only have 10 seconds to choose an answer
+                        before the pirates catch up to you! ⏳🏃‍♀️</li>
                 </ul>
+                <p><strong>Embark on your journey, brave explorer, and let the adventure begin! May the winds be ever in
+                        your favour, and may you find the treasure you seek. 🌈🌟></strong></p>
                 <h2>SELECT DIFFICULTY TO START THE GAME</h2>
+            </div>
+            <div class="difficulty-buttons">
                 <button id="easyMode">Easy</button>
                 <button id="hardMode">Hard</button>
-                <p><strong>Embark on your journey, brave explorer, and let the adventure begin! May the winds be ever in your favour, and may you find the treasure you seek. 🌈🌟></strong></p>
             </div>
-            <div id="quiz-container" style="display:none;">
-                <div id="timer">Time left: <span id="time">10</span> seconds</div>
-                <div id="question"></div>
-                <div id="answers"></div>
-                <div class="score-count">
-                    <p>Correct Answers: <span id="correct">0</span></p>
-                    <p>Incorrect Answers: <span id="incorrect">0</span></p>
-                </div>
-                <button id="restartQuiz" style="display: none;">Restart Quiz</button>
-                <div id="explanation" style="display:none;"></div>
+        </div>
+        <div id="quiz-container" style="display:none;">
+            <div id="timer">Time left: <span id="time">10</span> seconds</div>
+            <div id="question"></div>
+            <div id="answers"></div>
+            <div class="score-count">
+                <p>Correct Answers: <span id="correct">0</span></p>
+                <p>Incorrect Answers: <span id="incorrect">0</span></p>
             </div>
+            <button id="restartQuiz" style="display: none;">Restart Quiz</button>
+            <div id="explanation" style="display:none;"></div>
+        </div>
         </div>
     </main>
     <footer style="display:none;" id="footer">

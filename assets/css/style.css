@@ -156,6 +156,21 @@ button:focus {
     margin-bottom: 20px;
 }
 
+/*Buttons within game selection*/
+
+.difficulty-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#easyMode, #hardMode {
+    max-width: 150px;
+    min-width: 100px;
+    padding: 10px 20px;
+    flex: 1;
+}
+
 /*Styling for timer*/
 
 #timer {
