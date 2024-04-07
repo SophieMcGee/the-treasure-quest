@@ -143,6 +143,19 @@ button:focus {
     font-size: 1.2rem;
 }
 
+/*Game Instructions Styling*/
+
+#game-selection ul {
+    list-style: none; 
+    padding-left: 0;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+#game-selection li {
+    margin-bottom: 20px;
+}
+
 /*Styling for timer*/
 
 #timer {
