@@ -101,12 +101,18 @@ header {
 }
 
 /*Font Styles*/
-h2,
-h3 {
+h2 {
     font-weight: 800;
     font-size: 4vw;
     margin: 0 auto;
     line-height: 1.4;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 3vw;
+    margin: 0 auto;
+    line-height: 1.2;
 }
 
 /*Styling for buttons*/
