@@ -46,23 +46,22 @@
                 <p><strong>Embark on your journey, brave explorer, and let the adventure begin! May the winds be ever in
                         your favour, and may you find the treasure you seek. 🌈🌟></strong></p>
                 <h2>SELECT DIFFICULTY TO START THE GAME</h2>
+                <div class="difficulty-buttons">
+                    <button id="easyMode">Easy</button>
+                    <button id="hardMode">Hard</button>
+                </div>
             </div>
-            <div class="difficulty-buttons">
-                <button id="easyMode">Easy</button>
-                <button id="hardMode">Hard</button>
+            <div id="quiz-container" style="display:none;">
+                <div id="timer">Time left: <span id="time">10</span> seconds</div>
+                <div id="question"></div>
+                <div id="answers"></div>
+                <div class="score-count">
+                    <p>Correct Answers: <span id="correct">0</span></p>
+                    <p>Incorrect Answers: <span id="incorrect">0</span></p>
+                </div>
+                <button id="restartQuiz" style="display: none;">Restart Quiz</button>
+                <div id="explanation" style="display:none;"></div>
             </div>
-        </div>
-        <div id="quiz-container" style="display:none;">
-            <div id="timer">Time left: <span id="time">10</span> seconds</div>
-            <div id="question"></div>
-            <div id="answers"></div>
-            <div class="score-count">
-                <p>Correct Answers: <span id="correct">0</span></p>
-                <p>Incorrect Answers: <span id="incorrect">0</span></p>
-            </div>
-            <button id="restartQuiz" style="display: none;">Restart Quiz</button>
-            <div id="explanation" style="display:none;"></div>
-        </div>
         </div>
     </main>
     <footer style="display:none;" id="footer">
