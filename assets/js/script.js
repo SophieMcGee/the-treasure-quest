@@ -516,22 +516,28 @@ function toggleSound() {
     soundEnabled = !soundEnabled;
     document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
     document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
-    
+
 }
 
-function playSound(soundId) {
-    if (soundEnabled) {
-        const sound = document.getElementById(soundId);
-        if (sound) {
-            sound.currentTime = 0; // Rewind to the start
-            sound.play();
+function playSound(soundId, duration = 0) {
+    if (!soundEnabled) return;
+    const sound = document.getElementById(soundId);
+    if (sound) {
+        sound.currentTime = 0; // Start sound from the beginning
+        sound.play();
+        if (duration > 0) {
+            setTimeout(() => {
+                sound.pause();
+                sound.currentTime = 0;
+            }, duration);
         }
     }
 }
+
 //Function to start the sound with the correct icon
 toggleSound();
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('toggle-sound').addEventListener('click', toggleSound);
 });
 
@@ -646,7 +652,7 @@ function endQuiz() {
 <button id="restartButton">Restart the game!</button>`;
     document.getElementById('restartButton').addEventListener('click', restartGame);
     if (score === selectedQuestions.length) {
-        playSound('winSound');
+        playSound('winSound', 5000); // Play the fanfare winning sound for 5 seconds
     }
 }
 
