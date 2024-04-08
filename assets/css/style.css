@@ -52,6 +52,13 @@ header {
     margin-right: 1rem;
 }
 
+/* Sound settings styles */
+#toggle-sound {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
 /*Styling for Restart Quiz button*/
 
 #restartQuiz {

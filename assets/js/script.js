@@ -509,6 +509,28 @@ let selectedQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let incorrectCount = 0;
+let soundEnabled = true;
+
+//Function to control sound, effects are enabled by default
+function toggleSound() {
+    soundEnabled = !soundEnabled;
+    document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
+    document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
+    
+}
+
+function playSound(soundId) {
+    if (!soundEnabled) return; 
+    const sound = document.getElementById(soundId);
+    if (sound) {
+        sound.currentTime = 0; 
+        sound.play();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('toggle-sound').addEventListener('click', toggleSound);
+});
 
 //Event listeners for the easy and hard mode buttons
 document.getElementById('easyMode').addEventListener('click', function () {
