@@ -520,13 +520,16 @@ function toggleSound() {
 }
 
 function playSound(soundId) {
-    if (!soundEnabled) return; 
-    const sound = document.getElementById(soundId);
-    if (sound) {
-        sound.currentTime = 0; 
-        sound.play();
+    if (soundEnabled) {
+        const sound = document.getElementById(soundId);
+        if (sound) {
+            sound.currentTime = 0; // Rewind to the start
+            sound.play();
+        }
     }
 }
+//Function to start the sound with the correct icon
+toggleSound();
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('toggle-sound').addEventListener('click', toggleSound);
@@ -622,8 +625,10 @@ function checkAnswer(selectedIndex) {
     clearInterval(countdown);
     if (selectedIndex === selectedQuestions[currentQuestionIndex].correctAnswerPosition) {
         score++;
+        playSound('rightSound');
     } else {
         incorrectCount++;
+        playSound('wrongSound');
     }
     document.getElementById('correct').textContent = score;
     document.getElementById('incorrect').textContent = incorrectCount;
@@ -640,6 +645,9 @@ function endQuiz() {
     quizContainer.innerHTML = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
 <button id="restartButton">Restart the game!</button>`;
     document.getElementById('restartButton').addEventListener('click', restartGame);
+    if (score === selectedQuestions.length) {
+        playSound('winSound');
+    }
 }
 
 function restartGame() {
