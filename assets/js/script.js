@@ -657,19 +657,5 @@ function endQuiz() {
 }
 
 function restartGame() {
-    score = 0;
-    incorrectCount = 0;
-    currentQuestionIndex = 0;
-
-    const correctElement = document.getElementById('correct');
-    const incorrectElement = document.getElementById('incorrect');
-    if (correctElement) correctElement.textContent = '0';
-    if (incorrectElement) incorrectElement.textContent = '0';
-
-    document.getElementById('game-selection').style.display = 'block';
-    document.getElementById('quiz-container').style.display = 'none';
-    const restartQuizBtn = document.getElementById('restartQuiz');
-    if (restartQuizBtn) {
-        restartQuizBtn.style.display = 'none';
-    }
+   location.reload()
 }
