@@ -535,10 +535,12 @@ function playSound(soundId, duration = 0) {
 }
 
 //Function to start the sound with the correct icon
-toggleSound();
-
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('toggle-sound').addEventListener('click', toggleSound);
+
+    // Update icons based on soundEnabled flag when the page loads
+    document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
+    document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
 });
 
 //Event listeners for the easy and hard mode buttons
