@@ -207,7 +207,8 @@ button:focus {
 
 .timeout-popup {
     background-color: #ffcccc;
-    color: #060606; /* Dark text for contrast */
+    color: #060606;
+    /* Dark text for contrast */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -222,7 +223,7 @@ button:focus {
 
 /*Question styles*/
 #question {
-    font-weight: 800;
+    font-weight: 200;
     font-size: 1em;
     color: #060606;
     border-radius: 10px;
@@ -237,6 +238,11 @@ button:focus {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#question-number {
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
 /* Answers Styling */

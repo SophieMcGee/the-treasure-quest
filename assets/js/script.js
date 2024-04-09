@@ -577,6 +577,12 @@ function getRandomQuestions(sourceArray, numQuestions) {
 function displayCurrentQuestion() {
     const quizContainer = document.getElementById('quiz-container');
     const questionInfo = selectedQuestions[currentQuestionIndex];
+
+    const questionNumberDisplay = document.getElementById('question-number');
+    if (questionNumberDisplay) {
+        questionNumberDisplay.textContent = `Question ${currentQuestionIndex + 1} of ${selectedQuestions.length}`;
+    }
+
     document.getElementById('question').textContent = questionInfo.question;
     const answersContainer = document.getElementById('answers');
     answersContainer.innerHTML = '';
@@ -634,7 +640,7 @@ function handleTimeout() {
 
     setTimeout(() => {
         timeoutMessage.style.display = 'none';
-        
+
         currentQuestionIndex++;
         if (currentQuestionIndex < selectedQuestions.length) {
             displayCurrentQuestion();
