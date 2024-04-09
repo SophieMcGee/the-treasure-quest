@@ -620,15 +620,21 @@ function handleTimeout() {
     incorrectCount++;
     document.getElementById('incorrect').textContent = incorrectCount;
 
-    const timeoutMessage = document.getElementById('timeout-message') || document.createElement('div');
-    timeoutMessage.setAttribute('id', 'timeout-message');
-    timeoutMessage.innerHTML = "<div class='timeout-popup'>Time's up, the pirates caught up with you this time! Good luck on the next question!</div>";
+    let timeoutMessage = document.getElementById('timeout-message');
+    if (!timeoutMessage) { 
+        timeoutMessage = document.createElement('div');
+        timeoutMessage.setAttribute('id', 'timeout-message');
+        timeoutMessage.classList.add('timeout-popup'); 
+        const quizContainer = document.getElementById('quiz-container');
+        quizContainer.insertBefore(timeoutMessage, quizContainer.firstChild.nextSibling); 
+    }
 
-    const quizContainer = document.getElementById('quiz-container');
-    quizContainer.appendChild(timeoutMessage);
+    timeoutMessage.innerHTML = "<div class='timeout-popup'>Time's up, the pirates caught up with you this time! Good luck on the next question!</div>";
+    timeoutMessage.style.display = 'block';
 
     setTimeout(() => {
         timeoutMessage.style.display = 'none';
+        
         currentQuestionIndex++;
         if (currentQuestionIndex < selectedQuestions.length) {
             displayCurrentQuestion();
