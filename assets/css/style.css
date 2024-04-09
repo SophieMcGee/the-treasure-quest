@@ -230,7 +230,7 @@ button:focus {
     margin-right: auto;
 }
 
-/* Answers container */
+/* Answers Styling */
 #answers {
     display: flex;
     flex-direction: column;
@@ -258,6 +258,16 @@ button:focus {
 #answers button:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Correct answer button style */
+.button-correct {
+    background-color: #7ED957; 
+}
+
+/* Incorrect answer button style */
+.button-incorrect {
+    background-color: #b21124; 
 }
 
 /*Media query for very small mobile screens below 360px wide*/

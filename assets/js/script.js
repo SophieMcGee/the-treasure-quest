@@ -631,22 +631,41 @@ function handleTimeout() {
 //Triggered when an option is clicked, checks to see if answer is correct and updates score, ends quiz with final score
 function checkAnswer(selectedIndex) {
     clearInterval(countdown);
+    const buttons = document.querySelectorAll('#answers button');
+    const selectedButton = buttons[selectedIndex];
+
+    buttons.forEach(button => button.disabled = true);
+
     if (selectedIndex === selectedQuestions[currentQuestionIndex].correctAnswerPosition) {
         score++;
         playSound('rightSound');
+        selectedButton.classList.add('button-correct');
     } else {
         incorrectCount++;
         playSound('wrongSound');
+        selectedButton.classList.add('button-incorrect');
     }
     document.getElementById('correct').textContent = score;
     document.getElementById('incorrect').textContent = incorrectCount;
-    currentQuestionIndex++;
-    if (currentQuestionIndex < selectedQuestions.length) {
-        displayCurrentQuestion();
-    } else {
-        endQuiz();
-    }
+
+    //Delay moving to the next question by 1 second to show change in button colour
+    setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < selectedQuestions.length) {
+            displayCurrentQuestion();
+        } else {
+            endQuiz();
+        }
+
+        //Reset the buttons in the next question
+        const newButtons = document.querySelectorAll('#answers button');
+        buttons.forEach(button => {
+            button.disabled = false;
+            button.classList.remove('button-correct', 'button-incorrect');
+        });
+    }, 1000);
 }
+
 //Display the quiz score with option to restart the quiz
 function endQuiz() {
     const quizContainer = document.getElementById('quiz-container');
@@ -659,5 +678,5 @@ function endQuiz() {
 }
 
 function restartGame() {
-   location.reload()
+    location.reload()
 }
