@@ -262,12 +262,12 @@ button:focus {
 
 /* Correct answer button style */
 .button-correct {
-    background-color: #7ED957; 
+    background-color: #7ED957 !important;
 }
 
 /* Incorrect answer button style */
 .button-incorrect {
-    background-color: #b21124; 
+    background-color: #b21124 !important;
 }
 
 /*Media query for very small mobile screens below 360px wide*/
