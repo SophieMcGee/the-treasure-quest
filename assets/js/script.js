@@ -617,15 +617,25 @@ function startTimer(duration, display) {
 }
 
 function handleTimeout() {
-    alert("Time's up!");
     incorrectCount++;
     document.getElementById('incorrect').textContent = incorrectCount;
-    currentQuestionIndex++;
-    if (currentQuestionIndex < selectedQuestions.length) {
-        displayCurrentQuestion();
-    } else {
-        endQuiz();
-    }
+
+    const timeoutMessage = document.getElementById('timeout-message') || document.createElement('div');
+    timeoutMessage.setAttribute('id', 'timeout-message');
+    timeoutMessage.innerHTML = "<div class='timeout-popup'>Time's up, the pirates caught up with you this time! Good luck on the next question!</div>";
+
+    const quizContainer = document.getElementById('quiz-container');
+    quizContainer.appendChild(timeoutMessage);
+
+    setTimeout(() => {
+        timeoutMessage.style.display = 'none';
+        currentQuestionIndex++;
+        if (currentQuestionIndex < selectedQuestions.length) {
+            displayCurrentQuestion();
+        } else {
+            endQuiz();
+        }
+    }, 5000);
 }
 
 //Triggered when an option is clicked, checks to see if answer is correct and updates score, ends quiz with final score
