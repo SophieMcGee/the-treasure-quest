@@ -285,6 +285,53 @@ button:focus {
     background-color: #b21124 !important;
 }
 
+/*Styling for question feedback modal*/
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 10; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  .modal-content {
+    background-color: #ffffff;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #aaaaaa;
+    width: 80%;
+  }
+  
+  .close-button {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-button:hover,
+  .close-button:focus {
+    color: #060606;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #next-question {
+    padding: 10px 20px;
+    background-color: #7ED957;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #next-question:hover {
+    background-color: #7ED957;
+  }
+
 /*Media query for very small mobile screens below 360px wide*/
 @media (max-width: 360px) {
 

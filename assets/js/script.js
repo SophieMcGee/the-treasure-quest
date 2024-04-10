@@ -634,12 +634,12 @@ function handleTimeout() {
     });
 
     let timeoutMessage = document.getElementById('timeout-message');
-    if (!timeoutMessage) { 
+    if (!timeoutMessage) {
         timeoutMessage = document.createElement('div');
         timeoutMessage.setAttribute('id', 'timeout-message');
-        timeoutMessage.classList.add('timeout-popup'); 
+        timeoutMessage.classList.add('timeout-popup');
         const quizContainer = document.getElementById('quiz-container');
-        quizContainer.insertBefore(timeoutMessage, quizContainer.firstChild.nextSibling); 
+        quizContainer.insertBefore(timeoutMessage, quizContainer.firstChild.nextSibling);
     }
 
     timeoutMessage.innerHTML = "<div class='timeout-popup'>Time's up, the pirates caught up with you this time!<br>Good luck on the next question!</div>";
@@ -667,38 +667,65 @@ function checkAnswer(selectedIndex) {
     clearInterval(countdown);
     const buttons = document.querySelectorAll('#answers button');
     const selectedButton = buttons[selectedIndex];
+    const infoModal = document.getElementById('info-modal');
+    const explanationText = document.getElementById('explanation-text');
+    const nextQuestionButton = document.getElementById('next-question');
+    const closeButton = document.querySelector('.close-button');
 
+    //Disable all buttons to stop further clicks
     buttons.forEach(button => button.disabled = true);
 
     if (selectedIndex === selectedQuestions[currentQuestionIndex].correctAnswerPosition) {
+        //Correct answer
         score++;
         playSound('rightSound');
         selectedButton.classList.add('button-correct');
+        proceedToNextQuestion();
     } else {
+        //Incorrect answer
         incorrectCount++;
         playSound('wrongSound');
         selectedButton.classList.add('button-incorrect');
+        document.getElementById('incorrect').textContent = incorrectCount;
+
+        //Explanation for correct answer in modal
+        explanationText.textContent = `The correct answer is: "${selectedQuestions[currentQuestionIndex].options[selectedQuestions[currentQuestionIndex].correctAnswerPosition]}".`;
+        infoModal.style.display = "block";
+
+
+        closeButton.onclick = function () {
+            infoModal.style.display = "none";
+        };
     }
-    document.getElementById('correct').textContent = score;
-    document.getElementById('incorrect').textContent = incorrectCount;
 
-    //Delay moving to the next question by 1 second to show change in button colour
-    setTimeout(() => {
-        currentQuestionIndex++;
-        if (currentQuestionIndex < selectedQuestions.length) {
-            displayCurrentQuestion();
-        } else {
-            endQuiz();
-        }
-
-        //Reset the buttons in the next question
-        const newButtons = document.querySelectorAll('#answers button');
-        buttons.forEach(button => {
-            button.disabled = false;
-            button.classList.remove('button-correct', 'button-incorrect');
-        });
-    }, 1000);
+//Go to next question button inside modal
+    nextQuestionButton.onclick = function () {
+        infoModal.style.display = "none";
+        proceedToNextQuestion();
+    };
 }
+
+function proceedToNextQuestion() {
+    // Increment question index or end quiz if at the last question
+    currentQuestionIndex++;
+    if (currentQuestionIndex < selectedQuestions.length) {
+        displayCurrentQuestion();
+    } else {
+        endQuiz();
+    }
+
+    // Reset to new questions
+    resetAnswerButtons();
+}
+function resetAnswerButtons() {
+    // Enable all buttons and remove colour classes for the next question
+    const buttons = document.querySelectorAll('#answers button');
+    buttons.forEach(button => {
+        button.disabled = false;
+        button.classList.remove('button-correct', 'button-incorrect');
+    });
+}
+
 
 //Display the quiz score with option to restart the quiz
 function endQuiz() {
