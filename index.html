@@ -74,7 +74,14 @@
                     <p>Incorrect Answers: <span id="incorrect">0</span></p>
                 </div>
                 <button id="restartQuiz" style="display: none;">Restart Quiz</button>
-                <div id="explanation" style="display:none;"></div>
+                <div id="info-modal" class="modal">
+                    <div class="modal-content">
+                      <span class="close-button">&times;</span>
+                      <h2>Oops! That's not quite right.</h2>
+                      <p id="explanation-text">Here's a bit more info...</p>
+                      <button id="next-question">Go to Next Question</button>
+                    </div>
+                  </div>
             </div>
         </div>
     </main>
