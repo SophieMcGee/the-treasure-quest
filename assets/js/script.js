@@ -670,7 +670,6 @@ function checkAnswer(selectedIndex) {
     const infoModal = document.getElementById('info-modal');
     const explanationText = document.getElementById('explanation-text');
     const nextQuestionButton = document.getElementById('next-question');
-    const closeButton = document.querySelector('.close-button');
 
     //Disable all buttons to stop further clicks
     buttons.forEach(button => button.disabled = true);
@@ -680,7 +679,10 @@ function checkAnswer(selectedIndex) {
         score++;
         playSound('rightSound');
         selectedButton.classList.add('button-correct');
-        proceedToNextQuestion();
+        document.getElementById('correct').textContent = score;
+        setTimeout(() => {
+            proceedToNextQuestion();
+        }, 1000);
     } else {
         //Incorrect answer
         incorrectCount++;
@@ -695,20 +697,15 @@ function checkAnswer(selectedIndex) {
 
         closeButton.onclick = function () {
             infoModal.style.display = "none";
+            proceedToNextQuestion();
         };
     }
-
-//Go to next question button inside modal
-    nextQuestionButton.onclick = function () {
-        infoModal.style.display = "none";
-        proceedToNextQuestion();
-    };
 }
 
 function proceedToNextQuestion() {
     // Increment question index or end quiz if at the last question
-    currentQuestionIndex++;
-    if (currentQuestionIndex < selectedQuestions.length) {
+    if (currentQuestionIndex < selectedQuestions.length -1) {
+        currentQuestionIndex++;
         displayCurrentQuestion();
     } else {
         endQuiz();
