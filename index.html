@@ -85,8 +85,34 @@
             </div>
         </div>
     </main>
-    <footer style="display:none;" id="footer">
-        <!--Footer Content-->
+    <footer>
+        <div class="footer-container">
+            <!--Contact Form-->
+            <div class="contact">
+                <h2 class="form-header">Do you have any game questions?</h2>
+                <form id="contact-form" action="contact.html" method="GET">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="contact-form-input" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="contact-form-input" required>
+                    <label for="phone">Telephone Number</label>
+                    <input type="tel" id="telephone" name="telephone" class="contact-form-input" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" class="contact-form-input" rows="3" required></textarea>
+                    <button type="submit" class="button">Contact Us</button>
+                </form>
+            </div>
+        </div>
+        <ul id="social-media-links">
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label=" Visit our Facebook Page,
+                    this will open in a new tab."><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://www.twitter.com/" target="_blank" rel="noopener" aria-label=" Visit our Twitter Page,
+                    this will open in a new tab."><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://www.Linkedin.com/" target="_blank" rel="noopener" aria-label=" Visit our Linkedin Page,
+                    this will open in a new tab."><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label=" Visit our Instagram Page,
+                    this will open in a new tab."><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
     </footer>
     <script src="assets/js/script.js"></script>
     <!--Kit from Font Awesome for social media icons and sound toggle-->
