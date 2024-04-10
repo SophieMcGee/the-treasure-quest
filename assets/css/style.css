@@ -346,6 +346,7 @@ footer {
 .footer-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     max-width: 600px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -369,6 +370,7 @@ label {
 .form-header {
     margin-bottom: 15px;
     color: #ffffff;
+    font-size: 20px;
 }
 
 .contact-form-input,
@@ -452,19 +454,16 @@ label {
 
     .footer-container {
         flex-direction: row; 
-        justify-content: space-between; 
+        justify-content: space-around;
+        align-items: flex-start;
     }
 
-    .contact-form-input,
-    .button {
-        width: 90%;
+    .contact {
+        width: 100%; 
+        max-width: 600px; 
+        align-items: center;
     }
-
-    .contact-form-input,
-    .button,
-    label {
-        width: calc(100% - 20px); /* Adjust width to maintain consistency */
-    }
+}
 
 
     /* Media query for desktops and screens above 996px wide */
