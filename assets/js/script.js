@@ -626,6 +626,13 @@ function handleTimeout() {
     incorrectCount++;
     document.getElementById('incorrect').textContent = incorrectCount;
 
+    //Disable answer buttons and mark as incorrect when time runs out
+    const answerButtons = document.querySelectorAll('#answers button');
+    answerButtons.forEach(button => {
+        button.disabled = true;
+        button.classList.add('button-incorrect');
+    });
+
     let timeoutMessage = document.getElementById('timeout-message');
     if (!timeoutMessage) { 
         timeoutMessage = document.createElement('div');
@@ -635,7 +642,7 @@ function handleTimeout() {
         quizContainer.insertBefore(timeoutMessage, quizContainer.firstChild.nextSibling); 
     }
 
-    timeoutMessage.innerHTML = "<div class='timeout-popup'>Time's up, the pirates caught up with you this time! Good luck on the next question!</div>";
+    timeoutMessage.innerHTML = "<div class='timeout-popup'>Time's up, the pirates caught up with you this time!<br>Good luck on the next question!</div>";
     timeoutMessage.style.display = 'block';
 
     setTimeout(() => {
@@ -647,7 +654,12 @@ function handleTimeout() {
         } else {
             endQuiz();
         }
-    }, 5000);
+        //Re-enable and reset the answer buttons for the next question
+        answerButtons.forEach(button => {
+            button.disabled = false;
+            button.classList.remove('button-incorrect', 'button-correct');
+        });
+    }, 3000);
 }
 
 //Triggered when an option is clicked, checks to see if answer is correct and updates score, ends quiz with final score
