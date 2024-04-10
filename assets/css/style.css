@@ -473,6 +473,10 @@ label {
             margin: 1 2rem;
         }
 
+        #toggle-sound {
+            font-size: 36px; 
+        }
+
         .timer-circle {
             width: 3.5em;
             height: 3.5em;
@@ -527,4 +531,4 @@ label {
             max-width: 1600px;
         }
     }
-}
+
