@@ -184,6 +184,33 @@ button:focus {
     flex: 1;
 }
 
+/*Styling for progress-grid*/
+
+#progress-grid {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.question-progress {
+    border-radius: 50%;
+    background-color: #aaaaaa; 
+    width: 40px;
+    height: 40px;
+}
+
+.question-progress.correct {
+    background-image: url('insert path to fold coin');
+    background-size: cover;
+}
+
+.question-progress.incorrect {
+    background-image: url('insert path to flag image');
+    background-size: cover;
+}
+
 /*Styling for timer*/
 
 .timer-circle {
@@ -439,6 +466,14 @@ label {
     }
 }
 
+/* Media Query for Tablet view*/
+@media (min-width: 600px) and (max-width: 767px) {
+    #progress-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+
 /* Media query for tablets and screens above 768px wide */
 @media (min-width: 768px) {
 
@@ -446,6 +481,10 @@ label {
         width: auto;
         padding: 8px 16px;
         font-size: 1.1rem;
+    }
+
+    #progress-grid {
+        grid-template-columns: repeat(10, 1fr);
     }
 
     .timer-circle {
