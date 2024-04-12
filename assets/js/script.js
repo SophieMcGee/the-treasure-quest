@@ -698,25 +698,16 @@ function handleTimeout() {
 //Triggered when an option is clicked, checks to see if answer is correct and updates score, ends quiz with final score
 function checkAnswer(selectedIndex) {
     clearInterval(countdown);
-    const buttons = document.querySelectorAll('#answers button');
-    const selectedButton = buttons[selectedIndex];
-    const infoModal = document.getElementById('info-modal');
-    const explanationText = document.getElementById('explanation-text');
-    const closeButton = document.getElementById('closeButton');
-    const nextQuestionButton = document.getElementById('next-question');
     const isCorrect = selectedIndex === selectedQuestions[currentQuestionIndex].correctAnswerPosition;
 
-
-    //Disable all buttons to stop further clicks
-    buttons.forEach(button => button.disabled = true);
+    updateProgressCircle(currentQuestionIndex + 1, isCorrect);
+    updateAnswerFeedback(isCorrect, selectedIndex);
 
     if (isCorrect) {
         //Correct answer
         score++;
         playSound('rightSound');
-        selectedButton.classList.add('button-correct');
         document.getElementById('correct').textContent = score;
-        updateProgressCircle(currentQuestionIndex + 1, true);
         setTimeout(() => {
             proceedToNextQuestion();
         }, 1000);
@@ -724,65 +715,69 @@ function checkAnswer(selectedIndex) {
         //Incorrect answer
         incorrectCount++;
         playSound('wrongSound');
-        selectedButton.classList.add('button-incorrect');
         document.getElementById('incorrect').textContent = incorrectCount;
-        updateProgressCircle(currentQuestionIndex + 1, false);
         setTimeout(() => {
             proceedToNextQuestion();
         }, 1000);
-        //Explanation for correct answer in modal
-        explanationText.textContent = `The correct answer is: "${selectedQuestions[currentQuestionIndex].options[selectedQuestions[currentQuestionIndex].correctAnswerPosition]}".`;
+    }
+    function updateAnswerFeedback(isCorrect, selectedIndex) {
+        const selectedButton = document.querySelectorAll('#answers button')[selectedIndex];
+        selectedButton.classList.add(isCorrect ? 'button-correct' : 'button-incorrect');
+
+        const infoModal = document.getElementById('info-modal');
+        const explanationText = document.getElementById('explanation-text');
+
+        explanationText.textContent = `The correct answer is: "${selectedQuestions[currentQuestionIndex].options[selectedQuestions[currentQuestionIndex].correctAnswerPosition]}"`;
         infoModal.style.display = "block";
 
-        setTimeout(() => {
+        const closeButton = document.getElementById('closeButton');
+        const nextQuestionButton = document.getElementById('next-question');
+
+        closeButton.onclick = function () {
+            infoModal.style.display = "none";
+        };
+
+        nextQuestionButton.onclick = function () {
+            infoModal.style.display = "none";
             proceedToNextQuestion();
-            if (infoModal.style.display === "block") {
-                closeButton.onclick = function () {
-                    infoModal.style.display = "none";
-                };
-                nextQuestionButton.onclick = function () {
-                    infoModal.style.display = "none";
-                    proceedToNextQuestion();
-                };
-            }
-        }, 1000);
-    }
-
-    function proceedToNextQuestion() {
-        // Increment question index or end quiz if at the last question
-        if (currentQuestionIndex < selectedQuestions.length - 1) {
-            currentQuestionIndex++;
-            displayCurrentQuestion();
-        } else {
-            endQuiz();
-        }
-
-        // Reset to new questions
-        resetAnswerButtons();
-    }
-    function resetAnswerButtons() {
-        // Enable all buttons and remove colour classes for the next question
-        const buttons = document.querySelectorAll('#answers button');
-        buttons.forEach(button => {
-            button.disabled = false;
-            button.classList.remove('button-correct', 'button-incorrect');
-        });
+        };
     }
 
 
-    //Display the quiz score with option to restart the quiz
-    function endQuiz() {
-        const quizContainer = document.getElementById('quiz-container');
-        quizContainer.innerHTML = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
+function proceedToNextQuestion() {
+    currentQuestionIndex++;
+    // Increment question index or end quiz if at the last question
+    if (currentQuestionIndex < selectedQuestions.length - 1) {
+        displayCurrentQuestion();
+    } else {
+        endQuiz();
+    }
+    // Reset to new questions
+    resetAnswerButtons();
+}
+function resetAnswerButtons() {
+    // Enable all buttons and remove colour classes for the next question
+    const buttons = document.querySelectorAll('#answers button');
+    buttons.forEach(button => {
+        button.disabled = false;
+        button.classList.remove('button-correct', 'button-incorrect');
+    });
+}
+
+
+//Display the quiz score with option to restart the quiz
+function endQuiz() {
+    const quizContainer = document.getElementById('quiz-container');
+    quizContainer.innerHTML = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
 <button id="restartButton">Restart the game!</button>`;
-        document.getElementById('restartButton').addEventListener('click', restartGame);
-        if (score === selectedQuestions.length) {
-            playSound('winSound', 5000); // Play the fanfare winning sound for 5 seconds
-        }
+    document.getElementById('restartButton').addEventListener('click', restartGame);
+    if (score === selectedQuestions.length) {
+        playSound('winSound', 5000); // Play the fanfare winning sound for 5 seconds
     }
+}
 
-    function restartGame() {
-        location.reload()
-    }
+function restartGame() {
+    location.reload()
+}
 }
 
