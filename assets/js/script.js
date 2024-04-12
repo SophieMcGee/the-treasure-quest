@@ -700,41 +700,41 @@ function checkAnswer(selectedIndex) {
     clearInterval(countdown);
     const isCorrect = selectedIndex === selectedQuestions[currentQuestionIndex].correctAnswerPosition;
 
-    updateProgressCircle(currentQuestionIndex + 1, isCorrect);
-    updateAnswerFeedback(isCorrect, selectedIndex);
+    updateProgressCircle(currentQuestionIndex, isCorrect);
 
     if (isCorrect) {
         //Correct answer
         score++;
         playSound('rightSound');
         document.getElementById('correct').textContent = score;
-        setTimeout(() => {
-            proceedToNextQuestion();
-        }, 1000);
     } else {
         //Incorrect answer
         incorrectCount++;
         playSound('wrongSound');
         document.getElementById('incorrect').textContent = incorrectCount;
-        setTimeout(() => {
-            proceedToNextQuestion();
-        }, 1000);
     }
-    function updateAnswerFeedback(isCorrect, selectedIndex) {
-        const selectedButton = document.querySelectorAll('#answers button')[selectedIndex];
-        selectedButton.classList.add(isCorrect ? 'button-correct' : 'button-incorrect');
 
-        const infoModal = document.getElementById('info-modal');
+    displayModalFeedback(selectedIndex, isCorrect);
+
+    setTimeout(() => {
+        proceedToNextQuestion();
+    }, 3000);
+
+    function displayModalFeedback(selectedIndex, isCorrect) {    
+        const modal = document.getElementById('info-modal');
         const explanationText = document.getElementById('explanation-text');
+        modal.style.display = "block";
 
-        explanationText.textContent = `The correct answer is: "${selectedQuestions[currentQuestionIndex].options[selectedQuestions[currentQuestionIndex].correctAnswerPosition]}"`;
-        infoModal.style.display = "block";
+        explanationText.textContent = isCorrect ? 
+        "Great job! That's the correct answer." : 
+        `Oops! Wrong this time the correct answer was ${selectedQuestions[currentQuestionIndex].options[selectedQuestions[currentQuestionIndex].correctAnswerPosition]}.`;
+
 
         const closeButton = document.getElementById('closeButton');
         const nextQuestionButton = document.getElementById('next-question');
 
         closeButton.onclick = function () {
-            infoModal.style.display = "none";
+            modal.style.display = "none";
         };
 
         nextQuestionButton.onclick = function () {
@@ -779,5 +779,10 @@ function endQuiz() {
 function restartGame() {
     location.reload()
 }
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('easyMode').addEventListener('click', () => startGame('easy'));
+    document.getElementById('hardMode').addEventListener('click', () => startGame('hard'));
+    toggleSound();
+    initializeProgressCircles();
+});
 }
-
