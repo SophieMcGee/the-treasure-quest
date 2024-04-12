@@ -548,7 +548,8 @@ function initializeProgressCircles() {
 
 // Updates the progress circle based on the answer outcome
 function updateProgressCircle(questionIndex, isCorrect) {
-    const progressCircle = document.getElementById('progress-' + questionIndex);
+    const progressCircleId = 'progress-' + (currentQuestionIndex + 1);
+    const progressCircle = document.getElementById(progressCircleId);
     if (isCorrect) {
         progressCircle.style.backgroundImage = "url('assets/images/gold-coin.webp')";
     } else {
