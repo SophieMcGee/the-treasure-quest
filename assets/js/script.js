@@ -534,15 +534,6 @@ function playSound(soundId, duration = 0) {
     }
 }
 
-//Function to start the sound with the correct icon
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('toggle-sound').addEventListener('click', toggleSound);
-
-    // Update icons based on soundEnabled flag when the page loads
-    document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
-    document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
-});
-
 //Controls progress circles
 function initializeProgressCircles() {
     const progressGrid = document.getElementById('progress-grid');
@@ -564,6 +555,25 @@ function updateProgressCircle(questionIndex, isCorrect) {
         progressCircle.style.backgroundImage = "url('assets/images/pirate-flag.webp')";
     }
 }
+
+//Function to start the sound with the correct icon
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('toggle-sound').addEventListener('click', toggleSound);
+    document.getElementById('easyMode').addEventListener('click', function () {
+        startGame('easy');
+        initializeProgressCircles();
+    });
+
+    document.getElementById('hardMode').addEventListener('click', function () {
+        startGame('hard');
+        initializeProgressCircles();
+    });
+
+    // Update icons based on soundEnabled flag when the page loads
+    document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
+    document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
+});
+
 
 //Event listeners for the easy and hard mode buttons
 document.getElementById('easyMode').addEventListener('click', function () {
@@ -601,12 +611,10 @@ function getRandomQuestions(sourceArray, numQuestions) {
 function displayCurrentQuestion() {
     const quizContainer = document.getElementById('quiz-container');
     const questionInfo = selectedQuestions[currentQuestionIndex];
-
     const questionNumberDisplay = document.getElementById('question-number');
     if (questionNumberDisplay) {
         questionNumberDisplay.textContent = `Question ${currentQuestionIndex + 1} of ${selectedQuestions.length}`;
     }
-
     document.getElementById('question').textContent = questionInfo.question;
     const answersContainer = document.getElementById('answers');
     answersContainer.innerHTML = '';
@@ -693,18 +701,21 @@ function checkAnswer(selectedIndex) {
     const selectedButton = buttons[selectedIndex];
     const infoModal = document.getElementById('info-modal');
     const explanationText = document.getElementById('explanation-text');
-    const nextQuestionButton = document.getElementById('next-question');
     const closeButton = document.getElementById('closeButton');
+    const nextQuestionButton = document.getElementById('next-question');
+    const isCorrect = selectedIndex === selectedQuestions[currentQuestionIndex].correctAnswerPosition;
+
 
     //Disable all buttons to stop further clicks
     buttons.forEach(button => button.disabled = true);
 
-    if (selectedIndex === selectedQuestions[currentQuestionIndex].correctAnswerPosition) {
+    if (isCorrect) {
         //Correct answer
         score++;
         playSound('rightSound');
         selectedButton.classList.add('button-correct');
         document.getElementById('correct').textContent = score;
+        updateProgressCircle(currentQuestionIndex + 1, true);
         setTimeout(() => {
             proceedToNextQuestion();
         }, 1000);
@@ -714,59 +725,63 @@ function checkAnswer(selectedIndex) {
         playSound('wrongSound');
         selectedButton.classList.add('button-incorrect');
         document.getElementById('incorrect').textContent = incorrectCount;
-
-        updateProgressCircle(currentQuestionIndex + 1, isCorrect);
-
+        updateProgressCircle(currentQuestionIndex + 1, false);
+        setTimeout(() => {
+            proceedToNextQuestion();
+        }, 1000);
         //Explanation for correct answer in modal
         explanationText.textContent = `The correct answer is: "${selectedQuestions[currentQuestionIndex].options[selectedQuestions[currentQuestionIndex].correctAnswerPosition]}".`;
         infoModal.style.display = "block";
 
-        // Close button event listener
-        closeButton.addEventListener('click', function () {
-            infoModal.style.display = "none";
-        });
-
-        // Next question button event listener
-        nextQuestionButton.addEventListener('click', function () {
-            infoModal.style.display = "none";
+        setTimeout(() => {
             proceedToNextQuestion();
+            if (infoModal.style.display === "block") {
+                closeButton.onclick = function () {
+                    infoModal.style.display = "none";
+                };
+                nextQuestionButton.onclick = function () {
+                    infoModal.style.display = "none";
+                    proceedToNextQuestion();
+                };
+            }
+        }, 1000);
+    }
+
+    function proceedToNextQuestion() {
+        // Increment question index or end quiz if at the last question
+        if (currentQuestionIndex < selectedQuestions.length - 1) {
+            currentQuestionIndex++;
+            displayCurrentQuestion();
+        } else {
+            endQuiz();
+        }
+
+        // Reset to new questions
+        resetAnswerButtons();
+    }
+    function resetAnswerButtons() {
+        // Enable all buttons and remove colour classes for the next question
+        const buttons = document.querySelectorAll('#answers button');
+        buttons.forEach(button => {
+            button.disabled = false;
+            button.classList.remove('button-correct', 'button-incorrect');
         });
     }
-}
-        function proceedToNextQuestion() {
-            // Increment question index or end quiz if at the last question
-            if (currentQuestionIndex < selectedQuestions.length - 1) {
-                currentQuestionIndex++;
-                displayCurrentQuestion();
-            } else {
-                endQuiz();
-            }
-
-            // Reset to new questions
-            resetAnswerButtons();
-        }
-        function resetAnswerButtons() {
-            // Enable all buttons and remove colour classes for the next question
-            const buttons = document.querySelectorAll('#answers button');
-            buttons.forEach(button => {
-                button.disabled = false;
-                button.classList.remove('button-correct', 'button-incorrect');
-            });
-        }
 
 
-        //Display the quiz score with option to restart the quiz
-        function endQuiz() {
-            const quizContainer = document.getElementById('quiz-container');
-            quizContainer.innerHTML = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
+    //Display the quiz score with option to restart the quiz
+    function endQuiz() {
+        const quizContainer = document.getElementById('quiz-container');
+        quizContainer.innerHTML = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
 <button id="restartButton">Restart the game!</button>`;
-            document.getElementById('restartButton').addEventListener('click', restartGame);
-            if (score === selectedQuestions.length) {
-                playSound('winSound', 5000); // Play the fanfare winning sound for 5 seconds
-            }
+        document.getElementById('restartButton').addEventListener('click', restartGame);
+        if (score === selectedQuestions.length) {
+            playSound('winSound', 5000); // Play the fanfare winning sound for 5 seconds
         }
+    }
 
-        function restartGame() {
-            location.reload()
-        }
+    function restartGame() {
+        location.reload()
+    }
+}
 
