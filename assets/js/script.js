@@ -709,29 +709,39 @@ function checkAnswer(selectedIndex) {
         score++;
         playSound('rightSound');
         document.getElementById('correct').textContent = score;
+    
     } else {
         //Incorrect answer
         incorrectCount++;
         playSound('wrongSound');
         document.getElementById('incorrect').textContent = incorrectCount;
+    
     }
 
     displayModalFeedback(selectedIndex, isCorrect);
-
+}
     function displayModalFeedback(selectedIndex, isCorrect) {    
         const modal = document.getElementById('info-modal');
         const explanationText = document.getElementById('explanation-text');
+        const nextQuestionButton = document.getElementById('next-question'); 
         modal.style.display = "block";
 
         explanationText.textContent = isCorrect ? 
         "Great job! That's the correct answer." : 
         `Oops! Wrong this time the correct answer was ${selectedQuestions[currentQuestionIndex].options[selectedQuestions[currentQuestionIndex].correctAnswerPosition]}.`;
 
-        const nextQuestionButton = document.getElementById('next-question');
-        nextQuestionButton.onclick = function () {
-            modal.style.display = "none";
-            proceedToNextQuestion();
-        };
+        if (currentQuestionIndex < selectedQuestions.length - 1) {
+            nextQuestionButton.style.display = "block";
+            nextQuestionButton.onclick = function () {
+                modal.style.display = "none";
+                proceedToNextQuestion();
+            };
+        } else {
+            nextQuestionButton.style.display = "none";  
+            setTimeout(() => {
+                modal.style.display = "none";
+                endQuiz();  
+            }, 3000);
     }
 
 
@@ -770,4 +780,4 @@ function endQuiz() {
 function restartGame() {
     location.reload()
 }
-}
+    }
