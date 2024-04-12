@@ -557,6 +557,7 @@ function updateProgressCircle(questionIndex, isCorrect) {
     }
 }
 
+
 //Function to start the sound with the correct icon
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('toggle-sound').addEventListener('click', toggleSound);
@@ -729,16 +730,11 @@ function checkAnswer(selectedIndex) {
         "Great job! That's the correct answer." : 
         `Oops! Wrong this time the correct answer was ${selectedQuestions[currentQuestionIndex].options[selectedQuestions[currentQuestionIndex].correctAnswerPosition]}.`;
 
-
-        const closeButton = document.getElementById('closeButton');
         const nextQuestionButton = document.getElementById('next-question');
 
-        closeButton.onclick = function () {
-            modal.style.display = "none";
-        };
 
         nextQuestionButton.onclick = function () {
-            infoModal.style.display = "none";
+            modal.style.display = "none";
             proceedToNextQuestion();
         };
     }
@@ -779,10 +775,4 @@ function endQuiz() {
 function restartGame() {
     location.reload()
 }
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('easyMode').addEventListener('click', () => startGame('easy'));
-    document.getElementById('hardMode').addEventListener('click', () => startGame('hard'));
-    toggleSound();
-    initializeProgressCircles();
-});
 }
