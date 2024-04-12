@@ -202,12 +202,12 @@ button:focus {
 }
 
 .question-progress.correct {
-    background-image: url('insert path to fold coin');
+    background-image: url('assets/images/gold-coin.webp');
     background-size: cover;
 }
 
 .question-progress.incorrect {
-    background-image: url('insert path to flag image');
+    background-image: url('assets/images/pirate-flag.webp');
     background-size: cover;
 }
 

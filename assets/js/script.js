@@ -559,9 +559,9 @@ function initializeProgressCircles() {
 function updateProgressCircle(questionIndex, isCorrect) {
     const progressCircle = document.getElementById('progress-' + questionIndex);
     if (isCorrect) {
-        progressCircle.style.backgroundImage = "url('insert path to coin image')";
+        progressCircle.style.backgroundImage = "url('assets/images/gold-coin.webp')";
     } else {
-        progressCircle.style.backgroundImage = "url('insert path to flag image')";
+        progressCircle.style.backgroundImage = "url('assets/images/pirate-flag.webp')";
     }
 }
 
