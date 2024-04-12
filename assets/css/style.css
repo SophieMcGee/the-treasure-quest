@@ -189,7 +189,7 @@ button:focus {
 #progress-grid {
     grid-template-columns: repeat(2, 1fr);
     display: grid;
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
     padding: 10px;
 }
@@ -197,18 +197,21 @@ button:focus {
 .question-progress {
     border-radius: 50%;
     background-color: #aaaaaa; 
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .question-progress.correct {
-    background-image: url('assets/images/gold-coin.webp');
-    background-size: cover;
+    background-image: url('assets/images/gold-coin.webp');   
 }
 
 .question-progress.incorrect {
     background-image: url('assets/images/pirate-flag.webp');
-    background-size: cover;
 }
 
 /*Styling for timer*/
