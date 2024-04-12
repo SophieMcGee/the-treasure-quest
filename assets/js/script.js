@@ -543,13 +543,37 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
 });
 
+//Controls progress circles
+function initializeProgressCircles() {
+    const progressGrid = document.getElementById('progress-grid');
+    progressGrid.innerHTML = '';
+    for (let i = 1; i <= 10; i++) {
+        let circle = document.createElement('div');
+        circle.className = 'question-progress';
+        circle.id = 'progress-' + i;
+        progressGrid.appendChild(circle);
+    }
+}
+
+// Updates the progress circle based on the answer outcome
+function updateProgressCircle(questionIndex, isCorrect) {
+    const progressCircle = document.getElementById('progress-' + questionIndex);
+    if (isCorrect) {
+        progressCircle.style.backgroundImage = "url('insert path to coin image')";
+    } else {
+        progressCircle.style.backgroundImage = "url('insert path to flag image')";
+    }
+}
+
 //Event listeners for the easy and hard mode buttons
 document.getElementById('easyMode').addEventListener('click', function () {
     startGame('easy');
+    initializeProgressCircles();
 });
 
 document.getElementById('hardMode').addEventListener('click', function () {
     startGame('hard');
+    initializeProgressCircles();
 });
 
 //Selects 10 random questions from the chosen difficulty level before calling the first question
@@ -690,6 +714,8 @@ function checkAnswer(selectedIndex) {
         playSound('wrongSound');
         selectedButton.classList.add('button-incorrect');
         document.getElementById('incorrect').textContent = incorrectCount;
+
+        updateProgressCircle(currentQuestionIndex + 1, isCorrect);
 
         //Explanation for correct answer in modal
         explanationText.textContent = `The correct answer is: "${selectedQuestions[currentQuestionIndex].options[selectedQuestions[currentQuestionIndex].correctAnswerPosition]}".`;
