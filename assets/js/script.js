@@ -660,6 +660,8 @@ function handleTimeout() {
     incorrectCount++;
     document.getElementById('incorrect').textContent = incorrectCount;
 
+    updateProgressCircle(currentQuestionIndex, false);
+
     //Disable answer buttons and mark as incorrect when time runs out
     const answerButtons = document.querySelectorAll('#answers button');
     answerButtons.forEach(button => {
@@ -696,11 +698,10 @@ function handleTimeout() {
     }, 3000);
 }
 
-//Triggered when an option is clicked, checks to see if answer is correct and updates score, ends quiz with final score
+//Triggered when an option is clicked, checks to see if answer is correct and updates progress circles , ends quiz with final score
 function checkAnswer(selectedIndex) {
     clearInterval(countdown);
     const isCorrect = selectedIndex === selectedQuestions[currentQuestionIndex].correctAnswerPosition;
-
     updateProgressCircle(currentQuestionIndex, isCorrect);
 
     if (isCorrect) {
@@ -717,10 +718,6 @@ function checkAnswer(selectedIndex) {
 
     displayModalFeedback(selectedIndex, isCorrect);
 
-    setTimeout(() => {
-        proceedToNextQuestion();
-    }, 3000);
-
     function displayModalFeedback(selectedIndex, isCorrect) {    
         const modal = document.getElementById('info-modal');
         const explanationText = document.getElementById('explanation-text');
@@ -731,8 +728,6 @@ function checkAnswer(selectedIndex) {
         `Oops! Wrong this time the correct answer was ${selectedQuestions[currentQuestionIndex].options[selectedQuestions[currentQuestionIndex].correctAnswerPosition]}.`;
 
         const nextQuestionButton = document.getElementById('next-question');
-
-
         nextQuestionButton.onclick = function () {
             modal.style.display = "none";
             proceedToNextQuestion();
@@ -743,7 +738,7 @@ function checkAnswer(selectedIndex) {
 function proceedToNextQuestion() {
     currentQuestionIndex++;
     // Increment question index or end quiz if at the last question
-    if (currentQuestionIndex < selectedQuestions.length - 1) {
+    if (currentQuestionIndex < selectedQuestions.length) {
         displayCurrentQuestion();
     } else {
         endQuiz();
