@@ -514,11 +514,16 @@ let soundEnabled = false;
 //Function to control sound, effects are enabled by default
 function toggleSound() {
     soundEnabled = !soundEnabled;
-    document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
-    document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
+    const soundOnIcon = document.getElementById('sound-on'); 
+    const soundOffIcon = document.getElementById('sound-off'); 
+    const toggleSoundSpan = document.getElementById('toggle-sound');
+
+    soundOnIcon.style.display = soundEnabled ? 'inline' : 'none';
+    soundOffIcon.style.display = soundEnabled ? 'none' : 'inline';
+    toggleSoundSpan.setAttribute('aria-label', soundEnabled ? 'Turn sound off' : 'Turn sound on');
 
 }
-
+//Sets the duration of game sounds
 function playSound(soundId, duration = 0) {
     if (!soundEnabled) return;
     const sound = document.getElementById(soundId);
@@ -562,20 +567,22 @@ function updateProgressCircle(questionIndex, isCorrect) {
 
 //Function to start the sound with the correct icon
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('toggle-sound').addEventListener('click', toggleSound);
+    const toggleSoundSpan = document.getElementById('toggle-sound');
+    document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
+    document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
+    toggleSoundSpan.setAttribute('aria-label', soundEnabled ? 'Turn sound off' : 'Turn sound on');
+
+    toggleSoundSpan.addEventListener('click', toggleSound);
     document.getElementById('easyMode').addEventListener('click', function () {
         startGame('easy');
         initializeProgressCircles();
+        
     });
 
     document.getElementById('hardMode').addEventListener('click', function () {
         startGame('hard');
         initializeProgressCircles();
     });
-
-    // Update icons based on soundEnabled flag when the page loads
-    document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
-    document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
 });
 
 
