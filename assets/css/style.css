@@ -487,8 +487,20 @@ label {
     .logo-container img {
         max-width: 150px;
     }
+
+    #answers button {
+        font-size: 0.9em;  
+        padding: 8px 10px; 
+    }
 }
 
+/* Media Query for small to medium devices (overlaps with above for fine tuning) */
+@media (max-width: 600px) {
+    #answers button {
+        font-size: 1em;    
+        padding: 9px 12px;
+    }
+}
 
 /* Media query for tablets and screens above 768px wide */
 @media (min-width: 768px) {
