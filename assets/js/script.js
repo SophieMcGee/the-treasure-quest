@@ -509,7 +509,7 @@ let selectedQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let incorrectCount = 0;
-let soundEnabled = true;
+let soundEnabled = false;
 
 //Function to control sound, effects are enabled by default
 function toggleSound() {
