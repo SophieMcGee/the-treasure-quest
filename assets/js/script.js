@@ -789,12 +789,19 @@ function resetAnswerButtons() {
 //Display the quiz score with option to restart the quiz
 function endQuiz() {
     const quizContainer = document.getElementById('quiz-container');
-    quizContainer.innerHTML = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
-<button id="restartButton">Restart the game!</button>`;
-    document.getElementById('restartButton').addEventListener('click', restartGame);
+    const videoContainer = document.getElementById('result-video');
+    let resultsHtml = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
+    <button id="restartButton">Restart the game!</button>`;
+//Code for checking if 10 correct
     if (score === selectedQuestions.length) {
+        videoContainer.style.display = 'block';
         playSound('winSound', 5000); // Play the fanfare winning sound for 5 seconds
+    } else {
+        //Do not display video for less than 10 correct
+        videoContainer.style.display = 'none';
     }
+    quizContainer.innerHTML = resultsHtml;
+    document.getElementById('restartButton').addEventListener('click', restartGame);
 }
 
 function restartGame() {
