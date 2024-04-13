@@ -113,7 +113,7 @@ header {
     width: 100%;
 }
     
-quiz-content {
+.quiz-content {
     display: flex;
     width: 100%;
     align-items: start;
@@ -499,6 +499,14 @@ label {
         font-size: 1.1rem;
     }
 
+    .progress-panel {
+        padding: 15px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
     .question-progress {
         width: 40px;  
         height: 40px;
@@ -507,7 +515,6 @@ label {
 
     .timer-circle {
         font-size: 2.5em;
-        margin-bottom: 20px;
     }
 
     .footer-container {
@@ -566,11 +573,11 @@ label {
         }
     
         .progress-panel {
-            padding: 15px; 
+            padding: 20px; 
         }
     
         .main-content {
-            padding: 20px; 
+            padding: 25px; 
         }
     }
     
@@ -609,5 +616,14 @@ label {
         .game-container {
             max-width: 1600px;
         }
+
+        .progress-panel {
+            padding: 25px;
+        }
+    
+        .main-content {
+            padding: 30px;
+        }
+    
     }
 
