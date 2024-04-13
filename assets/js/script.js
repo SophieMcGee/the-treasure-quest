@@ -727,8 +727,7 @@ function checkAnswer(selectedIndex) {
         playSound('rightSound');
         document.getElementById('correct').textContent = score;
 
-    } else {
-        //Incorrect answer
+    } else { 
         incorrectCount++;
         playSound('wrongSound');
         document.getElementById('incorrect').textContent = incorrectCount;
