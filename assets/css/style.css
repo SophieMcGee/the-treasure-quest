@@ -213,12 +213,13 @@ button:focus {
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    justify-content: flex-start;
 }
 #progress-grid {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
-    justify-content: center;
     padding: 10px;
 }
 
@@ -369,7 +370,7 @@ button:focus {
 
 
 #next-question {
-    width: 80%;            
+    width: 50%;            
     padding: 10px 0;       
     margin-top: 10px;      
     padding: 10px auto;
