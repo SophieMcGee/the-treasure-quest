@@ -36,9 +36,9 @@
         <audio id="rightSound" src="assets/media/correct-answer.wav" preload="auto"></audio>
         <audio id="wrongSound" src="assets/media/wrong-answer.mp3" preload="auto"></audio>
         <audio id="winSound" src="assets/media/end-of-game-fanfare.wav" preload="auto"></audio>
-        <span id="toggle-sound">
-            <i class="fa-solid fa-volume-high" id="sound-on" style="display: none;"></i>
-            <i class="fa-solid fa-volume-xmark" id="sound-off"></i>
+        <span id="toggle-sound" aria-label="Toggle sound">
+            <i class="fa-solid fa-volume-high" id="sound-on" style="display: none;" aria-hidden="true"></i>
+            <i class="fa-solid fa-volume-xmark" id="sound-off" aria-hidden="true"></i>
         </span>
     </header>
     <main>
@@ -66,8 +66,9 @@
                     your favour, and may you find the treasure you seek.</p>
                 <h2>SELECT DIFFICULTY TO START THE GAME</h2>
                 <div class="difficulty-buttons">
-                    <button id="easyMode">Easy</button>
-                    <button id="hardMode">Hard</button>
+                    <button id="easyMode" aria-label="Start game on easy mode">Easy</button>
+                    <button id="hardMode" aria-label="Start game on hard mode">Hard</button>
+                    <button id="restartQuiz" aria-label="Restart the quiz" style="display: none;">Restart Quiz</button>
                 </div>
             </div>
             <div id="quiz-container" style="display:none;">
@@ -75,16 +76,16 @@
                     <div class="progress-panel">
                         <!-- Progress-grid -->
                         <div id="progress-grid">
-                            <div class="question-progress" id="progress-1"></div>
-                            <div class="question-progress" id="progress-2"></div>
-                            <div class="question-progress" id="progress-3"></div>
-                            <div class="question-progress" id="progress-4"></div>
-                            <div class="question-progress" id="progress-5"></div>
-                            <div class="question-progress" id="progress-6"></div>
-                            <div class="question-progress" id="progress-7"></div>
-                            <div class="question-progress" id="progress-8"></div>
-                            <div class="question-progress" id="progress-9"></div>
-                            <div class="question-progress" id="progress-10"></div>
+                            <div class="question-progress" id="progress-1" aria-label="Question 1: Unanswered"></div>
+                            <div class="question-progress" id="progress-2" aria-label="Question 2: Unanswered"></div>
+                            <div class="question-progress" id="progress-3" aria-label="Question 3: Unanswered"></div>
+                            <div class="question-progress" id="progress-4" aria-label="Question 4: Unanswered"></div>
+                            <div class="question-progress" id="progress-5" aria-label="Question 5: Unanswered"></div>
+                            <div class="question-progress" id="progress-6" aria-label="Question 6: Unanswered"></div>
+                            <div class="question-progress" id="progress-7" aria-label="Question 7: Unanswered"></div>
+                            <div class="question-progress" id="progress-8" aria-label="Question 8: Unanswered"></div>
+                            <div class="question-progress" id="progress-9" aria-label="Question 9: Unanswered"></div>
+                            <div class="question-progress" id="progress-10" aria-label="Question 10: Unanswered"></div>
                         </div>
                     </div>
                     <div class="main-content">
@@ -99,12 +100,12 @@
                         </div>
                     </div>
                 </div>
-                <button id="restartQuiz" style="display: none;">Restart Quiz</button>
+                <button id="restartQuiz" aria-label="Restart the quiz and try again" style="display: none;">Restart Quiz</button>
                 <div id="info-modal" class="modal">
                     <div class="modal-content">
                         <p id="explanation-text">Here's a bit more info...</p>
-                        <button id="next-question">Go to Next Question</button>
-                        <button id="view-score" style="display: none;">View Quiz Score</button>
+                        <button id="next-question" aria-label="Proceed to the next question">Go to Next Question</button>
+                        <button id="view-score" style="display: none;" aria-label="View your final quiz score">View Quiz Score</button>
                     </div>
                 </div>
             </div>
