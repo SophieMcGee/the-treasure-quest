@@ -552,8 +552,10 @@ function updateProgressCircle(questionIndex, isCorrect) {
     const progressCircle = document.getElementById(progressCircleId);
     if (isCorrect) {
         progressCircle.style.backgroundImage = "url('assets/images/gold-coin.webp')";
+        progressCircle.setAttribute('aria-label', `Question ${questionIndex + 1}: Correct`);
     } else {
         progressCircle.style.backgroundImage = "url('assets/images/pirate-flag.webp')";
+        progressCircle.setAttribute('aria-label', `Question ${questionIndex + 1}: Incorrect`);
     }
 }
 
