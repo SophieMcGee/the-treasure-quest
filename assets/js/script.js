@@ -609,6 +609,14 @@ function startGame(difficulty) {
     document.getElementById('quiz-container').style.display = 'block';
     document.getElementById('game-selection').style.display = 'none';
     displayCurrentQuestion();
+
+    scrollToQuizContainer();
+}
+
+//Add scroll effect to move players to top of quiz container when the difficulty is selected and game begins
+function scrollToQuizContainer() {
+    const quizContainer = document.getElementById('quiz-container');
+    quizContainer.scrollIntoView({ behavior: 'smooth' });
 }
 
 //Pull random questions from the source questions array
