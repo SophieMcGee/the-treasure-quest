@@ -510,12 +510,13 @@ let currentQuestionIndex = 0;
 let score = 0;
 let incorrectCount = 0;
 let soundEnabled = false;
+let currentDifficulty = 'easy';
 
 //Function to control sound, effects are enabled by default
 function toggleSound() {
     soundEnabled = !soundEnabled;
-    const soundOnIcon = document.getElementById('sound-on'); 
-    const soundOffIcon = document.getElementById('sound-off'); 
+    const soundOnIcon = document.getElementById('sound-on');
+    const soundOffIcon = document.getElementById('sound-off');
     const toggleSoundSpan = document.getElementById('toggle-sound');
 
     soundOnIcon.style.display = soundEnabled ? 'inline' : 'none';
@@ -565,20 +566,21 @@ function updateProgressCircle(questionIndex, isCorrect) {
 }
 
 
-//Function to start the sound with the correct icon
+//Function to start the game
 document.addEventListener('DOMContentLoaded', function () {
     const toggleSoundSpan = document.getElementById('toggle-sound');
     document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
     document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
-    document.getElementById('restartQuiz').style.display = 'block'; 
-document.getElementById('restartQuiz').disabled = true;
+    document.getElementById('restartQuiz').style.display = 'block';
+    document.getElementById('restartQuiz').disabled = true;
+    document.getElementById('restartQuiz').addEventListener('click', resetGame);
     toggleSoundSpan.setAttribute('aria-label', soundEnabled ? 'Turn sound off' : 'Turn sound on');
 
     toggleSoundSpan.addEventListener('click', toggleSound);
     document.getElementById('easyMode').addEventListener('click', function () {
         startGame('easy');
         initializeProgressCircles();
-        
+
     });
 
     document.getElementById('hardMode').addEventListener('click', function () {
@@ -601,6 +603,7 @@ document.getElementById('hardMode').addEventListener('click', function () {
 
 //Selects 10 random questions from the chosen difficulty level before calling the first question
 function startGame(difficulty) {
+    currentDifficulty = difficulty;
     selectedQuestions = getRandomQuestions(questions[difficulty], 10);
     currentQuestionIndex = 0;
     score = 0;
@@ -611,8 +614,20 @@ function startGame(difficulty) {
     document.getElementById('quiz-container').style.display = 'block';
     document.getElementById('game-selection').style.display = 'none';
     displayCurrentQuestion();
-
     scrollToQuizContainer();
+}
+//Function to reset the game back to the start at the same difficulty level
+function resetGame() {
+    selectedQuestions = getRandomQuestions(questions[currentDifficulty], 10);
+    currentQuestionIndex = 0;
+    score = 0;
+    incorrectCount = 0;
+
+    displayCurrentQuestion();
+    initializeProgressCircles();
+    document.getElementById('quiz-container').style.display = 'block';
+    document.getElementById('result-video').style.display = 'none';
+    document.getElementById('restartQuiz').style.display = 'none';
 }
 
 //Add scroll effect to move players to top of quiz container when the difficulty is selected and game begins
@@ -729,7 +744,7 @@ function checkAnswer(selectedIndex) {
         playSound('rightSound');
         document.getElementById('correct').textContent = score;
 
-    } else { 
+    } else {
         incorrectCount++;
         playSound('wrongSound');
         document.getElementById('incorrect').textContent = incorrectCount;
@@ -793,7 +808,7 @@ function endQuiz() {
     const videoContainer = document.getElementById('result-video');
     let resultsHtml = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
     <button id="restartButton">Visit the homepage!</button>`;
-//Code for checking if 10 correct
+    //Code for checking if 10 correct
     if (score === selectedQuestions.length) {
         videoContainer.style.display = 'block';
         playSound('winSound', 5000); // Play the fanfare winning sound for 5 seconds
@@ -802,8 +817,9 @@ function endQuiz() {
         videoContainer.style.display = 'none';
     }
     quizContainer.innerHTML = resultsHtml;
-    document.getElementById('restartButton').addEventListener('click', restartGame);
     document.getElementById('restartQuiz').disabled = false; // Button to go to 1st Quiz Question
+    document.getElementById('restartButton').addEventListener('click', restartGame);
+    
 }
 
 function restartGame() {
