@@ -785,7 +785,6 @@ function resetAnswerButtons() {
     });
 }
 
-
 //Display the quiz score with option to restart the quiz
 function endQuiz() {
     const quizContainer = document.getElementById('quiz-container');

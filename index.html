@@ -68,7 +68,7 @@
                 <div class="difficulty-buttons">
                     <button id="easyMode" aria-label="Start game on easy mode">Easy</button>
                     <button id="hardMode" aria-label="Start game on hard mode">Hard</button>
-                    <button id="restartQuiz" aria-label="Restart the quiz" style="display: none;">Restart Quiz</button>
+                    <button id="restartButton" aria-label="Restart the quiz" style="display: none;">Restart Quiz</button>
                 </div>
             </div>
             <div id="quiz-container" style="display:none;">
@@ -100,6 +100,12 @@
                         </div>
                     </div>
                 </div>
+                <div id="result-video" style="display: none;" alt="Video of under the sea with a treasure chest">
+                    <video width="320" height="240" controls>
+                        <source src="assets/media/treasure-video.mp4" type="video/mp4">
+                        Apologies, the browser you are using does not support the video.
+                    </video>
+                </div>
                 <button id="restartQuiz" aria-label="Restart the quiz and try again" style="display: none;">Restart
                     Quiz</button>
                 <div id="info-modal" class="modal">
@@ -110,12 +116,6 @@
                         <button id="view-score" style="display: none;" aria-label="View your final quiz score">View Quiz
                             Score</button>
                     </div>
-                </div>
-                <div id="result-video" style="display: none;" alt="Video of under the sea with a treasure chest">
-                    <video width="320" height="240" controls>
-                        <source src="assets/media/treasure-video.mp4" type="video/mp4">
-                        Apologies, the browser you are using does not support the video.
-                    </video>
                 </div>
             </div>
         </div>
