@@ -571,11 +571,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggleSoundSpan = document.getElementById('toggle-sound');
     document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
     document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
-    document.getElementById('restartQuiz').style.display = 'block';
-    document.getElementById('restartQuiz').disabled = true;
     document.getElementById('restartQuiz').addEventListener('click', resetGame);
     toggleSoundSpan.setAttribute('aria-label', soundEnabled ? 'Turn sound off' : 'Turn sound on');
-
     toggleSoundSpan.addEventListener('click', toggleSound);
     document.getElementById('easyMode').addEventListener('click', function () {
         startGame('easy');
@@ -817,9 +814,9 @@ function endQuiz() {
         videoContainer.style.display = 'none';
     }
     quizContainer.innerHTML = resultsHtml;
-    document.getElementById('restartQuiz').disabled = false; // Button to go to 1st Quiz Question
     document.getElementById('restartButton').addEventListener('click', restartGame);
-    
+    document.getElementById('restartQuiz').style.display = 'block';  
+    document.getElementById('restartQuiz').disabled = false; 
 }
 
 function restartGame() {
