@@ -570,6 +570,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggleSoundSpan = document.getElementById('toggle-sound');
     document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
     document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
+    document.getElementById('restartQuiz').style.display = 'block'; 
+document.getElementById('restartQuiz').disabled = true;
     toggleSoundSpan.setAttribute('aria-label', soundEnabled ? 'Turn sound off' : 'Turn sound on');
 
     toggleSoundSpan.addEventListener('click', toggleSound);
