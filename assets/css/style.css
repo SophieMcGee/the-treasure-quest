@@ -78,12 +78,13 @@ header {
     background-color: #e96854;
     color: #ffffff;
     border: none;
-    position: absolute;
+    position: static;
     right: 2rem;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     z-index: 10;
+    margin-top: 20px;
 }
 
 #restartQuiz:hover,
