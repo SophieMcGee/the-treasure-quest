@@ -792,7 +792,7 @@ function endQuiz() {
     const quizContainer = document.getElementById('quiz-container');
     const videoContainer = document.getElementById('result-video');
     let resultsHtml = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
-    <button id="restartButton">Restart the game!</button>`;
+    <button id="restartButton">Visit the homepage!</button>`;
 //Code for checking if 10 correct
     if (score === selectedQuestions.length) {
         videoContainer.style.display = 'block';
@@ -803,6 +803,7 @@ function endQuiz() {
     }
     quizContainer.innerHTML = resultsHtml;
     document.getElementById('restartButton').addEventListener('click', restartGame);
+    document.getElementById('restartQuiz').disabled = false; // Button to go to 1st Quiz Question
 }
 
 function restartGame() {
