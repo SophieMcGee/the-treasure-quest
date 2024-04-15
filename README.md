@@ -347,12 +347,14 @@ The countdown timer is another key visual element, bringing a sense of urgency a
 3. Interactive Buttons and Hover Effects
 The game's buttons are designed to be not only visually pleasing but also interactive, with hover effects providing clear feedback to the user. This not only adds depth to the game's visual appeal but also enhances usability, clearly signifying to players when an option or control can be interacted with. In addition, buttons are not static but respond to user interactions. For example, hovering over an answer choice triggers a subtle shift in colour or size, providing a tactile sense of engagement that mimics the interactivity of physical game boards.
 
-
 4. Responsive Feedback Modals
 Upon answering questions, responsive modals appear to provide immediate feedback. These are populated based on the correctness of the player’s answer, allowing for an intuitive understanding of the game's response to their actions.
 
 5. Dynamic End-of-Game Display
 At the conclusion of each quiz, players are met with a dynamic end-of-game display that changes based on their performance. A perfect score unlocks an animated treasure chest, providing a rewarding visual payoff for the player’s efforts.
+
+6. Interactive Sound Toggle
+The sound toggle is a prominent feature within the header area and when sound is off, the toggle displays a muted speaker icon; when turned on, it changes to a speaker with sound waves, providing clear visual feedback regarding the game's current sound status. The sound toggle button animates upon interaction, with a smooth transition between states adding to the visual affirmation of the player's action. 
 
 ### Custom Graphics and Illustrations
 
@@ -371,6 +373,7 @@ The game's interface is dotted with custom icons and buttons, each contributing 
 Typography plays a crucial role in the game's visual feedback system. We use different font sizes, weights, and styles to distinguish between types of text and to denote the importance of various elements. Important messages and game instructions are prominently displayed, ensuring they catch the player’s eye.
 
 ### Accessibility Considerations
+
 During the development features were implemented to ensure the game is accessible, providing an inclusive experience for all users. This commitment to accessibility is included throughout the code, examples include the following implementations: 
 
 1. The code utilises semantic HTML5 elements which inherently support screen readers and other assistive technologies. This semantic structuring enhances the understanding of the game's content and context for users with visual impairments.
@@ -384,3 +387,51 @@ During the development features were implemented to ensure the game is accessibl
 5. For external links, such as those leading to social media pages or additional resources, the code includes mechanisms that inform users they are navigating away from the game. This feature is particularly useful for those using screen readers, as it sets expectations for the resulting action correctly.
 
 6. While the game is colourful and visually vibrant, the design is mindful to ensure that text and interactive elements have sufficient contrast against their backgrounds. This consideration facilitates readability for users with colour vision deficiencies.
+
+7. Players have the option to enable sound effects at any point during the game via a clearly marked sound toggle button. This button is accessible, designed to be easily activated using keyboard navigation or assistive technology, ensuring that all players can engage with the game's audio features if they choose.
+
+### Clear Navigation
+
+"The Treasure Quest" is coded with the aim of providing a seamless navigational experience for all players. The clarity of the game's navigation is a critical aspect of its design, ensuring that players can intuitively move through the game without confusion. The following features contribute to this clarity:
+
+1. Structured Information Flow
+The game’s HTML structure is organised in a logical flow that reflects the typical progression of player interaction—from the welcoming screen through the game selection to the quiz questions and final results. This intuitive structure ensures that players naturally understand how to proceed at each stage.
+
+2. Upfront Instructions
+Clear instructions are provided at the beginning of the game. Players are guided on how to play, including how to engage with the sound toggle located prominently in the top left corner, ensuring an accessible experience for auditory learning.
+
+3. Consistent Interactive Elements
+
+Buttons and interactive elements are consistently styled and behave predictably throughout the game. This consistency allows players to quickly learn and become comfortable with the game mechanics, facilitating ease of use and minimising the learning curve.
+
+4. Visible State Transitions
+
+The game code reflects state changes visibly. For example, when a quiz is underway, certain elements such as the difficulty selection are hidden, making it clear that the game is in progress and guiding the user's focus to the questions.
+
+5. Accessible Navigational Aids
+The game includes various navigational aids, such as the 'Restart Quiz' button, which is clearly labeled and positioned to allow players to easily start over or adjust settings without searching for how to do so.
+
+6. Social Media Integration
+The footer contains social media links, allowing players to easily connect with the broader community or seek additional information.
+
+7. Responsive Modal for User Feedback
+
+A modal serves as a direct form of user feedback, popping up to confirm answer results, and a popup is also included to alert the user when the timer reaches zero. The popup is designed to disappear automatically, with the modal including a clear button to 'Go to Next Question' as a point of exit.
+
+8. Error Messages
+
+When a player attempts to save a score without entering a username, a message will appear, gently prompting for the required information.
+
+The images below show these navigation features in more detail:
+
+1. The main homepage for the game, with clear instructions and buttons to select the difficulty level.
+
+2. The question screen with progress in the form of coins or pirate flags for wrong answers, clear score counters, timer, answer buttons and a button to restart the quiz. 
+
+3. The modal feedback which updates based on whether the answer is correct or not.
+
+4. The end of game screen for scores of less than 10, with the option to enter a username to save the score, restart the quiz with the same difficulty as previously selected, a button to click to go back to the main homepag and an area to display the high scores.
+
+5. This is the screen that is displayed at the end of the game if a perfect score is achieved, it is the same as outlined above, however a video with a treasure chest is added.
+
+![Navigation Features](assets/readme-images/game-play-screens.webp)
