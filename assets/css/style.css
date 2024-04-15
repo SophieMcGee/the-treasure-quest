@@ -368,6 +368,28 @@ button:focus {
     display: block;
 }
 
+/*Styling for screen at the end of the game*/
+
+#game-end-container label, #game-end-container input, #game-end-container button {
+    display: block;
+    margin-top: 10px;
+}
+
+#game-end-container input, #game-end-container button {
+    padding: 8px;
+}
+
+#game-end-container button {
+    background-color: #7ED957; 
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#game-end-container button:hover {
+    background-color: #7ED957;
+}
+
 /*Footer Styling*/
 footer {
     width: 100%;
