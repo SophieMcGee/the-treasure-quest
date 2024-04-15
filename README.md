@@ -658,3 +658,37 @@ I am pleased with the high scores, however, several opportunities for optimisati
 * Largest Contentful Paint (LCP): The game logo was identified as the element contributing most to the LCP. This indicates that the logo takes the longest to become fully visible to the user. To optimise the LCP, in the future I will reduce the image file size of the logo without compromising its visual integrity.
 
 [Back to top](<#contents>)
+
+## Testing of User Stories
+
+> User story 1 - Children Aged 7 to 11_"As a child, I want the quiz game to be fun and colourful so that I can enjoy learning and playing at the same time. I expect the game to have questions that are challenging but fair for my age, helping me learn new things without feeling overwhelmed. The game should cover different topics that I learn about at school, providing a variety of questions that cater to my interests within the school subject."_
+
+Manual testing:
+
+| User Step | Description | Pass or Fail |
+|:----------|:------------|:------------:|
+|1| Child opens the game and sees the game instructions |Pass|
+|2| Child sees the colourful easy and hard difficulty buttons and chooses sound preference |Pass|
+|3| Plays through a set of questions with clear progress indicated through visual feedback |Pass|
+|4| Child is able to restart the game at any time on the same level with the score reset to 0 |Pass|
+|5| Child is able to save their score by entering username and review highscores |Pass|
+
+> User story 2 - Parents and Guardians _"As a parent, I want to ensure that the content of the game is safe and educational, providing my child with a positive and enriching experience. The game should offer settings or controls that allow me to adjust the difficulty level, tailoring the experience to my child’s learning needs and preferences."_
+
+Manual testing:
+| User Step | Description | Pass or Fail |
+|:----------|:------------|:------------:|
+|1| Parent is able to play the quiz to review the game's content for safety and educational quality |Pass|
+|2| Parent observes the game providing encouragement and positive tones within answer feedback |Pass|
+|3| Is able to adjust the game’s difficulty level |Pass|
+|4| User clicks the relevant service accordian to view more information |Pass|
+
+
+> User story 3 - Educators and Teachers_"As an educator, I want to incorporate the quiz game as a supplementary learning tool that complements the curriculum and engages students in a fun way. I expect the game to cover a range of topics that align with educational standards and objectives, reinforcing what students are learning in class. The game should provide clear progress and results at the end, enabling me to identify topics where the class as a whole might need further instruction or review."_
+
+| User Step | Description | Pass or Fail |
+|:----------|:------------|:------------:|
+|1| Educator is able to use the game in a classroom setting on multiple device screen sizes |Pass|
+|2| Is able to reviews the progress and results provided at the game's conclusion when students save their username |Pass|
+
+[Back to top](<#contents>)
