@@ -830,6 +830,7 @@ function saveScore(username, score) {
     const scores = JSON.parse(localStorage.getItem('scores')) || {};
     scores[username] = score;
     localStorage.setItem('scores', JSON.stringify(scores));
+    displayScores();
     alert('Score saved successfully!');
 }
 
@@ -856,14 +857,7 @@ function displayScores() {
         scoreItem.textContent = `${user}: ${scores[user]}`;
         scoresList.appendChild(scoreItem);
     });
-    document.getElementById('leaderboard').style.display = 'block';
 }
-
-function toggleLeaderboard() {
-    const leaderboard = document.getElementById('leaderboard');
-    leaderboard.style.display = (leaderboard.style.display == 'none' ? 'block' : 'none');
-}
-
 
 function handleSaveScoreSubmit(event) {
     event.preventDefault();
@@ -900,6 +894,7 @@ function endQuiz() {
         videoContainer.style.display = 'none';
     }
 
+
     document.getElementById('restartQuizAfterGame').style.display = 'block';
     document.getElementById('visitHomepage').style.display = 'block';
 
@@ -907,6 +902,8 @@ function endQuiz() {
     if (saveScoreForm) {
         saveScoreForm.addEventListener('submit', handleSaveScoreSubmit);
     }
+
+    displayScores();
 
     document.getElementById('restartQuizAfterGame').addEventListener('click', resetGame);
     document.getElementById('visitHomepage').addEventListener('click', function () {
