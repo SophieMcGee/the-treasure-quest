@@ -235,6 +235,8 @@ During the skeleton phase, wireframing and prototyping were conducted to visuali
 
 <b>This wireframe is available to view within Figma via <a href="https://www.figma.com/file/emfhPcFWQ6JCpErbkXPCqR/The-Treasure-Quest?type=whiteboard&node-id=0%3A1&t=xKgywFtGAzySzKDC-1" target="_blank" rel="noopener">THIS LINK.</a></b>
 
+At all stages of the design process I gained feedback from friends, family, peers and my mentor, so the final design is slightly different based on their perceptions of user experience. The main difference is the movement of the progress circles to the left hand side, which ensures more of the quiz game can be seen on the screen during gameplay.
+
 ### Surface
 
 During the surface design I brought the game to life with vibrant colors, engaging graphics, and buttons that appeal to children. Careful consideration was given to font choices, colour schemes, and imagery to ensure readability and draw interest while maintaining a fun and safe environment for learning. The final design encapsulates a treasure-hunt theme, with each quiz attempt designed to be a new adventure.
@@ -717,5 +719,75 @@ Manual testing:
 |Loading and error handling | Game handles loading and errors in game, displaying relevant messages to users |Pass|
 |Fanfare sound on perfect score | Fanfare sound plays when the user achieves a perfect score |Pass|
 |Celebratory video on perfect score | A celebratory video plays when the user gets all questions correct |Pass|
+
+[Back to top](<#contents>)
+
+## Bugs
+
+1. Bug 1: ReferenceError in script.js
+
+During development, the console in Dev Tools displayed the following error as the quizContainer was being referenced before it was properly defined in the script. I revised the script to ensure that quizContainer was correctly defined and accessible before it was called in the displayCurrentQuestion function. By adjusting the order of function calls and ensuring all variables were declared and initialised before use, the error was resolved. This change made sure that the quizContainer element was always available when needed by the game's logic.
+
+2. Bug 2: Incorrect Display of Question Answers
+
+While testing the game during development, I encountered an issue where clicking the 'easy' or 'hard' mode buttons caused all possible answers to be displayed incorrectly. Instead of showing separate answer options, each button was displaying the entire array of potential answers as a single string.
+
+The root cause of this problem was in how the answer options were being defined within the questions object. Originally, the options were inadvertently grouped as a single string. To fix this, I corrected the structure of the options array in each question to ensure answers were defined as separate strings. Additionally, I updated the event listeners for buttons within the displayCurrentQuestion function to ensure they were assigned correctly. Instead of appending to the quizContainer, buttons were appended to the answersContainer to match the HTML structure correctly. These adjustments ensured that each answer was displayed as an individual, clickable button corresponding to the respective question.
+
+3. Bug 3: Restart Quiz Button Not Working
+
+
+A critical bug was observed during development where the 'Restart Quiz' button, which appears at the end of the game, was not functioning correctly. The button was intended to reset the game and take the player back to the initial game screen. The bug was triggered because the button tried to access and modify elements with the IDs 'correct' and 'incorrect' that were not present at the initial game load screen.
+
+
+To address this issue, I modified the JavaScript code associated with the button to first check if these elements existed before attempting to access their style properties. This preventative check eliminates any JavaScript errors that previously occurred when these elements were not found in the DOM. During the final design stage the button functions were further modified, however this detail above shows the bugs which were rectified during the development stages initially. 
+
+4. Bug 4: Restart Quiz Button Not Resetting Game Properly
+
+
+During the initial game development a looping error was identified with the 'Restart Quiz' button at the end of the game. Initially, when players clicked this button, it redirected them to the main landing page correctly. However, selecting 'easy' or 'hard' mode subsequently led players directly to the end screen of the previous session instead of starting a new game. This resulted in a frustrating user experience as the game did not reset as expected. To resolve this issue during development, I implemented a full page reload strategy by adding the location.reload() method within the restartGame function. This method forced the web page to reload from the server, rather than from the cache, ensuring that all game variables and states are reset to their default settings. This was a workaround I used during the development stage, and the final code does not include this location.reload() function.
+
+5. Bug 5: Timeout Popup Message Not Persisting Across Questions
+
+
+The game was designed to alert players with a popup message when the time for answering a question expired. This timeout message was intended to appear after each 10-second countdown. However, due to a bug in the implementation, the timeout message was only appearing for the first question and not persisting through subsequent questions.
+
+
+The problem was traced back to the method of appending and removing the timeout message in the Document Object Model (DOM). Initially, a new message was being created and destroyed each time, which was inefficient and led to inconsistent behavior. To address this, I modified the approach to maintain a single timeout message in the DOM and simply toggle its visibility as needed. This ensures that the message is ready to be shown immediately when the timer runs out, without the need for repeated creation and deletion.
+
+6. Bug 6: Answer Buttons Active During Timeout Message Display
+
+
+After implementing the timeout message for when the 10-second timer runs out, it was observed that players could still interact with the answer buttons during the brief period the message was displayed. This allowed players to potentially select an answer even after the designated time had expired, which was not intended.
+
+
+To address this issue, I added functionality to disable the answer buttons as soon as the timer expires. This prevents any further interaction with the game until the next question is loaded. Additionally, all answers are automatically marked as incorrect if no selection was made within the time limit. To improve the user experience and keep the game pace steady, the display duration of the timeout message was also reduced from the initial longer period to just 3 seconds.
+
+7. Bug 7: Progress Circles Not Updating Correctly on Timeout
+
+
+The game includes a progress grid with grey circles, each corresponding to a quiz question. These circles are intended to update to show a gold coin for correct answers and a pirate flag for incorrect answers. However, it was observed that when the timer ran out, the relevant progress circle did not update to show the pirate flag, indicating an incorrect answer.
+
+
+The issue was traced back to the handleTimeout function, where the updateProgressCircle function was not being invoked to mark the question as incorrect. To address this, the code was modified to include a call to updateProgressCircle within the handleTimeout function, explicitly passing the current question index and a boolean value of false to signify that the answer was incorrect. This ensured that the progress circle would update appropriately, even when the timer expires.
+
+8. Bug 8: Modal Feedback Button Display Error on Final Question
+
+In the quiz game, a modal pops up to provide feedback on the player's answer. This modal includes a button intended to advance the player to the next question. However, this button was inappropriately displayed on the final question (question 10) of the quiz, where it should instead transition to the end-of-quiz interface.
+
+
+To resolve this issue, the displayModalFeedback function was modified to include a check that determines if the current question is the last question in the quiz. Based on this check, the function now correctly toggles the visibility of the "Next Question" button and introduces a "View Quiz Score" button when the player is on the final question. This adjustment ensures that players receive appropriate options based on their progress in the quiz.
+
+9. Bug 9: Scrolling Issue on Game Start
+
+Upon selecting either the 'easy' or 'hard' mode on the main game start page, the quiz container would not automatically scroll into view. Users were required to manually scroll up to begin answering questions, which could lead to confusion and a disjointed user experience.
+
+To address this issue, the scrollToQuizContainer function was implemented to automatically scroll the quiz container into view when a game mode is selected. This function uses the scrollIntoView() method with the { behavior: 'smooth' } option to ensure a smooth transition, enhancing the user experience by focusing the user directly on the quiz content without sudden jumps.
+
+Throughout the development of this project, various features and functionalities underwent significant changes and enhancements based on iterative testing and feedback. As a result, some of the earlier bugs and issues documented in this section may not directly correspond to the final version of the code. These entries serve as a historical record of the challenges encountered and the solutions implemented during the development process.
+
+Adjustments and optimisations were made continuously to improve performance, user experience, and game mechanics. This means that some segments of the code related to these bugs have been refined or replaced entirely in the final deployment. This approach of iterative development and continuous improvement ensures that the game not only meets but exceeds the expectations of its users by providing a robust and enjoyable experience.
+
+For those reviewing the code or the documentation, please consider these points as part of the natural evolution of a dynamic and user-focused development process.
 
 [Back to top](<#contents>)
