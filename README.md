@@ -644,7 +644,7 @@ The Lighthouse tool was also used during the development phase to monitor ongoin
 
 <b>*Mobile View:</b>
 
-![404 Page Performance Testing Mobile](assets/readme-images/pagespeed-about-mobile.png)
+![404 Page Performance Testing Mobile](assets/readme-images/404-performance-mobile.webp)
 
 <b>*Desktop View:</b>
 
@@ -690,5 +690,32 @@ Manual testing:
 |:----------|:------------|:------------:|
 |1| Educator is able to use the game in a classroom setting on multiple device screen sizes |Pass|
 |2| Is able to reviews the progress and results provided at the game's conclusion when students save their username |Pass|
+
+[Back to top](<#contents>)
+
+## Manual Testing of Game Features
+
+| Feature | Expected Result | Pass or Fail |
+|:----------|:------------|:------------:|
+|Audio toggle | Sound effects can be enabled or disabled using the sound icon in the game |Pass|
+|Progress indicators | Visual feedback on user progress via circular progress indicators for each question, with the correct image showing based on answer |Pass|
+|Dynamic question display | Questions and multiple choice answers load correctly based on the selected difficulty |Pass|
+|Correct/incorrect feedback | Visual and auditory signals indicate whether the answer was correct or incorrect |Pass|
+|Difficulty selection | Users can select between 'easy' and 'hard' modes which changes the set of questions |Pass|
+|Timeout and time up handling | When the timer runs out, it automatically moves to the next question, showing a timeout message, updates the question as incorrect |Pass|
+|Final score display | 	At the end of the quiz, the total score is displayed clearly |Pass|
+|Restart quiz options | Users can restart the quiz at any time or after completion, which resets the game to question 1 on the previously selected difficulty level, previous score tally is cleared |Pass|
+|Homepage Links | The user is able to click the logo at any time or click the visit the homepage button at the ened of the game to redirect back to the main game setup screen |Pass|
+|The username section of the score submit form is a required field | If the field is not filled out an error message appears and the form is not submitted |Pass|
+|Mobile responsiveness | The game adjusts to various screen sizes without layout issues or obscured content |Pass|
+|Keyboard navigability | All interactive elements are accessible via keyboard for improved accessibility |Pass|
+|The message section of the contact form is a required field| If the field is not filled out an error message appears and the form is not submitted |Pass|
+|ARIA labels for accessibility | All dynamic content has appropriate ARIA labels for screen readers |Pass|
+|Modal feedback for answers |When an answer is selected, a modal pops up providing right or wrong feedback with a button to go to the next question |Pass|
+|High score functionality | Correct answer, wrong answer, and background sounds play correctly as per settings |Pass|
+|Navigation between game sections | Navigation from the start screen to game and back, as well as between different game phases, works seamlessly |Pass|
+|Loading and error handling | Game handles loading and errors in game, displaying relevant messages to users |Pass|
+|Fanfare sound on perfect score | Fanfare sound plays when the user achieves a perfect score |Pass|
+|Celebratory video on perfect score | A celebratory video plays when the user gets all questions correct |Pass|
 
 [Back to top](<#contents>)
