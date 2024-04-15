@@ -859,17 +859,6 @@ function displayScores() {
     });
 }
 
-function handleSaveScoreSubmit(event) {
-    event.preventDefault();
-    const username = document.getElementById('username').value.trim();
-    if (username === '') {
-        document.getElementById('usernameError').style.display = 'block';
-        return;
-    }
-    document.getElementById('usernameError').style.display = 'none';
-    saveScore(username, score);
-}
-
 //Display the quiz score with option to restart the quiz
 function endQuiz() {
     //Hide the quiz container
@@ -896,11 +885,6 @@ function endQuiz() {
 
     document.getElementById('restartQuizAfterGame').style.display = 'block';
     document.getElementById('visitHomepage').style.display = 'block';
-
-    const saveScoreForm = document.getElementById('saveScoreForm');
-    if (saveScoreForm) {
-        saveScoreForm.addEventListener('submit', handleSaveScoreSubmit);
-    }
 
     displayScores();
 
