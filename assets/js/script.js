@@ -864,6 +864,19 @@ function toggleLeaderboard() {
     leaderboard.style.display = (leaderboard.style.display == 'none' ? 'block' : 'none');
 }
 
+
+function handleSaveScoreSubmit(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value.trim();
+    if (username === '') {
+        document.getElementById('usernameError').style.display = 'block';
+        return;
+    }
+    document.getElementById('usernameError').style.display = 'none';
+    saveScore(username, score);
+    alert('Score saved successfully!');
+}
+
 //Display the quiz score with option to restart the quiz
 function endQuiz() {
     //Hide the quiz container
@@ -891,17 +904,10 @@ function endQuiz() {
     document.getElementById('visitHomepage').style.display = 'block';
 
     const saveScoreForm = document.getElementById('saveScoreForm');
-    saveScoreForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-        const username = document.getElementById('username').value.trim();
-        if (username === '') {
-            document.getElementById('usernameError').style.display = 'block';
-            return;
-        }
-        document.getElementById('usernameError').style.display = 'none';
-        localStorage.setItem(username, score);
-        alert('Score saved successfully!');
-    });
+    if (saveScoreForm) {
+        saveScoreForm.addEventListener('submit', handleSaveScoreSubmit);
+    }
+
     document.getElementById('restartQuizAfterGame').addEventListener('click', resetGame);
     document.getElementById('visitHomepage').addEventListener('click', function () {
         window.location.href = 'index.html';
