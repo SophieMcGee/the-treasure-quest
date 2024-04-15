@@ -670,7 +670,6 @@ function getRandomQuestions(sourceArray, numQuestions) {
 
 //Display the current question and position answers
 function displayCurrentQuestion() {
-    const quizContainer = document.getElementById('quiz-container');
     const questionInfo = selectedQuestions[currentQuestionIndex];
 
     const questionNumberDisplay = document.getElementById('question-number');
