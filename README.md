@@ -319,6 +319,11 @@ Carefully crafted to resonate with the young audience, the logo itself is based 
 
 ## Generic Game Features
 
+The game is designed with a variety of key features, which can be seen within the images below taken from the various display points: 
+
+![Navigation Features](assets/readme-images/game-play-screens.webp)
+
+
 ### Responsive Design
 
 "The Treasure Quest" game is designed to ensure an optimal and consistent user experience across all devices. With a mobile first design strategy, the design also focuses on adaptability, ensuring that the game remains engaging, accessible, and user-friendly whether it's being played on a desktop computer, tablet, or smartphone. In key areas the game utilises a flexible grid layout that adapts to the width of the browser, ensuring that game elements are displayed optimally on every screen size. This is achieved using code within the css file such as percentages for widths instead of fixed units, allowing the game to fluidly adjust to different screen sizes without compromising on design or functionality. In addition, the game's typography uses responsive font sizes in many areas by adjusting the viewport width (vw) unit, which scales the text based on the width of the screen. This ensures that headings (h1, h2) and other textual content remain legible and proportionate across all devices.
@@ -337,12 +342,15 @@ The design implements media queries that target three main breakpoints:
 
 "The Treasure Quest" game is designed to deliver an immersive gaming experience through its rich visual feedback mechanisms and distinctive identity, which are fundamental in guiding players through their adventure. Below are the features that enhance the game's visual feedback and identity:
 
-
 1. Progress Indicators
 Visual cues are integral to the game, particularly in the form of progress indicators. The progress grid, with individual circles, provides immediate feedback on the player’s current standing in the quiz. Correct answers are celebrated with a shiny gold coin icon, while incorrect ones are marked with a pirate flag, turning the act of answering questions into a visually engaging narrative.
 
+![Progress Circles](assets/readme-images/progress-circles.webp)
+
 2. Animated Timer
 The countdown timer is another key visual element, bringing a sense of urgency and excitement to the gameplay. The timer changes colour to a more vivid colour and includes a blinking animation to signal the critical last few seconds, effectively guiding the player through the time-sensitive nature of the quiz.
+
+![Timer](assets/readme-images/timer.webp)
 
 3. Interactive Buttons and Hover Effects
 The game's buttons are designed to be not only visually pleasing but also interactive, with hover effects providing clear feedback to the user. This not only adds depth to the game's visual appeal but also enhances usability, clearly signifying to players when an option or control can be interacted with. In addition, buttons are not static but respond to user interactions. For example, hovering over an answer choice triggers a subtle shift in colour or size, providing a tactile sense of engagement that mimics the interactivity of physical game boards.
@@ -350,27 +358,21 @@ The game's buttons are designed to be not only visually pleasing but also intera
 4. Responsive Feedback Modals
 Upon answering questions, responsive modals appear to provide immediate feedback. These are populated based on the correctness of the player’s answer, allowing for an intuitive understanding of the game's response to their actions.
 
+![Feedback Modal](assets/readme-images/feedback-modal.webp)
+
 5. Dynamic End-of-Game Display
 At the conclusion of each quiz, players are met with a dynamic end-of-game display that changes based on their performance. A perfect score unlocks an animated treasure chest, providing a rewarding visual payoff for the player’s efforts.
+
+![End of Game Display](assets/readme-images/end-of-game-display.webp)
 
 6. Interactive Sound Toggle
 The sound toggle is a prominent feature within the header area and when sound is off, the toggle displays a muted speaker icon; when turned on, it changes to a speaker with sound waves, providing clear visual feedback regarding the game's current sound status. The sound toggle button animates upon interaction, with a smooth transition between states adding to the visual affirmation of the player's action. 
 
+![Sound Toggle](assets/readme-images/sound-toggle.webp)
+
 ### Custom Graphics and Illustrations
 
-The game features custom graphics and illustrations that not only add character and charm but also serve as visual metaphors for the user’s journey. These unique design elements reinforce the game’s identity and create a memorable playing experience.
-
-1. Unique Illustrations
-Every graphic and illustration in "The Treasure Quest" is designed to transport players into the world of exploration and discovery. From the logo to the playful skull and crossbones, each element has been created to support the narrative of adventure.
-
-2. Vibrant Colour Palette and Themes
-The game's visual identity is defined by a vibrant colour palette, reinforcing the excitement and fun of the treasure hunt. The colour scheme is not only aesthetically pleasing but also serves a functional purpose.
-
-3. Engaging Interface
-The game's interface is dotted with custom icons and buttons, each contributing to a cohesive visual language. These bespoke elements are not only functional but also contribute to the thematic consistency, ensuring that even the user interface feels like part of the game’s universe.
-
-4. Fonts and Typography
-Typography plays a crucial role in the game's visual feedback system. We use different font sizes, weights, and styles to distinguish between types of text and to denote the importance of various elements. Important messages and game instructions are prominently displayed, ensuring they catch the player’s eye.
+The game features custom graphics and illustrations that not only add character and charm but also serve as visual metaphors for the user’s journey. These unique design elements reinforce the game’s identity and create a memorable playing experience. Every graphic and illustration in "The Treasure Quest" is designed to transport players into the world of exploration and discovery. From the logo to the playful skull and crossbones, each element has been created to support the narrative of adventure. The game's visual identity is defined by a vibrant colour palette, reinforcing the excitement and fun of the treasure hunt. The colour scheme is not only aesthetically pleasing but also serves a functional purpose.
 
 ### Accessibility Considerations
 
@@ -390,48 +392,49 @@ During the development features were implemented to ensure the game is accessibl
 
 7. Players have the option to enable sound effects at any point during the game via a clearly marked sound toggle button. This button is accessible, designed to be easily activated using keyboard navigation or assistive technology, ensuring that all players can engage with the game's audio features if they choose.
 
+### Difficulty Selection
+
+The game begins with an inviting section that sets the stage for the adventure. It features a prominent headline, following by instructions and prompts to choose the difficulty, all aimed at immersing players right from the start. The easy/hard call to action buttons are pivotal in engaging the user from the outset. The difficulty selection buttons not only guide users to the game but also serve as their first interactive experience with the game's interface.
+
+![Difficulty Buttons](assets/readme-images/difficulty-buttons.webp)
+
+
 ### Clear Navigation
+"The Treasure Quest" is coded with the aim of providing a seamless navigational experience for all players. The clarity of the game's navigation is a critical aspect of its design, ensuring that players can intuitively move through the game without confusion. This begins with the game’s HTML structure which is organised in a logical flow that reflects the typical progression of player interaction—from the welcoming screen through the game selection to the quiz questions and final results. This intuitive structure ensures that players naturally understand how to proceed at each stage.
 
-"The Treasure Quest" is coded with the aim of providing a seamless navigational experience for all players. The clarity of the game's navigation is a critical aspect of its design, ensuring that players can intuitively move through the game without confusion. The following features contribute to this clarity:
 
-1. Structured Information Flow
-The game’s HTML structure is organised in a logical flow that reflects the typical progression of player interaction—from the welcoming screen through the game selection to the quiz questions and final results. This intuitive structure ensures that players naturally understand how to proceed at each stage.
+The game also includes buttons and interactive elements to enhance navigation which are consistently styled and behave predictably throughout the game. This consistency allows players to quickly learn and become comfortable with the game mechanics, facilitating ease of use and minimising the learning curve. For example, the 'Restart Quiz' button, is clearly labeled and positioned to allow players to easily start over without having to reselect the difficulty. This button is included within every question and at the end of the game. For players who prefer to visit the homepage to select a new difficulty level, the logo includes a link to this view alongside a button within the end of quiz view which clearly guides users to the homepage.
 
-2. Upfront Instructions
-Clear instructions are provided at the beginning of the game. Players are guided on how to play, including how to engage with the sound toggle located prominently in the top left corner, ensuring an accessible experience for auditory learning.
+In addition, a modal serves as a direct form of user feedback, popping up to confirm answer results, and a popup is also included to alert the user when the timer reaches zero. The popup is designed to disappear automatically, with the modal including a clear button to 'Go to Next Question' as a point of exit.
 
-3. Consistent Interactive Elements
+![Game Buttons](assets/readme-images/game-buttons.webp)
 
-Buttons and interactive elements are consistently styled and behave predictably throughout the game. This consistency allows players to quickly learn and become comfortable with the game mechanics, facilitating ease of use and minimising the learning curve.
+### Dynamic Favicon
 
-4. Visible State Transitions
+A custom favicon reflects the game's identity even in the browser tab, enhancing brand recognition and adding to the overall professional feel of the game.
 
-The game code reflects state changes visibly. For example, when a quiz is underway, certain elements such as the difficulty selection are hidden, making it clear that the game is in progress and guiding the user's focus to the questions.
+![Favicon](assets/readme-images/favicon-display.webp)
 
-5. Accessible Navigational Aids
-The game includes various navigational aids, such as the 'Restart Quiz' button, which is clearly labeled and positioned to allow players to easily start over or adjust settings without searching for how to do so.
+### Immersive Audio Effects
 
-6. Social Media Integration
-The footer contains social media links, allowing players to easily connect with the broader community or seek additional information.
+With sound effects linked to actions such as correct or incorrect answers, players receive auditory feedback that enhances the interactive experience. These sounds are carefully selected to be pleasant and encouraging, contributing to the game's immersive atmosphere. If a player scores a perfect 10 out of 10 score a rewarding fanfare sound plays for 5 seconds in addition to the treasure video. These sounds are all inactive as standard, but can be toggled at any point within the header area.
 
-7. Responsive Modal for User Feedback
+### Inclusive Footer
+The footer not only grounds the design but provides additional navigation options, including social media integration. This offers players the chance to join the game's broader community, share their experiences, or follow updates.
 
-A modal serves as a direct form of user feedback, popping up to confirm answer results, and a popup is also included to alert the user when the timer reaches zero. The popup is designed to disappear automatically, with the modal including a clear button to 'Go to Next Question' as a point of exit.
+![Footer](assets/readme-images/footer.webp)
 
-8. Error Messages
+### User Score Submission and High Scores Leaderboard
 
-When a player attempts to save a score without entering a username, a message will appear, gently prompting for the required information.
+A key feature is the user's ability to save their score at the end of the game by entering a username and clicking the button below. This form is designed with accessibility in mind, providing both visual and programmatic feedback for users. In addition, the leaderboard is a feature that adds to healthy competitiveness. Users can view high scores stored locally, encouraging replayability and engagement, these also also ordered by user to improve clarity.
 
-The images below show these navigation features in more detail:
+### Error Messages
 
-1. The main homepage for the game, with clear instructions and buttons to select the difficulty level.
+The code handles user input validation, ensuring that any errors are communicated effectively, maintaining an uninterrupted and smooth user experience. For example, when a player attempts to save a score without entering a username, a message will appear, gently prompting for the required information.
 
-2. The question screen with progress in the form of coins or pirate flags for wrong answers, clear score counters, timer, answer buttons and a button to restart the quiz. 
+### Adaptive Question Pool
 
-3. The modal feedback which updates based on whether the answer is correct or not.
+The game elevates player engagement by presenting a vast repository of 100 questions tailored to different difficulty levels, with the easy mode providing a more approachable challenge, and the hard mode requiring a deeper knowledge base. This ensures that both novice adventurers and seasoned explorers can find a level that suits their skills.
 
-4. The end of game screen for scores of less than 10, with the option to enter a username to save the score, restart the quiz with the same difficulty as previously selected, a button to click to go back to the main homepag and an area to display the high scores.
-
-5. This is the screen that is displayed at the end of the game if a perfect score is achieved, it is the same as outlined above, however a video with a treasure chest is added.
-
-![Navigation Features](assets/readme-images/game-play-screens.webp)
+### Dynamic Question Shuffle
+Each game session is designed to be a new experience. The code shuffles the questions using a randomisation function to prevent predictability and encourage replayability. This shuffling mechanic enhances the game's educational value by presenting new challenges every time. Players work their way through 10 questions per session, a number carefully chosen to ensure a balance between a satisfying length and maintaining the player's attention.
