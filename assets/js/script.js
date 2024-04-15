@@ -635,6 +635,8 @@ function resetGame() {
     document.getElementById('quiz-container').style.display = 'block';
     document.getElementById('result-video').style.display = 'none';
     document.getElementById('restartQuiz').style.display = 'block';
+    document.getElementById('restartQuizAfterGame').style.display = 'none';  // Hide the end-game restart button
+    document.getElementById('restartButton').style.display = 'none';
 }
 
 //Add scroll effect to move players to top of quiz container when the difficulty is selected and game begins
