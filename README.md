@@ -586,3 +586,25 @@ The tool found no issues within the Javascript code.
 
 [Back to top](<#contents>)
 
+## Responsivity Testing
+
+The game interface was tested for responsivity throughout the development process, utilising Chrome Dev Tools to simulate various device sizes and orientations. This ensured that the game maintained functionality and aesthetic integrity across a wide range of screen sizes.
+
+At the completion of the project, further testing was conducted using the <a href="http://www.responsinator.com" target="_blank" rel="noopener">Responsinator</a> website to assess the game's responsivity across different browsers, including Chrome, Firefox, and Edge. The results confirmed that the game performs well on screen widths starting from 280 pixels, with no issues such as stretching, pixelation, or unintended horizontal scrolling. All game elements align and function as intended, according to the specifications defined in the CSS stylesheet. This testing validates the game's responsive design, ensuring a seamless user experience on various devices and browsers.
+
+Additionally, manual checks were conducted on physical devices such as tablets and smartphones to verify touch responsiveness and visual layout, further ensuring that players experience consistent gameplay across all platforms.
+
+
+The results including the various screen sizes tested are shown below:
+
+![Responsivity Testing](assets/readme-images/responsivity-tests.webp)
+
+To test the responsiveness of the game interface, follow these steps:
+
+1. Navigate to the game's URL.
+2. Open the developer tools in your browser.
+3. Set the zoom to 50% and select the 'Responsive' mode.
+4. Adjust the screen width to various dimensions to observe how the game interface adapts to different screen sizes.
+
+[Back to top](<#contents>)
+
