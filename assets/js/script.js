@@ -825,6 +825,30 @@ function resetAnswerButtons() {
         button.classList.remove('button-correct', 'button-incorrect');
     });
 }
+//Local storage of highscores by username
+function saveScore(username, score) {
+    const scores = JSON.parse(localStorage.getItem('scores')) || {};
+    scores[username] = score;
+    localStorage.setItem('scores', JSON.stringify(scores));
+}
+
+function displayScores() {
+    const scores = JSON.parse(localStorage.getItem('scores')) || {};
+    const scoresList = document.getElementById('highScoresList');
+    scoresList.innerHTML = '';
+    Object.keys(scores).forEach(user => {
+        const scoreItem = document.createElement('li');
+        scoreItem.textContent = `${user}: ${scores[user]}`;
+        scoresList.appendChild(scoreItem);
+    });
+}
+
+function getUsernameAndSaveScore() {
+    const username = prompt("Please enter your username to save your score:");
+    if (username) {
+        saveScore(username, score);
+    }
+}
 
 //Display the quiz score with option to restart the quiz
 function endQuiz() {
@@ -851,6 +875,9 @@ function endQuiz() {
 
     document.getElementById('restartQuizAfterGame').style.display = 'block';
     document.getElementById('visitHomepage').style.display = 'block';
+
+    getUsernameAndSaveScore();
+    displayScores();
 
     document.getElementById('restartQuizAfterGame').addEventListener('click', resetGame);
     document.getElementById('visitHomepage').addEventListener('click', function() {
