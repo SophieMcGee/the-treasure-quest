@@ -851,11 +851,12 @@ function displayScores() {
     //Sort scores in descending order by value
     const sortedScores = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
 
-    Object.keys(scores).forEach(user => {
+    sortedScores.forEach(user => {
         const scoreItem = document.createElement('li');
         scoreItem.textContent = `${user}: ${scores[user]}`;
         scoresList.appendChild(scoreItem);
     });
+    document.getElementById('leaderboard').style.display = 'block';
 }
 
 //Display the quiz score with option to restart the quiz
