@@ -791,3 +791,78 @@ Adjustments and optimisations were made continuously to improve performance, use
 For those reviewing the code or the documentation, please consider these points as part of the natural evolution of a dynamic and user-focused development process.
 
 [Back to top](<#contents>)
+
+## Future Developments
+
+* Additional Question Sets and Categories
+    *  Introduce more categories beyond Geography to cover subjects like Science, History, and Literature. This would cater to a broader range of interests and educational needs, making the game more versatile and appealing to a wider audience.
+* Multiplayer Functionality
+    * Develop a multiplayer mode where players can compete against friends or random opponents. This could include live score tracking, timed rounds, and interactive challenges to enhance competitive play.
+* Educational Resources and Feedback
+    * Expand the feedback system to provide detailed explanations for each answer, potentially linking to external educational resources for further learning. This would enhance the educational value of the game.
+
+
+
+# Credits
+
+The following sources were used as a guide for the code within this project:
+
+* Love Maths – Code Institute Project
+    *Assisted with the development of event-driven programming, organisation of functions for clarity and maintainability, dynamic content management, use of let and const block scope, error handling and validation and code to implement feedback mechanisms.
+* Code Institute Course Content
+    * Throughout the project, the course content was referred to for basic JavaScript game logic and structures, CSS styling and HTML structure. However, all code was customised to fit the unique requirements and functionalities of the quiz game.
+    
+* Implementation of buttons and the sound toggle
+    * https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener and https://www.w3schools.com/js/js_events.asp - These page were used to refine the addEventListeners throughout the project.
+
+* Flexbox styling 
+    * https://css-tricks.com/snippets/css/a-guide-to-flexbox/ This was used to help style and arrange elements dynamically across difference screen sizes.
+
+* CSS Grid for Question Layout
+    * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout Provided detail for embedding sound effects and managing audio playback.
+
+* Sound Integration and Management
+    * https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content offered insights into CSS transition effects, enhancing the visual appeal and user experience within the services grid.
+
+* ARIA Labels and Roles
+    * https://www.w3.org/TR/using-aria/ Provided code to ensure the game is accessible, including screen reader support for interactive elements.
+
+* Chrome DevTools
+    * Used extensively to debug JavaScript and inspect CSS/HTML elements in real-time
+
+* All images and the video used within the website
+    * These were all sourced from the Canva website and are not copyrighted.
+
+* All website icons
+    * These were all sourced from the Font Awesome website
+
+* Game font
+    * This was downloaded from Google Fonts.
+
+* Website Favicon
+    * Favicon.io wasa used to create the website favicon.
+
+*Freesounds
+    * All audio files were downloaded from this website and are not copyrighted.
+
+*Twinkl
+    * This resource provides content for teachers to use within lessons that is aligned with the Geography school curriculum for the target users of this quiz. All questions were adapted from this website, with the following links: 
+* https://www.twinkl.ie/resource/t2-g-4031-lks2-the-big-end-of-year-around-the-world-quiz-powerpoint 
+* https://www.twinkl.ie/resource/t2-t-16624-european-neighbours-day-europe-quiz-pack 
+* https://www.twinkl.ie/resource/au-g-57-oceans-of-the-world-powerpoint-and-quiz-card-resource-pack 
+* https://www.twinkl.ie/resource/au-g-50-equator-hemispheres-tropics-and-poles-multiple-choice-quiz-cards 
+* https://www.twinkl.ie/resource/au-t2-g-689-countries-across-the-world-powerpoint-pop-quiz 
+* https://www.twinkl.ie/resource/european-capital-cities-multiple-choice-quiz-tg-442 
+* https://www.twinkl.ie/resource/irish-landmarks-interactive-quiz-roi-gy-1709728924 
+* https://www.twinkl.ie/resource/au-t2-g-604-europe-and-north-america-quiz-cards 
+* https://www.twinkl.ie/resource/family-lockdown-geography-quiz-t-g-828 
+* https://www.twinkl.ie/resource/greta-thunberg-powerpoint-quiz-au-l-1636297425 
+* https://www.twinkl.ie/resource/au-t2-g-698-world-climates-multiple-choice-pop-quiz 
+
+
+
+# Acknowledgements
+
+My mentor Gareth for all his brilliant help and guidance, alongside the feedback and advice from the peers within my course who helped with checking functionality.
+
+[Back to top](<#contents>)
