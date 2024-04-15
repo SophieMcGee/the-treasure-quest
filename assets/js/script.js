@@ -897,9 +897,3 @@ function endQuiz() {
     });
 
 }
-
-
-function visitHomepage() {
-    location.reload()
-}
-
