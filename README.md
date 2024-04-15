@@ -438,3 +438,37 @@ The game elevates player engagement by presenting a vast repository of 100 quest
 
 ### Dynamic Question Shuffle
 Each game session is designed to be a new experience. The code shuffles the questions using a randomisation function to prevent predictability and encourage replayability. This shuffling mechanic enhances the game's educational value by presenting new challenges every time. Players work their way through 10 questions per session, a number carefully chosen to ensure a balance between a satisfying length and maintaining the player's attention.
+
+[Back to top](<#contents>)
+
+# Technologies Used
+
+* HTML
+    * Provided the structural foundation of the game's interface, facilitating content layout and interactive elements.
+* CSS
+    * Used to style the game, including backgrounds, buttons, and modals, enhancing the visual appeal and ensuring a consistent user experience.
+* Javascript
+    * Core to the game's functionality, handling events, game logic, sound effects, and dynamic content updates to create an interactive user experience.
+* Gitpod
+    * The integrated development environment (IDE) used for writing, testing, and debugging the game's code.
+* Github
+    * Hosted the project repository, enabling version control and release management, ensuring that progress on the game was systematically tracked and stored.
+* Canva
+    * Utilised for designing the game’s assets such as the logo and various graphical elements integrated within the game to enhance its aesthetic appeal.
+* Favicon.io
+    * Created the favicon for the game, which appears in the browser tab, aiding in brand consistency and recognition.
+* Figma
+    * Used for creating detailed wireframes to guide the development of the user interface, ensuring a well-planned layout and user flow.
+* Tinypng
+    * Optimised the size of the images used in the game to reduce load times and enhance performance, particularly important for users on slower internet connections.
+* Font Awesome
+    * Icons sourced from Font Awesome were incorporated into the game's design within the social media area and the sound toggle, providing intuitive graphical cues for user interactions.
+* Google Fonts
+    * Integrated into the game to enhance typography, with fonts selected for readability and thematic alignment with the game’s aesthetic.
+* Freesound
+    * Sourced sound effects that are triggered during various game actions, such as correct or incorrect answers, enhancing the auditory feedback of the game.
+* Twinkl
+    * A website used to source and curate the educational content for the quiz questions, ensuring a variety of challenging and informative questions aligned with the game’s educational goals.
+
+[Back to top](<#contents>)
+
