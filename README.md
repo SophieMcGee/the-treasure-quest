@@ -506,3 +506,47 @@ To clone the repository and work locally:
 4. Enter git clone [paste the URL you copied earlier]. This will create a local clone of the repository.
 
 [Back to top](<#contents>)
+
+# Testing
+
+Comprehensive testing of the website was conducted to ensure the functionality of individual components throughout each page of the site. 
+
+## Validator Testing
+
+The following website tools were used dto test the game and to check for errors within the code.
+
+* <a href="https://validator.w3.org/" target="_blank" rel="noopener">W3C Markup Validation Service</a>
+* <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener">W3C CSS Validation Service</a>
+* <a href="https://jshint.com/" target="_blank" rel="noopener">JS Hint Validation Service</a>
+
+The tests resulted in the following:
+
+### HTML Validation:
+
+Inital Test:
+
+![Inital HTML Test](assets/readme-images/html-validation-initial-errors.webp)
+
+Amendments:
+
+1. The first warning about the potential misuse of aria-label indicated that the attribute was used on an element that may not support the attribute effectively for accessibility purposes. The sound toggle was included in a span element, however as interactive elements are more suited to have aria-labels I changed the span to a button element, which removed the issue. Upon making the change the toggle inherited the button css styling, which actually improved the overall design. The only tweak needed was to reduce the font-size for smaller screens to ensure it didnt cover the logo.
+
+2. The second warning about the potential misuse of aria-label on a non-interactive element like a <div> is again related to accessibility best practices. To solve the issue I added a role to each element to indicate game progress, by adding role="progressBar" to each question div assitive technologies understand that the element represents progression of a task and the associated aria-label is describing this task.
+
+Final Test:
+
+![Game HTML Final Test](assets/readme-images/html-validation-final-test.webp)
+
+Final Test:
+
+![Game HTML Final Test](assets/readme-images/html-final-test-homepage.png)
+
+#### 404 Page
+
+Inital Test:
+
+![404 Page HTML Test](assets/readme-images/404-test.webp)
+
+Amendments:
+
+The tool found no issues within the page.
