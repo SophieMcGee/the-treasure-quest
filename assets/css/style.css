@@ -121,7 +121,7 @@ header {
 }
 
 /*Font Styles*/
-h2 {
+h1, h2 {
     font-weight: 800;
     font-size: 4vw;
     margin: 0 auto;
@@ -552,7 +552,7 @@ footer {
     /* Media query for very large screens above 2400px wide */
     @media (min-width: 2400px) {
 
-        h2,
+        h1, h2,
         h3 {
             font-weight: 800;
             font-size: 2vw;
