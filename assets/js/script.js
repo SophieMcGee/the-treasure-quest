@@ -824,9 +824,17 @@ function endQuiz() {
     quizContainer.innerHTML = resultsHtml;
     document.getElementById('restartButton').addEventListener('click', restartGame);
     document.getElementById('restartQuiz').style.display = 'block';
-    document.getElementById('restartQuiz').disabled = false; 
-    document.getElementById('restartQuiz').addEventListener('click', resetGame);
+
+    setupRestartButton();
 }
+
+function setupRestartButton() {
+    const restartButton = document.getElementById('restartQuiz');
+    if (restartButton) {
+        restartButton.addEventListener('click', resetGame);
+    }
+}
+
 
 function restartGame() {
     location.reload()
