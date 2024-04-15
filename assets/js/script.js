@@ -830,7 +830,19 @@ function saveScore(username, score) {
     const scores = JSON.parse(localStorage.getItem('scores')) || {};
     scores[username] = score;
     localStorage.setItem('scores', JSON.stringify(scores));
+    alert('Score saved successfully!');
 }
+
+document.getElementById('saveScoreForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value.trim();
+    if (username === '') {
+        document.getElementById('usernameError').style.display = 'block';
+        return;
+    }
+    document.getElementById('usernameError').style.display = 'none';
+    saveScore(username, score); 
+});
 
 function displayScores() {
     const scores = JSON.parse(localStorage.getItem('scores')) || {};
@@ -841,13 +853,6 @@ function displayScores() {
         scoreItem.textContent = `${user}: ${scores[user]}`;
         scoresList.appendChild(scoreItem);
     });
-}
-
-function getUsernameAndSaveScore() {
-    const username = prompt("Please enter your username to save your score:");
-    if (username) {
-        saveScore(username, score);
-    }
 }
 
 //Display the quiz score with option to restart the quiz
@@ -876,9 +881,18 @@ function endQuiz() {
     document.getElementById('restartQuizAfterGame').style.display = 'block';
     document.getElementById('visitHomepage').style.display = 'block';
 
-    getUsernameAndSaveScore();
-    displayScores();
-
+    const saveScoreForm = document.getElementById('saveScoreForm');
+    saveScoreForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value.trim();
+        if (username === '') {
+            document.getElementById('usernameError').style.display = 'block';
+            return;
+        }
+        document.getElementById('usernameError').style.display = 'none';
+        localStorage.setItem(username, score);  
+        alert('Score saved successfully!');
+    });
     document.getElementById('restartQuizAfterGame').addEventListener('click', resetGame);
     document.getElementById('visitHomepage').addEventListener('click', function() {
         window.location.href = 'index.html';
