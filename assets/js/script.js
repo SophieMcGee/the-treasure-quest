@@ -571,8 +571,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggleSoundSpan = document.getElementById('toggle-sound');
     document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
     document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
-    document.getElementById('restartQuiz').addEventListener('click', resetGame);
-    document.getElementById('restartQuiz').style.display = 'none';
+    const restartQuiz = document.getElementById('restartQuiz');
+    const restartQuizAfterGame = document.getElementById('restartQuizAfterGame');
+
+    if (restartQuiz) {
+        restartQuiz.addEventListener('click', resetGame);
+    }
+    if (restartQuizAfterGame) {
+        restartQuizAfterGame.addEventListener('click', resetGame);
+    }
+
+    
     toggleSoundSpan.setAttribute('aria-label', soundEnabled ? 'Turn sound off' : 'Turn sound on');
     toggleSoundSpan.addEventListener('click', toggleSound);
     document.getElementById('easyMode').addEventListener('click', function () {
@@ -833,13 +842,6 @@ function endQuiz() {
         window.location.href = 'index.html';
     });
     
-}
-
-function setupRestartButton() {
-    const restartButton = document.getElementById('restartQuiz');
-    if (restartButton) {
-        restartButton.addEventListener('click', resetGame);
-    }
 }
 
 
