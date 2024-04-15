@@ -654,18 +654,15 @@ function getRandomQuestions(sourceArray, numQuestions) {
 
 //Display the current question and position answers
 function displayCurrentQuestion() {
-    console.log("current qustion func called")
-    console.log("Current Question Index:", currentQuestionIndex);
     const quizContainer = document.getElementById('quiz-container');
     const questionInfo = selectedQuestions[currentQuestionIndex];
 
     const questionNumberDisplay = document.getElementById('question-number');
-    console.log("this is cur question number display = ", questionNumberDisplay)
+    
     if (questionNumberDisplay) {
         questionNumberDisplay.textContent = `Question ${currentQuestionIndex + 1} of ${selectedQuestions.length}`;
     } else {
     }
-    console.log("question element is == ", document.getElementById('question'))
     document.getElementById('question').textContent = questionInfo.question;
     const answersContainer = document.getElementById('answers');
     answersContainer.innerHTML = '';
