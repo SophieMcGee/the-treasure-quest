@@ -635,11 +635,11 @@ The Lighthouse tool was also used during the development phase to monitor ongoin
 
 <b>*Mobile View</b>
 
-![Performance Testing Mobile](assets/readme-images/404-performance-mobile.webp)
+![Performance Testing Mobile](assets/readme-images/performance-mobile.webp)
 
 <b>*Desktop View:</b>
 
-![Performance Testing Desktop](assets/readme-images/404-performance-desktop.webp)
+![Performance Testing Desktop](assets/readme-images/performance-desktop.webp)
 
 
 ### 404 Page
