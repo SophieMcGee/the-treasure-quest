@@ -1,4 +1,7 @@
 //Game Questions
+/**
+ * Questions data structured by difficulty level, each containing a set of questions with options and the correct answer index.
+ */
 const questions = {
     easy: [
         {
@@ -512,7 +515,10 @@ let incorrectCount = 0;
 let soundEnabled = false;
 let currentDifficulty = 'easy';
 
-//Function to control sound, effects are enabled by default
+/**
+ * Toggles the sound effects on or off.
+ * Effects are enabled by default.
+ */
 function toggleSound() {
     soundEnabled = !soundEnabled;
     const soundOnIcon = document.getElementById('sound-on');
@@ -524,7 +530,10 @@ function toggleSound() {
     toggleSoundSpan.setAttribute('aria-label', soundEnabled ? 'Turn sound off' : 'Turn sound on');
 
 }
-//Sets the duration of game sounds
+
+/**
+ * Plays a sound effect based on its ID and optional duration.
+ */
 function playSound(soundId, duration = 0) {
     if (!soundEnabled) return;
     const sound = document.getElementById(soundId);
@@ -540,7 +549,9 @@ function playSound(soundId, duration = 0) {
     }
 }
 
-//Controls progress circles
+/**
+ * Initializes the progress circles on the quiz interface.
+ */
 function initializeProgressCircles() {
     const progressGrid = document.getElementById('progress-grid');
     progressGrid.innerHTML = '';
@@ -552,7 +563,11 @@ function initializeProgressCircles() {
     }
 }
 
-// Updates the progress circle based on the answer outcome
+/**
+ * Updates the display of a progress circle to indicate whether the answer was correct or incorrect.
+ * questionIndex - The index of the current question.
+ * isCorrect - Whether the answer was correct.
+ */
 function updateProgressCircle(questionIndex, isCorrect) {
     const progressCircleId = 'progress-' + (currentQuestionIndex + 1);
     const progressCircle = document.getElementById(progressCircleId);
@@ -566,7 +581,9 @@ function updateProgressCircle(questionIndex, isCorrect) {
 }
 
 
-//Function to start the game
+/**
+ * Sets up event listeners once the DOM is fully loaded.
+ */
 document.addEventListener('DOMContentLoaded', function () {
     const toggleSoundSpan = document.getElementById('toggle-sound');
     document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
@@ -608,7 +625,10 @@ document.getElementById('hardMode').addEventListener('click', function () {
     initializeProgressCircles();
 });
 
-//Selects 10 random questions from the chosen difficulty level before calling the first question
+/**
+ * Initializes the quiz by selecting a set of questions and displaying the quiz interface.
+ * difficulty - The difficulty level of the quiz (easy or hard).
+ */
 function startGame(difficulty) {
     currentDifficulty = difficulty;
     selectedQuestions = getRandomQuestions(questions[difficulty], 10);
@@ -616,7 +636,9 @@ function startGame(difficulty) {
     score = 0;
     incorrectCount = 0;
 
-    //Ensure the game selection is visible
+    /**
+     * Resets the game settings and prepares for a new game session.
+     */
     document.getElementById('header').classList.add('game-active');
     document.getElementById('quiz-container').style.display = 'block';
     document.getElementById('game-selection').style.display = 'none';
@@ -655,20 +677,28 @@ function resetGame() {
     //document.getElementById('restartButton').style.display = 'none';
 }
 
-//Add scroll effect to move players to top of quiz container when the difficulty is selected and game begins
+/**
+ * Smoothly scrolls to the quiz container when the difficulty is selected and game begins.
+ */
 function scrollToQuizContainer() {
     const quizContainer = document.getElementById('quiz-container');
     quizContainer.scrollIntoView({ behavior: 'smooth' });
 }
 
-//Pull random questions from the source questions array
-
+/**
+ * Randomly selects a specified number of 10 questions from the source array.
+ * sourceArray - Array of available questions.
+ * numQuestions - Number of questions to select.
+ * returns an array of randomly selected questions.
+ */
 function getRandomQuestions(sourceArray, numQuestions) {
     const shuffled = [...sourceArray].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, numQuestions);
 }
 
-//Display the current question and position answers
+/**
+ * Displays the current question and its answer options.
+ */
 function displayCurrentQuestion() {
     const questionInfo = selectedQuestions[currentQuestionIndex];
 
@@ -695,7 +725,11 @@ function displayCurrentQuestion() {
     });
 }
 
-//Code for a countdown timer of 10 seconds for each question
+/**
+ * Starts a countdown timer for answering the question.
+ * duration - Duration of the timer in seconds.
+ * display - DOM element to display the timer.
+ */
 let countdown;
 
 function startTimer(duration, display) {
@@ -717,6 +751,9 @@ function startTimer(duration, display) {
     }, 1000);
 }
 
+/**
+ * Handles the scenario when the timer runs out before an answer is selected.
+ */
 function handleTimeout() {
     incorrectCount++;
     document.getElementById('incorrect').textContent = incorrectCount;
@@ -759,7 +796,13 @@ function handleTimeout() {
     }, 3000);
 }
 
-//Triggered when an option is clicked, checks to see if answer is correct and updates progress circles , ends quiz with final score
+/**
+ * Evaluates the selected answer and updates the game state accordingly.
+ * Updates progress circles with relevent image
+ * Plays appropriate sound
+ * Displays the modal with the answer feedback
+ * selectedIndex - Index of the selected answer button.
+ */
 function checkAnswer(selectedIndex) {
     clearInterval(countdown);
     const isCorrect = selectedIndex === selectedQuestions[currentQuestionIndex].correctAnswerPosition;
@@ -807,7 +850,9 @@ function displayModalFeedback(selectedIndex, isCorrect) {
         };
     }
 }
-
+/**
+ * Proceeds to display the next question or ends the quiz if all questions have been answered.
+ */
 
 function proceedToNextQuestion() {
     currentQuestionIndex++;
@@ -820,6 +865,10 @@ function proceedToNextQuestion() {
     // Reset to new questions
     resetAnswerButtons();
 }
+
+/**
+ * Resets the state of the answer buttons for the next question.
+ */
 function resetAnswerButtons() {
     // Enable all buttons and remove colour classes for the next question
     const buttons = document.querySelectorAll('#answers button');
@@ -828,7 +877,12 @@ function resetAnswerButtons() {
         button.classList.remove('button-correct', 'button-incorrect');
     });
 }
-//Local storage of highscores by username
+
+/**
+ * Saves the player's score under their username through local storage.
+ * username - The player's username.
+ * score - The player's score to save.
+ */
 function saveScore(username, score) {
     const scores = JSON.parse(localStorage.getItem('scores')) || {};
     scores[username] = score;
@@ -836,7 +890,10 @@ function saveScore(username, score) {
     displayScores();
     alert('Score saved successfully!');
 }
-
+/**
+ * Handles the submission of the score form, checking for a valid username.
+ * event - The event object from the form submission.
+ */
 document.getElementById('saveScoreForm').addEventListener('submit', function (event) {
     event.preventDefault();
     const username = document.getElementById('username').value.trim();
@@ -848,13 +905,16 @@ document.getElementById('saveScoreForm').addEventListener('submit', function (ev
     saveScore(username, score);
 });
 
+/**
+ * Displays all saved scores from local storage in descending order.
+ */
 function displayScores() {
     const scores = JSON.parse(localStorage.getItem('scores')) || {};
     const scoresList = document.getElementById('highScoresList');
     scoresList.innerHTML = '';
     //Sort scores in descending order by value
     const sortedScores = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
-
+    // Append each score to the high scores list as a list item
     sortedScores.forEach(user => {
         const scoreItem = document.createElement('li');
         scoreItem.textContent = `${user}: ${scores[user]}`;
@@ -862,7 +922,9 @@ function displayScores() {
     });
 }
 
-//Display the quiz score with option to restart the quiz
+/**
+ * Ends the quiz, displays the final score, and provides options to restart or visit the homepage.
+ */
 function endQuiz() {
     //Hide the quiz container
     const quizContainer = document.getElementById('quiz-container');
@@ -872,9 +934,11 @@ function endQuiz() {
     const gameEndContainer = document.getElementById('game-end-container');
     gameEndContainer.style.display = 'block';
 
+    // Display the final score message
     let resultsMessage = document.getElementById('result-message');
     resultsMessage.innerHTML = `Well done, your score is: ${score}/${selectedQuestions.length}`;
 
+    // Display a congratulatory video if the player got all questions correct
     const videoContainer = document.getElementById('result-video');
     //Code for checking if 10 correct
     if (score === selectedQuestions.length) {
@@ -885,12 +949,14 @@ function endQuiz() {
         videoContainer.style.display = 'none';
     }
 
-
+    // Show the restart and visit homepage buttons
     document.getElementById('restartQuizAfterGame').style.display = 'block';
     document.getElementById('visitHomepage').style.display = 'block';
 
+    // Display updated high scores
     displayScores();
 
+    // Add event listeners for the restart and homepage navigation buttons
     document.getElementById('restartQuizAfterGame').addEventListener('click', resetGame);
     document.getElementById('visitHomepage').addEventListener('click', function () {
         window.location.href = 'index.html';

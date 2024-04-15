@@ -71,7 +71,7 @@ header {
 
 /*Game play screen*/
 .game-container,
-#game-selection, .error-container {
+#game-selection, .error-container, .game-end-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -369,24 +369,6 @@ button:focus {
 }
 
 /*Styling for screen at the end of the game*/
-
-.game-end-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 80%;
-    max-width: 1200px;
-    min-height: auto;
-    border-radius: 15px;
-    padding: 20px;
-    overflow-x: hidden;
-    z-index: 2;
-    position: relative;
-    margin: 1rem auto; 
-    background: rgba(255, 255, 255, 0.5);
-}
 
 .game-end-container label,
 .game-end-container input,
