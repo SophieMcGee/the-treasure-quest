@@ -14,10 +14,12 @@ The live site can be viewed here - <a href="https://sophiemcgee.github.io/the-tr
     * [**Target Audience**](<#target-audience>)
     * [**User Stories**](<#user-stories>)
     * [**Market Research**](<#market-research>)
-        * [Competitor Analysis](<#competitor-analysis>)
-        * [Pricing Requirements](<#pricing-requirements>)
-        * [Client Testimonials](<#client-testimonials>)
-        * [Streamlined Contact Process](<#streamlined-contact-process>)
+        * [Industry Analysis](<#industry-analysis>)
+        * [Educational Trends and Gamification](<#educational-trends-and-gamification>)
+        * [User Engagement Strategies](<#user-engagement-strategies>)
+        * [Content Relevance and Diversity](<#content-relevance-and-diversity>)
+        * [Safety and Accessibility](<#safety-and-accessibility>)
+        * [Community and Social Interaction](<#community-and-social-interaction>)
 * [**Design**](<#design>)
     * [**Planning and Development**](<#planning-and-development>)
         * [Strategy](<#strategy>)
@@ -32,8 +34,8 @@ The live site can be viewed here - <a href="https://sophiemcgee.github.io/the-tr
 * [**Features**](<#features>)
     * [**Generic Game Features**](<#generic-game-features>)
         * [Responsive Design](<#responsive-design>)
-	* [Visual Feedback and Interactivity](<#visual-feedback-and-interactivity>)
-	* [Accessibility Considerations](<#accessibility-considerations>)
+	    * [Visual Feedback and Interactivity](<#visual-feedback-and-interactivity>)
+	    * [Accessibility Considerations](<#accessibility-considerations>)
         * [Clear Navigation](<#clear-navigation>)
         * [Hero Section](<#hero-section>)
         * [Call-to-Action Buttons](<#call-to-action-buttons>)
@@ -367,3 +369,18 @@ The game's interface is dotted with custom icons and buttons, each contributing 
 
 4. Fonts and Typography
 Typography plays a crucial role in the game's visual feedback system. We use different font sizes, weights, and styles to distinguish between types of text and to denote the importance of various elements. Important messages and game instructions are prominently displayed, ensuring they catch the player’s eye.
+
+### Accessibility Considerations
+During the development features were implemented to ensure the game is accessible, providing an inclusive experience for all users. This commitment to accessibility is included throughout the code, examples include the following implementations: 
+
+1. The code utilises semantic HTML5 elements which inherently support screen readers and other assistive technologies. This semantic structuring enhances the understanding of the game's content and context for users with visual impairments.
+
+2. ARIA (Accessible Rich Internet Applications) labels and roles are extensively used within our code to provide screen reader users with a clear understanding of each element's purpose. For example, buttons for selecting quiz difficulty levels have aria-label attributes that describe their function, aiding users who cannot visually distinguish these controls.
+
+3. All images within the game, including decorative icons and educational graphics, are equipped with descriptive alt attributes. These descriptions facilitate an understanding of the images' context and purpose for users who cannot see them.
+
+4. When players enter their usernames to save their scores, the code implements error handling that provides clear and immediate feedback. If a username is not entered, an error message is displayed, and the input field is highlighted. This immediate feedback is essential for users who might not be able to perceive the absence of a username without visual cues.
+
+5. For external links, such as those leading to social media pages or additional resources, the code includes mechanisms that inform users they are navigating away from the game. This feature is particularly useful for those using screen readers, as it sets expectations for the resulting action correctly.
+
+6. While the game is colourful and visually vibrant, the design is mindful to ensure that text and interactive elements have sufficient contrast against their backgrounds. This consideration facilitates readability for users with colour vision deficiencies.
