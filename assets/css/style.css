@@ -390,6 +390,17 @@ button:focus {
     background-color: #7ED957;
 }
 
+#leaderboard {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
 /*Footer Styling*/
 footer {
     width: 100%;
