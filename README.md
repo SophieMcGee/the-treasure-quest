@@ -550,3 +550,25 @@ Inital Test:
 Amendments:
 
 The tool found no issues within the page.
+
+[Back to top](<#contents>)
+
+### CSS Validation
+
+Inital Test:
+
+![Stylesheet CSS Test](assets/readme-images/css-validation.webp)
+
+Amendments:
+
+1. The first issue related to a comment starting without the opening /*, which was causing the validator to interpret it as part of the CSS syntax, hence the parse error, which was resolved by adding the missing code.
+
+2. The second issue related to a padding element which was using an 'auto' value, this isn't accepted in CSS. To correct the error the auto value was removed and replaced with '0', this sets the padding to 10px top and bottom and zero to the left and right to maintain consistency.
+
+3. The final error related to a problem with the unit specification of the 'logo-container img', which was missing a unit for the 1 value within 'margin: 1 2rem;' This was resolved by adding the missing 'em' measurement.
+
+Final Test:
+
+![Stylesheet CSS Final Test](assets/readme-images/css-validation-final.webp)
+
+[Back to top](<#contents>)
