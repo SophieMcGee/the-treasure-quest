@@ -71,7 +71,7 @@ header {
 
 /*Game play screen*/
 .game-container,
-#game-selection, .error-container {
+#game-selection, .error-container, .game-end-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

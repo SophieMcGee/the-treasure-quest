@@ -825,9 +825,9 @@ function endQuiz() {
     gameEndContainer.style.display = 'block';
 
     let resultsMessage = document.getElementById('result-message');
-    resultMessage.innerHTML = `Well done, your score is: ${score}/${selectedQuestions.length}`;
+    resultsMessage.innerHTML = `Well done, your score is: ${score}/${selectedQuestions.length}`;
     
-    const resultVideo = document.getElementById('result-video');
+    const videoContainer = document.getElementById('result-video');
     //Code for checking if 10 correct
     if (score === selectedQuestions.length) {
         videoContainer.style.display = 'block';
@@ -836,6 +836,10 @@ function endQuiz() {
         //Do not display video for less than 10 correct
         videoContainer.style.display = 'none';
     }
+
+    document.getElementById('restartQuizAfterGame').style.display = 'block';
+    document.getElementById('visitHomepage').style.display = 'block';
+
     document.getElementById('restartQuizAfterGame').addEventListener('click', resetGame);
     document.getElementById('visitHomepage').addEventListener('click', function() {
         window.location.href = 'index.html';
@@ -844,7 +848,7 @@ function endQuiz() {
 }
 
 
-function restartGame() {
+function visitHomepage() {
     location.reload()
 }
 
