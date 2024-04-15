@@ -608,3 +608,17 @@ To test the responsiveness of the game interface, follow these steps:
 
 [Back to top](<#contents>)
 
+## Accessibility Testing
+
+Accessibility testing was conducted throughout the development of the game to ensure an inclusive experience for all users, particularly those utilising assistive technologies. The following criteria were emphasised:
+
+* Color Contrast: Ensured that the colour contrast between text and background meets the WCAG 2.1 guidelines for a minimum ratio, enhancing readability for those with visual impairments.
+* Heading Structure: Used hierarchical heading levels to convey the importance of content and provide a logical content structure, facilitating easier navigation for screen reader users.
+* Logical Segmentation: All game content is structured within sections and appropriately labeled, making the game interface navigable and understandable for those using assistive devices.
+* Alt Text for Images: Every image, including icons and buttons, is equipped with descriptive alternative text. This is crucial for players who rely on screen readers to understand visual content.
+* Accessible Controls: Interactive elements such as the sound toggle and game controls are labeled with aria attributes, ensuring they are recognisable and operable via screen readers and other assistive tools.
+* Language Declaration: The HTML lang attribute is set to "en" to specify that the content is in English, assisting text-to-speech tools in providing correct pronunciation.
+
+These measures ensure that the game not only provides fun and engaging content but is also accessible to players with diverse needs, reinforcing the inclusivity of the digital environment.
+
+[Back to top](<#contents>)
