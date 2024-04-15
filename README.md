@@ -622,3 +622,39 @@ Accessibility testing was conducted throughout the development of the game to en
 These measures ensure that the game not only provides fun and engaging content but is also accessible to players with diverse needs, reinforcing the inclusivity of the digital environment.
 
 [Back to top](<#contents>)
+
+## Performance Testing
+
+To evaluate the performance of "The Treasure Quest" game, I used <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a> to assess various aspects including performance, accessibility, best practices, SEO, and the characteristics of a progressive web app. The results, provided for both mobile and desktop versions, highlight the game's efficiency and optimisation across different platforms.
+
+The Lighthouse tool was also used during the development phase to monitor ongoing performance. However, due to fluctuations in internet connectivity affecting the reliability of the metrics, the final performance assessment was primarily conducted using PageSpeed Insights. This approach ensured more consistent and accurate results, confirming that the game performs optimally under various conditions.
+
+### Main Game Page
+
+<b>*Mobile View</b>
+
+![Performance Testing Mobile](assets/readme-images/404-performance-mobile.webp)
+
+<b>*Desktop View:</b>
+
+![Performance Testing Desktop](assets/readme-images/404-performance-desktop.webp)
+
+
+### 404 Page
+
+<b>*Mobile View:</b>
+
+![404 Page Performance Testing Mobile](assets/readme-images/pagespeed-about-mobile.png)
+
+<b>*Desktop View:</b>
+
+![404 Page Performance Testing Desktop](assets/readme-images/performance-desktop.webp)
+
+
+I am pleased with the high scores, however, several opportunities for optimisation were identified to further enhance the user experience in the future:
+
+* Avoid Large Layout Shifts: The testing identified some instances of layout shifts. These shifts can detract from the user experience by causing unexpected movement of content, which can be disorienting for players. To improve this, I will investigate the elements causing these shifts and look to stabilise the layout during initial page load and during game play in future developments.
+* Image Sizes: The current sizes of the images used in the game contribute to slower load times. Although all images were compressed and converted to webp files, further compressing these images could reduce their file sizes without compromising visual quality, thereby speeding up page loading and improving the LCP score.
+* Largest Contentful Paint (LCP): The game logo was identified as the element contributing most to the LCP. This indicates that the logo takes the longest to become fully visible to the user. To optimise the LCP, in the future I will reduce the image file size of the logo without compromising its visual integrity.
+
+[Back to top](<#contents>)
