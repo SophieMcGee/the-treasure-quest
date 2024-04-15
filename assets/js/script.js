@@ -859,6 +859,11 @@ function displayScores() {
     document.getElementById('leaderboard').style.display = 'block';
 }
 
+function toggleLeaderboard() {
+    const leaderboard = document.getElementById('leaderboard');
+    leaderboard.style.display = (leaderboard.style.display == 'none' ? 'block' : 'none');
+}
+
 //Display the quiz score with option to restart the quiz
 function endQuiz() {
     //Hide the quiz container
