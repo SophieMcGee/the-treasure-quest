@@ -868,7 +868,6 @@ function handleSaveScoreSubmit(event) {
     }
     document.getElementById('usernameError').style.display = 'none';
     saveScore(username, score);
-    alert('Score saved successfully!');
 }
 
 //Display the quiz score with option to restart the quiz
