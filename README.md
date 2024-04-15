@@ -572,3 +572,17 @@ Final Test:
 ![Stylesheet CSS Final Test](assets/readme-images/css-validation-final.webp)
 
 [Back to top](<#contents>)
+
+
+### Javascript Validation
+
+Inital Test:
+
+![Javascript Test](assets/readme-images/javascript-test.webp)
+
+Amendments:
+
+The tool found no issues within the Javascript code.
+
+[Back to top](<#contents>)
+
