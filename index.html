@@ -119,10 +119,13 @@
                         Apologies, the browser you are using does not support the video.
                     </video>
                 </div>
-                <div id="scoreboard">
-                    <h3>High Scores</h3>
-                    <ul id="highScoresList"></ul>
-                </div>
+                <form id="saveScoreForm">
+                    <label for="username">Enter your username to save your score:</label>
+                    <input type="text" id="username" required>
+                    <span id="usernameError" style="color: #b21124 ; display: none;">Please enter a username to continue.</span>
+                    <br>
+                    <button type="submit">Save Score</button>
+                </form>
                 <button id="restartQuizAfterGame">Restart Quiz</button>
                 <button id="visitHomepage">Visit the Homepage</button>
             </div>
