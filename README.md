@@ -472,3 +472,37 @@ Each game session is designed to be a new experience. The code shuffles the ques
 
 [Back to top](<#contents>)
 
+# Deployment
+
+The game was developed using GitPod and is hosted on GitHub, facilitating both the development and distribution phases of the project., it is deployed to the GitHub repository 'the-treasure-quest'.
+
+During the game development all changes were pushed to Github with regular detailed commit messages to ensure it was possible to easily track development progress.
+
+## Opening the repository
+
+The game can be accessed and deployed via GitHub by following these steps:
+
+1. Open the Github repository via this <a href="https://github.com/SophieMcGee/the-treasure-quest" target="_blank" rel="noopener">link.</a>
+2. Navigate to the 'Settings' tab.
+3. Within the Settings menu, select the 'Pages' section on the left side.
+4. Upon activation, GitHub Pages will provide a URL where the live game is hosted. Note that deployment may take a few minutes.
+
+This is the live link: https://sophiemcgee.github.io/the-treasure-quest/index.html
+
+## Forking the repository
+
+To create a personal copy of the repository, follow these steps:
+
+1. Open the Github repository and find the 'Code' tab.
+2. Click the 'Fork' button at the top right to fork the repository to your account.
+
+## Cloning the repository
+
+To clone the repository and work locally:
+
+1. Open the Github repository and navigate to the green 'Code' button to view options.
+2. Ensure HTTPS is selected and copy the URL provided.
+3. Open your terminal in Gitpod or any other IDE with Git support.
+4. Enter git clone [paste the URL you copied earlier]. This will create a local clone of the repository.
+
+[Back to top](<#contents>)
