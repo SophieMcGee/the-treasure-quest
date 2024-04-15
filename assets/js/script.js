@@ -581,7 +581,7 @@ document.addEventListener('DOMContentLoaded', function () {
         restartQuizAfterGame.addEventListener('click', resetGame);
     }
 
-    
+
     toggleSoundSpan.setAttribute('aria-label', soundEnabled ? 'Turn sound off' : 'Turn sound on');
     toggleSoundSpan.addEventListener('click', toggleSound);
     document.getElementById('easyMode').addEventListener('click', function () {
@@ -641,7 +641,7 @@ function resetGame() {
     if (gameEndContainer) {
         gameEndContainer.style.display = 'none'; // Hide the game end container
     }
-    
+
     displayCurrentQuestion();
     initializeProgressCircles();
     document.getElementById('quiz-container').style.display = 'block';
@@ -670,7 +670,7 @@ function displayCurrentQuestion() {
     const questionInfo = selectedQuestions[currentQuestionIndex];
 
     const questionNumberDisplay = document.getElementById('question-number');
-    
+
     if (questionNumberDisplay) {
         questionNumberDisplay.textContent = `Question ${currentQuestionIndex + 1} of ${selectedQuestions.length}`;
     } else {
@@ -833,7 +833,7 @@ function saveScore(username, score) {
     alert('Score saved successfully!');
 }
 
-document.getElementById('saveScoreForm').addEventListener('submit', function(event) {
+document.getElementById('saveScoreForm').addEventListener('submit', function (event) {
     event.preventDefault();
     const username = document.getElementById('username').value.trim();
     if (username === '') {
@@ -841,13 +841,16 @@ document.getElementById('saveScoreForm').addEventListener('submit', function(eve
         return;
     }
     document.getElementById('usernameError').style.display = 'none';
-    saveScore(username, score); 
+    saveScore(username, score);
 });
 
 function displayScores() {
     const scores = JSON.parse(localStorage.getItem('scores')) || {};
     const scoresList = document.getElementById('highScoresList');
     scoresList.innerHTML = '';
+    //Sort scores in descending order by value
+    const sortedScores = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+
     Object.keys(scores).forEach(user => {
         const scoreItem = document.createElement('li');
         scoreItem.textContent = `${user}: ${scores[user]}`;
@@ -867,7 +870,7 @@ function endQuiz() {
 
     let resultsMessage = document.getElementById('result-message');
     resultsMessage.innerHTML = `Well done, your score is: ${score}/${selectedQuestions.length}`;
-    
+
     const videoContainer = document.getElementById('result-video');
     //Code for checking if 10 correct
     if (score === selectedQuestions.length) {
@@ -882,7 +885,7 @@ function endQuiz() {
     document.getElementById('visitHomepage').style.display = 'block';
 
     const saveScoreForm = document.getElementById('saveScoreForm');
-    saveScoreForm.addEventListener('submit', function(event) {
+    saveScoreForm.addEventListener('submit', function (event) {
         event.preventDefault();
         const username = document.getElementById('username').value.trim();
         if (username === '') {
@@ -890,14 +893,14 @@ function endQuiz() {
             return;
         }
         document.getElementById('usernameError').style.display = 'none';
-        localStorage.setItem(username, score);  
+        localStorage.setItem(username, score);
         alert('Score saved successfully!');
     });
     document.getElementById('restartQuizAfterGame').addEventListener('click', resetGame);
-    document.getElementById('visitHomepage').addEventListener('click', function() {
+    document.getElementById('visitHomepage').addEventListener('click', function () {
         window.location.href = 'index.html';
     });
-    
+
 }
 
 
