@@ -630,6 +630,18 @@ function resetGame() {
     currentQuestionIndex = 0;
     score = 0;
     incorrectCount = 0;
+
+    // Clear the score message and hide relevant elements
+    const resultMessage = document.getElementById('result-message');
+    if (resultMessage) {
+        resultMessage.innerHTML = ''; // Clear the result message if it exists
+    }
+
+    const gameEndContainer = document.getElementById('game-end-container');
+    if (gameEndContainer) {
+        gameEndContainer.style.display = 'none'; // Hide the game end container
+    }
+    
     displayCurrentQuestion();
     initializeProgressCircles();
     document.getElementById('quiz-container').style.display = 'block';
