@@ -644,17 +644,17 @@ function getRandomQuestions(sourceArray, numQuestions) {
 //Display the current question and position answers
 function displayCurrentQuestion() {
     console.log("current qustion func called")
-    console.log("Current Question Index:", currentQuestionIndex); 
+    console.log("Current Question Index:", currentQuestionIndex);
     const quizContainer = document.getElementById('quiz-container');
     const questionInfo = selectedQuestions[currentQuestionIndex];
-    
+
     const questionNumberDisplay = document.getElementById('question-number');
-    console.log("this is cur question number display = ",questionNumberDisplay)
+    console.log("this is cur question number display = ", questionNumberDisplay)
     if (questionNumberDisplay) {
         questionNumberDisplay.textContent = `Question ${currentQuestionIndex + 1} of ${selectedQuestions.length}`;
-    }  else {
+    } else {
     }
-    console.log("question element is == ",document.getElementById('question'))
+    console.log("question element is == ", document.getElementById('question'))
     document.getElementById('question').textContent = questionInfo.question;
     const answersContainer = document.getElementById('answers');
     answersContainer.innerHTML = '';
@@ -808,11 +808,18 @@ function resetAnswerButtons() {
 
 //Display the quiz score with option to restart the quiz
 function endQuiz() {
+    //Hide the quiz container
     const quizContainer = document.getElementById('quiz-container');
-    const videoContainer = document.getElementById('result-video');
-    let resultsHtml = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
-    <button id="restartButton">Visit the homepage!</button>`;
+    quizContainer.style.display = 'none';
+
+    //Show the end of game container
+    const gameEndContainer = document.getElementById('game-end-container');
+    gameEndContainer.style.display = 'block';
+
+    let resultsMessage = document.getElementById('result-message');
+    resultMessage.innerHTML = `Well done, your score is: ${score}/${selectedQuestions.length}`;
     
+    const resultVideo = document.getElementById('result-video');
     //Code for checking if 10 correct
     if (score === selectedQuestions.length) {
         videoContainer.style.display = 'block';
@@ -821,11 +828,11 @@ function endQuiz() {
         //Do not display video for less than 10 correct
         videoContainer.style.display = 'none';
     }
-    quizContainer.innerHTML = resultsHtml;
-    document.getElementById('restartButton').addEventListener('click', restartGame);
-    document.getElementById('restartQuiz').style.display = 'block';
-
-    setupRestartButton();
+    document.getElementById('restartQuizAfterGame').addEventListener('click', resetGame);
+    document.getElementById('visitHomepage').addEventListener('click', function() {
+        window.location.href = 'index.html';
+    });
+    
 }
 
 function setupRestartButton() {
