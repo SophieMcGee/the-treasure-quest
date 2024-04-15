@@ -55,8 +55,10 @@
                         and uncover the pirate's treasure!</li>
                     <li><strong>Beware of Pirates:</strong> Oh no, got a question wrong? Watch out! The progress bar
                         will raise a pirate flag as a warning.</li>
-                    <li><strong>Want to start again?</strong> You can shuffle the questions and start again by clicking the 'Restart Quiz' button.</li>
-                    <li><strong>Sound Adventures:</strong> If you would like the game to display sounds, click the button
+                    <li><strong>Want to start again?</strong> You can shuffle the questions and start again by clicking
+                        the 'Restart Quiz' button.</li>
+                    <li><strong>Sound Adventures:</strong> If you would like the game to display sounds, click the
+                        button
                         in the top right corner.</li>
                     <li><strong>Race Against Time:</strong> Be quick! You only have 10 seconds to choose an answer
                         before the pirates catch up to you and the question is marked incorrect!</li>
@@ -109,11 +111,16 @@
                     </div>
                 </div>
             </div>
-            <div id="result-video" style="display: none;" alt="Video of under the sea with a treasure chest">
-                <video width="320" height="240" controls>
-                    <source src="assets/media/treasure-video.mp4" type="video/mp4">
-                    Apologies, the browser you are using does not support the video.
-                </video>
+            <div id="game-end-container" style="display:none;">
+                <div id="result-message"></div>
+                <div id="result-video" style="display: none;" alt="Video of under the sea with a treasure chest">
+                    <video width="320" height="240" controls>
+                        <source src="assets/media/treasure-video.mp4" type="video/mp4">
+                        Apologies, the browser you are using does not support the video.
+                    </video>
+                </div>
+                <button id="restartQuizAfterGame">Restart Quiz</button>
+                <button id="restartButton">Visit the Homepage</button>
             </div>
         </div>
     </main>
