@@ -572,6 +572,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('sound-on').style.display = soundEnabled ? 'inline' : 'none';
     document.getElementById('sound-off').style.display = soundEnabled ? 'none' : 'inline';
     document.getElementById('restartQuiz').addEventListener('click', resetGame);
+    document.getElementById('restartQuiz').style.display = 'none';
     toggleSoundSpan.setAttribute('aria-label', soundEnabled ? 'Turn sound off' : 'Turn sound on');
     toggleSoundSpan.addEventListener('click', toggleSound);
     document.getElementById('easyMode').addEventListener('click', function () {
@@ -610,24 +611,21 @@ function startGame(difficulty) {
     document.getElementById('header').classList.add('game-active');
     document.getElementById('quiz-container').style.display = 'block';
     document.getElementById('game-selection').style.display = 'none';
+    document.getElementById('restartQuiz').style.display = 'block';
     displayCurrentQuestion();
     scrollToQuizContainer();
 }
 //Function to reset the game back to the start at the same difficulty level
 function resetGame() {
-        
-    console.log('reset game called' )
     selectedQuestions = getRandomQuestions(questions[currentDifficulty], 10);
     currentQuestionIndex = 0;
-    console.log("curr quest index" ,currentQuestionIndex)
     score = 0;
     incorrectCount = 0;
-
     displayCurrentQuestion();
     initializeProgressCircles();
     document.getElementById('quiz-container').style.display = 'block';
     document.getElementById('result-video').style.display = 'none';
-    document.getElementById('restartQuiz').style.display = 'none';
+    document.getElementById('restartQuiz').style.display = 'block';
 }
 
 //Add scroll effect to move players to top of quiz container when the difficulty is selected and game begins
@@ -814,6 +812,7 @@ function endQuiz() {
     const videoContainer = document.getElementById('result-video');
     let resultsHtml = `<div>Well done, your score is: ${score}/${selectedQuestions.length}</div>
     <button id="restartButton">Visit the homepage!</button>`;
+    
     //Code for checking if 10 correct
     if (score === selectedQuestions.length) {
         videoContainer.style.display = 'block';
@@ -824,7 +823,7 @@ function endQuiz() {
     }
     quizContainer.innerHTML = resultsHtml;
     document.getElementById('restartButton').addEventListener('click', restartGame);
-    document.getElementById('restartQuiz').style.display = 'block';  
+    document.getElementById('restartQuiz').style.display = 'block';
     document.getElementById('restartQuiz').disabled = false; 
     document.getElementById('restartQuiz').addEventListener('click', resetGame);
 }
