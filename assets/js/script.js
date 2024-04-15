@@ -642,6 +642,10 @@ function resetGame() {
         gameEndContainer.style.display = 'none'; // Hide the game end container
     }
 
+    // Update score and incorrect displays to zero
+    document.getElementById('correct').textContent = score;
+    document.getElementById('incorrect').textContent = incorrectCount;
+
     displayCurrentQuestion();
     initializeProgressCircles();
     document.getElementById('quiz-container').style.display = 'block';
