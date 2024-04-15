@@ -813,7 +813,7 @@ The following sources were used as a guide for the code within this project:
     * Throughout the project, the course content was referred to for basic JavaScript game logic and structures, CSS styling and HTML structure. However, all code was customised to fit the unique requirements and functionalities of the quiz game.
     
 * Implementation of buttons and the sound toggle
-    * https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener and https://www.w3schools.com/js/js_events.asp - These page were used to refine the addEventListeners throughout the project.
+    * https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener and https://www.w3schools.com/js/js_events.asp - These pages were used to refine the addEventListeners throughout the project.
 
 * Flexbox styling 
     * https://css-tricks.com/snippets/css/a-guide-to-flexbox/ This was used to help style and arrange elements dynamically across difference screen sizes.
@@ -842,10 +842,10 @@ The following sources were used as a guide for the code within this project:
 * Website Favicon
     * Favicon.io wasa used to create the website favicon.
 
-*Freesounds
+* Freesounds
     * All audio files were downloaded from this website and are not copyrighted.
 
-*Twinkl
+* Twinkl
     * This resource provides content for teachers to use within lessons that is aligned with the Geography school curriculum for the target users of this quiz. All questions were adapted from this website, with the following links: 
 * https://www.twinkl.ie/resource/t2-g-4031-lks2-the-big-end-of-year-around-the-world-quiz-powerpoint 
 * https://www.twinkl.ie/resource/t2-t-16624-european-neighbours-day-europe-quiz-pack 
