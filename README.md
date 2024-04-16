@@ -701,24 +701,30 @@ Manual testing:
 |:----------|:------------|:------------:|
 |Audio toggle | Sound effects can be enabled or disabled using the sound icon in the game |Pass|
 |Progress indicators | Visual feedback on user progress via circular progress indicators for each question, with the correct image showing based on answer |Pass|
-|Dynamic question display | Questions and multiple choice answers load correctly based on the selected difficulty |Pass|
+|Dynamic question display | Questions and multiple choice answers load correctly based on the selected difficulty and can be clicked to choose an answer |Pass|
 |Correct/incorrect feedback | Visual and auditory signals indicate whether the answer was correct or incorrect |Pass|
 |Difficulty selection | Users can select between 'easy' and 'hard' modes which changes the set of questions |Pass|
-|Timeout and time up handling | When the timer runs out, it automatically moves to the next question, showing a timeout message, updates the question as incorrect |Pass|
+|Timeout and time up handling | The timer changes colour and counts down from 10. When the timer runs out, it automatically moves to the next question, showing a timeout message, updates the question as incorrect |Pass|
 |Final score display | 	At the end of the quiz, the total score is displayed clearly |Pass|
 |Restart quiz options | Users can restart the quiz at any time or after completion, which resets the game to question 1 on the previously selected difficulty level, previous score tally is cleared |Pass|
 |Homepage Links | The user is able to click the logo at any time or click the visit the homepage button at the ened of the game to redirect back to the main game setup screen |Pass|
 |The username section of the score submit form is a required field | If the field is not filled out an error message appears and the form is not submitted |Pass|
-|Mobile responsiveness | The game adjusts to various screen sizes without layout issues or obscured content |Pass|
+|Mobile responsiveness | The game adjusts to various screen sizes without layout issues or obscured content, all elements adjust as outlined in CSS including media queries |Pass|
 |Keyboard navigability | All interactive elements are accessible via keyboard for improved accessibility |Pass|
-|The message section of the contact form is a required field| If the field is not filled out an error message appears and the form is not submitted |Pass|
+|The message section of the contact form is a required field | If the field is not filled out an error message appears and the form is not submitted |Pass|
 |ARIA labels for accessibility | All dynamic content has appropriate ARIA labels for screen readers |Pass|
-|Modal feedback for answers |When an answer is selected, a modal pops up providing right or wrong feedback with a button to go to the next question |Pass|
+|Modal feedback for answers | When an answer is selected, a modal pops up providing right or wrong feedback with a button to go to the next question |Pass|
 |High score functionality | Correct answer, wrong answer, and background sounds play correctly as per settings |Pass|
 |Navigation between game sections | Navigation from the start screen to game and back, as well as between different game phases, works seamlessly |Pass|
 |Loading and error handling | Game handles loading and errors in game, displaying relevant messages to users |Pass|
 |Fanfare sound on perfect score | Fanfare sound plays when the user achieves a perfect score |Pass|
 |Celebratory video on perfect score | A celebratory video plays when the user gets all questions correct |Pass|
+|Button Hover and Active States | Buttons should show visual changes (colour, shadow) when hovered, clicked, or focused |Pass|
+|Font Loading and Display | Custom Google Fonts ('Sniglet') should load and display correctly across all text elements. |Pass|
+|Text Scaling Across Devices | Text sizes should scale appropriately across devices, particularly for headings and button labels.|Pass|
+|Background Image Handling | Background should cover the entire area without tiling or distortion across all device sizes.|Pass|
+|Social Media Links| All links open correctly in a new tab |Pass|
+|Navigation and Scrolling | Navigation actions (like starting the game) should auto-scroll the user to relevant content areas smoothly. |Pass|
 
 [Back to top](<#contents>)
 
@@ -800,6 +806,8 @@ For those reviewing the code or the documentation, please consider these points 
     * Develop a multiplayer mode where players can compete against friends or random opponents. This could include live score tracking, timed rounds, and interactive challenges to enhance competitive play.
 * Educational Resources and Feedback
     * Expand the feedback system to provide detailed explanations for each answer, potentially linking to external educational resources for further learning. This would enhance the educational value of the game.
+* Social Media Pages
+    * Currenntly, the social media pages have not been developed, in the future these would be added and linked to the game icons.
 
 
 
