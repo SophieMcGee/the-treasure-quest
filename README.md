@@ -533,7 +533,7 @@ Amendments:
 
 1. The first warning about the potential misuse of aria-label indicated that the attribute was used on an element that may not support the attribute effectively for accessibility purposes. The sound toggle was included in a span element, however as interactive elements are more suited to have aria-labels I changed the span to a button element, which removed the issue. Upon making the change the toggle inherited the button css styling, which actually improved the overall design. The only tweak needed was to reduce the font-size for smaller screens to ensure it didnt cover the logo.
 
-2. The second warning about the potential misuse of aria-label on a non-interactive element like a <div> is again related to accessibility best practices. To solve the issue I added a role to each element to indicate game progress, by adding role="progressBar" to each question div assitive technologies understand that the element represents progression of a task and the associated aria-label is describing this task.
+2. The second warning about the potential misuse of aria-label on a non-interactive element like a div is again related to accessibility best practices. To solve the issue I added a role to each element to indicate game progress, by adding role="progressBar" to each question div assitive technologies understand that the element represents progression of a task and the associated aria-label is describing this task.
 
 Final Test:
 
