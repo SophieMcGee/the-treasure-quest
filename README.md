@@ -8,7 +8,7 @@ The live site can be viewed here - <a href="https://sophiemcgee.github.io/the-tr
 
 # Contents
 
-* [**Website Objectives**](<#website-objectives>)
+* [**Game Objectives**](<#game-objectives>)
 * [**User Experience UX**](<#user-experience-ux>)
     * [**Client Background and Goals**](<#client-background-and-goals>)
     * [**Target Audience**](<#target-audience>)
@@ -35,31 +35,17 @@ The live site can be viewed here - <a href="https://sophiemcgee.github.io/the-tr
     * [**Generic Game Features**](<#generic-game-features>)
         * [Responsive Design](<#responsive-design>)
 	    * [Visual Feedback and Interactivity](<#visual-feedback-and-interactivity>)
+        * [Custom Graphics and Illustrations](<#custom-graphics-and-illustrations>)
 	    * [Accessibility Considerations](<#accessibility-considerations>)
+        * [Difficulty Selecion](<#difficulty-selection>)
         * [Clear Navigation](<#clear-navigation>)
-        * [Hero Section](<#hero-section>)
-        * [Call-to-Action Buttons](<#call-to-action-buttons>)
-        * [Favicon](<#favicon>)
-        * [Footer](<#Footer>)
-        * [Testimonials](<#testimonials>)
-        * [404 Page](<#404-page>)
-        * [Contact Page](<#contact-page>)
-    * [**Homepage Features**](<#homepage-features>)
-        * [About Section](<#about-section>)
-        * [Services Section](<#services-section>)
-        * [Pricing Section](<#pricing-section>)
-    * [**About Page Features**](<#about-page-features>)
-        * [Main About Section](<#main-about-section>)
-        * [Reasons to Work With Me Section](<#reasons-to-work-with-me-section>)
-    * [**Service Page Features**](<#service-page-features>)
-        * [Introduction Section](<#introduction-section>)
-        * [Main Services Section](<#main-services-section>)
-        * [Process Section](<#process-section>)
-     * [**Future Features**](<#future-features>)
-        * [Portfolio Page](<#portfolio-page>)
-        * [Content Request Form](<#content-request-form>)
-        * [Client Dashboard and Integration](<#client-dashboard-and-integration>)
-        * [Blog Page](<#blog-page>)
+        * [Dynamic Favicon](<#dynamic-favicon>)
+        * [Immersive Audio Effects](<#immersive-audio-effects>)
+        * [Inclusive Footer](<#inclusive-footer>)
+        * [User Score Submission and High Scores Leaderboard](<#user-score-submission-and-high-scores-leaderboard>)
+        * [Error Messages](<#error-messages>)
+        * [Adaptive Question Pool](<#adaptive-question-pool>)
+        * [Dynamic Question Shuffle](<#dynamic-question-shuffle>)
 * [**Technologies Used**](<#technologies-used>)
 * [**Deployment**](<#deployment>)
     * [**Opening the repository**](<#opening-the-repository>)
@@ -68,13 +54,15 @@ The live site can be viewed here - <a href="https://sophiemcgee.github.io/the-tr
 * [**Testing**](<#testing>)
     * [**Validator Testing**](<#validator-testing>)
         * [HTML Validation](<#html-validation>)
-        * [CSS Validation](<#css-validation>)
+        * [CSS Validation](<#javascript-validation>)
+        * [Javascript Validation](<#css-validation>)
     * [**Responsivity Testing**](<#responsivity-testing>)
     * [**Accessibility Testing**](<#accessibility-testing>)
     * [**Performance Testing**](<#performance-testing>)
     * [**Testing of User Stories**](<#testing-of-user-stories>)
-    * [**Manual Testing of Features**](<#manual-testing-of-features>)
+    * [**Manual Testing of Game Features**](<#manual-testing-of-game-features>)
     * [**Bugs**](<#bugs>)
+    * [**Future Developments**](<#future-developments>)
 * [**Credits**](<#credits>)
 * [**Acknowledgements**](<#acknowledgements>)
 
@@ -95,9 +83,9 @@ The core objective of 'The Treasure Quest' quiz game is to engage users in a cha
 
 As the creator behind 'The Treasure Quest' quiz game, the project is personal to me, and is crafted with the intent of offering an engaging and educational experience for my children and their friends. The idea for developing 'The Treasure Quest' was inspired by observing my children's curiosity and their natural inclination towards interactive digital content. Recognising the potential of interactive learning to enhance education outside the classroom, I aimed to combine elements of play with educational content, hopefully making learning an enjoyable experience. The following are my key personal goals for the project:
 
-* Foster a Love for Learning: The game is designed to spark curiosity and encourage exploration amoung children aged between 7 and 11. Through a variety of questions ranging from easy to hard difficulty levels, it aims to challenge them in a fun way, promoting critical thinking and retention.
+* Foster a Love for Learning: The game is designed to spark curiosity and encourage exploration among children aged between 7 and 11. Through a variety of questions ranging from easy to hard difficulty levels, it aims to challenge them in a fun way, promoting critical thinking and retention.
 * Provide a Safe and Engaging Platform for Children: In a digital age where content quality can be variable, ensuring this game serves as a safe, positive, and enriching online space for children is paramount. The content is carefully curated to be age-appropriate and informative.
-* Encourage Social Interaction: By including features that allow for sharing scores and achievements on social media pages created for the quiz game, the quiz encourages healthy competition and interaction amoung peers, fostering social bonds through shared challenges and learning experiences.
+* Encourage Social Interaction: By including features that allow for sharing scores and achievements on social media pages created for the quiz game, the quiz encourages healthy competition and interaction among peers, fostering social bonds through shared challenges and learning experiences.
 * Accessibility and Inclusivity: Ensuring the game is accessible to children of various ages and learning stages is key. The game's design considers diverse needs, making it inclusive and enjoyable for a broad audience of young learners.
 * Track Progress and Celebrate Achievements: Incorporating mechanisms for tracking progress and providing immediate feedback aims to motivate children to improve and challenge themselves. Achieving a perfect score and 'finding the treasure' is positioned as a significant accomplishment, encouraging repeated play and continuous learning.
 
@@ -195,7 +183,7 @@ Key considerations were given to making the game safe and accessible for childre
 
 ### Community and Social Interaction
 
-Insights into the importance of community and social interaction within educational platforms led to plans for the inclusion of features that allow for sharing achievements and fostering a sense of community amoung players, such as score sharing.
+Insights into the importance of community and social interaction within educational platforms led to plans for the inclusion of features that allow for sharing achievements and fostering a sense of community among players, such as score sharing.
 
 #### Design Implications
 
@@ -515,7 +503,7 @@ Comprehensive testing of the website was conducted to ensure the functionality o
 
 ## Validator Testing
 
-The following website tools were used dto test the game and to check for errors within the code.
+The following website tools were used to test the game and to check for errors within the code.
 
 * <a href="https://validator.w3.org/" target="_blank" rel="noopener">W3C Markup Validation Service</a>
 * <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener">W3C CSS Validation Service</a>
@@ -527,7 +515,7 @@ The tests resulted in the following:
 
 Inital Test:
 
-![Inital HTML Test](assets/readme-images/html-validation-initial-errors.webp)
+![Initial HTML Test](assets/readme-images/html-validation-initial-errors.webp)
 
 Amendments:
 
@@ -541,7 +529,7 @@ Final Test:
 
 #### 404 Page
 
-Inital Test:
+Initial Test:
 
 ![404 Page HTML Test](assets/readme-images/404-test.webp)
 
@@ -553,7 +541,7 @@ The tool found no issues within the page.
 
 ### CSS Validation
 
-Inital Test:
+Initial Test:
 
 ![Stylesheet CSS Test](assets/readme-images/css-validation.webp)
 
@@ -703,7 +691,7 @@ Manual testing:
 |Timeout and time up handling | The timer changes colour and counts down from 10. When the timer runs out, it automatically moves to the next question, showing a timeout message, updates the question as incorrect |Pass|
 |Final score display | 	At the end of the quiz, the total score is displayed clearly |Pass|
 |Restart quiz options | Users can restart the quiz at any time or after completion, which resets the game to question 1 on the previously selected difficulty level, previous score tally is cleared |Pass|
-|Homepage Links | The user is able to click the logo at any time or click the visit the homepage button at the ened of the game to redirect back to the main game setup screen |Pass|
+|Homepage Links | The user is able to click the logo at any time or click the visit the homepage button at the end of the game to redirect back to the main game setup screen |Pass|
 |The username section of the score submit form is a required field | If the field is not filled out an error message appears and the form is not submitted |Pass|
 |Mobile responsiveness | The game adjusts to various screen sizes without layout issues or obscured content, all elements adjust as outlined in CSS including media queries |Pass|
 |Keyboard navigability | All interactive elements are accessible via keyboard for improved accessibility |Pass|
@@ -717,7 +705,7 @@ Manual testing:
 |Celebratory video on perfect score | A celebratory video plays when the user gets all questions correct |Pass|
 |Button Hover and Active States | Buttons should show visual changes (colour, shadow) when hovered, clicked, or focused |Pass|
 |Font Loading and Display | Custom Google Fonts ('Sniglet') should load and display correctly across all text elements. |Pass|
-|Text Scaling Across Devices | Text sizes should scale appropriately across devices, particularly for headings and button labels.|Pass|
+|Text Scaling Across Devices | Text sizes should scale appropriately across devices, particularly for headings and button labels. |Pass|
 |Background Image Handling | Background should cover the entire area without tiling or distortion across all device sizes. |Pass|
 |Social Media Links| All links open correctly in a new tab |Pass|
 |Navigation and Scrolling | Navigation actions (like starting the game) should auto-scroll the user to relevant content areas smoothly. |Pass|
@@ -726,7 +714,7 @@ Manual testing:
 
 ## Bugs
 
-1. Bug 1: ReferenceError in script.js
+1. Bug 1: Reference Error in script.js
 
 During development, the console in Dev Tools displayed the following error as the quizContainer was being referenced before it was properly defined in the script. I revised the script to ensure that quizContainer was correctly defined and accessible before it was called in the displayCurrentQuestion function. By adjusting the order of function calls and ensuring all variables were declared and initialised before use, the error was resolved. This change made sure that the quizContainer element was always available when needed by the game's logic.
 
@@ -755,7 +743,7 @@ During the initial game development a looping error was identified with the 'Res
 The game was designed to alert players with a popup message when the time for answering a question expired. This timeout message was intended to appear after each 10-second countdown. However, due to a bug in the implementation, the timeout message was only appearing for the first question and not persisting through subsequent questions.
 
 
-The problem was traced back to the method of appending and removing the timeout message in the Document Object Model (DOM). Initially, a new message was being created and destroyed each time, which was inefficient and led to inconsistent behavior. To address this, I modified the approach to maintain a single timeout message in the DOM and simply toggle its visibility as needed. This ensures that the message is ready to be shown immediately when the timer runs out, without the need for repeated creation and deletion.
+The problem was traced back to the method of appending and removing the timeout message in the Document Object Model (DOM). Initially, a new message was being created and destroyed each time, which was inefficient and led to inconsistent behaviour. To address this, I modified the approach to maintain a single timeout message in the DOM and simply toggle its visibility as needed. This ensures that the message is ready to be shown immediately when the timer runs out, without the need for repeated creation and deletion.
 
 6. Bug 6: Answer Buttons Active During Timeout Message Display
 
@@ -803,7 +791,7 @@ For those reviewing the code or the documentation, please consider these points 
 * Educational Resources and Feedback
     * Expand the feedback system to provide detailed explanations for each answer, potentially linking to external educational resources for further learning. This would enhance the educational value of the game.
 * Social Media Pages
-    * Currenntly, the social media pages have not been developed, in the future these would be added and linked to the game icons.
+    * Currently, the social media pages have not been developed, in the future these would be added and linked to the game icons.
 
 
 
@@ -812,7 +800,8 @@ For those reviewing the code or the documentation, please consider these points 
 The following sources were used as a guide for the code within this project:
 
 * Love Maths – Code Institute Project
-    *Assisted with the development of event-driven programming, organisation of functions for clarity and maintainability, dynamic content management, use of let and const block scope, error handling and validation and code to implement feedback mechanisms.
+    * Assisted with the development of event-driven programming, organisation of functions for clarity and maintainability, dynamic content management, use of let and const block scope, error handling and validation and code to implement feedback mechanisms.
+
 * Code Institute Course Content
     * Throughout the project, the course content was referred to for basic JavaScript game logic and structures, CSS styling and HTML structure. However, all code was customised to fit the unique requirements and functionalities of the quiz game.
     
@@ -844,7 +833,7 @@ The following sources were used as a guide for the code within this project:
     * This was downloaded from Google Fonts.
 
 * Website Favicon
-    * Favicon.io wasa used to create the website favicon.
+    * Favicon.io was used to create the website favicon.
 
 * Freesounds
     * All audio files were downloaded from this website and are not copyrighted.
