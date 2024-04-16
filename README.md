@@ -539,10 +539,6 @@ Final Test:
 
 ![Game HTML Final Test](assets/readme-images/html-validation-final-test.webp)
 
-Final Test:
-
-![Game HTML Final Test](assets/readme-images/html-final-test-homepage.png)
-
 #### 404 Page
 
 Inital Test:
