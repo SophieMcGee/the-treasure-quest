@@ -722,7 +722,7 @@ Manual testing:
 |Button Hover and Active States | Buttons should show visual changes (colour, shadow) when hovered, clicked, or focused |Pass|
 |Font Loading and Display | Custom Google Fonts ('Sniglet') should load and display correctly across all text elements. |Pass|
 |Text Scaling Across Devices | Text sizes should scale appropriately across devices, particularly for headings and button labels.|Pass|
-|Background Image Handling | Background should cover the entire area without tiling or distortion across all device sizes.|Pass|
+|Background Image Handling | Background should cover the entire area without tiling or distortion across all device sizes. |Pass|
 |Social Media Links| All links open correctly in a new tab |Pass|
 |Navigation and Scrolling | Navigation actions (like starting the game) should auto-scroll the user to relevant content areas smoothly. |Pass|
 
